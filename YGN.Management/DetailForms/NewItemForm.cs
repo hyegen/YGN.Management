@@ -15,7 +15,7 @@ using static Entities.Extensions;
 
 namespace YGN.Management.DetailForms
 {
-    public partial class NewItemForm : DevExpress.XtraEditors.XtraForm
+    public partial class NewItemForm : XtraForm
     {
         #region members
         EntityModelContainer dbcontext;
@@ -57,7 +57,7 @@ namespace YGN.Management.DetailForms
 
             TRANSACTIONS transaction = new TRANSACTIONS
             {
-                TRCODE = (int)Trcode.Giris,
+                TRCODE = (int)Trcode.Input,
                 PROCESSDATE = DateTime.Now,
                 ITEMID = lastItemId,
                 USERID = GlobalVariables.USERID,

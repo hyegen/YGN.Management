@@ -8,7 +8,7 @@ namespace Commons.Enums
 {
     public enum Trcode
     {
-        Giris=1,
-        Cikis=4
+        Input=1,
+        Output=4
     }
 }
