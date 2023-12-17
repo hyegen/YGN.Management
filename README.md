@@ -1,1 +1,1 @@
-ERP project for Stores.
+ERP project for Textile Stores.
