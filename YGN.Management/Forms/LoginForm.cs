@@ -18,6 +18,14 @@ namespace YGN.Management
         EntityModelContainer dbcontext;
         #endregion
 
+        #region constructor
+        public MainView()
+        {
+            InitializeComponent();
+            dbcontext = new EntityModelContainer();
+        }
+        #endregion
+
         #region properties
 
         public string UserName
@@ -37,14 +45,6 @@ namespace YGN.Management
             }
         }
 
-        #endregion
-
-        #region constructor
-        public MainView()
-        {
-            InitializeComponent();
-            dbcontext = new EntityModelContainer();
-        }
         #endregion
 
         #region events
