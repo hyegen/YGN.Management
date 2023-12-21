@@ -36,7 +36,7 @@ namespace YGN.Management.Forms
         private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             NewClientForm newClientForm = new NewClientForm();
-            newClientForm.Show();
+            newClientForm.ShowDialog();
         }
 
         private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

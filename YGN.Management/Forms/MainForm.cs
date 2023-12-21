@@ -36,13 +36,13 @@ namespace YGN.Management.Forms
         private void itemsBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ItemsForm itemsForm = new ItemsForm();
-            itemsForm.Show();
+            itemsForm.ShowDialog();
         }
 
         private void clientBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ClientsForm clientsForm = new ClientsForm();
-            clientsForm.Show();
+            clientsForm.ShowDialog();
         }
 
         private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

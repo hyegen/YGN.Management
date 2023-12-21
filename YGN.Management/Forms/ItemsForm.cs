@@ -2,13 +2,8 @@
 using DevExpress.XtraEditors;
 using Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using YGN.Management.DetailForms;
 using static Entities.Extensions;
@@ -42,9 +37,9 @@ namespace YGN.Management.Forms
         private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             NewItemForm newItemForm = new NewItemForm();
-            newItemForm.Show();
+            newItemForm.ShowDialog();
         }
-
+        
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Close();
@@ -87,6 +82,6 @@ namespace YGN.Management.Forms
             }
         }
         #endregion
-       
+
     }
 }
