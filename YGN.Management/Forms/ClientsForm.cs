@@ -17,13 +17,12 @@ namespace YGN.Management.Forms
     public partial class ClientsForm : DevExpress.XtraEditors.XtraForm
     {
         #region members
-        EntityModelContainer dbcontext;
+
         #endregion
 
         #region constructor
         public ClientsForm()
         {
-            dbcontext = new EntityModelContainer();
             InitializeComponent();
         }
         #endregion
@@ -61,7 +60,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-            clientGridControl.DataSource = dbcontext.CLIENT.ToList();
+            //clientGridControl.DataSource = dbcontext.CLIENT.ToList();
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {

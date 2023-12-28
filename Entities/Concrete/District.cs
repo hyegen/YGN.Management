@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class TestClass
+    public class District
     {
-        public int ID { get; set; }
-        public int DepartmentID { get; set; }
+        public int Id { get; set; }
+        public int TownId { get; set; }
+        public string Description { get; set; }
     }
 }

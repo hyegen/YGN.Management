@@ -18,13 +18,11 @@ namespace YGN.Management.DetailForms
     public partial class NewItemForm : XtraForm
     {
         #region members
-        EntityModelContainer dbcontext;
         #endregion
 
         #region constructor
         public NewItemForm()
         {
-            dbcontext = new EntityModelContainer();
             InitializeComponent();
         }
         #endregion
@@ -53,32 +51,32 @@ namespace YGN.Management.DetailForms
         #region methods
         public void addToTransaction()
         {
-            int lastItemId = dbcontext.ITEMS.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
+            //int lastItemId = dbcontext.ITEMS.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
 
-            TRANSACTIONS transaction = new TRANSACTIONS
-            {
-                TRCODE = (int)Trcode.Input,
-                PROCESSDATE = DateTime.Now,
-                ITEMID = lastItemId,
-                USERID = GlobalVariables.USERID,
-                AMOUNT = Amount
-            };
+            //TRANSACTIONS transaction = new TRANSACTIONS
+            //{
+            //    TRCODE = (int)Trcode.Input,
+            //    PROCESSDATE = DateTime.Now,
+            //    ITEMID = lastItemId,
+            //    USERID = GlobalVariables.USERID,
+            //    AMOUNT = Amount
+            //};
 
-            dbcontext.TRANSACTIONS.Add(transaction);
-            dbcontext.SaveChanges();
+            //dbcontext.TRANSACTIONS.Add(transaction);
+            //dbcontext.SaveChanges();
         }
 
         public void addItem()
         {
-            ITEMS itm = new ITEMS
-            {
-                ITEMCODE = ItemCode,
-                ITEMNAME = ItemName
-            };
+        //    ITEMS itm = new ITEMS
+        //    {
+        //        ITEMCODE = ItemCode,
+        //        ITEMNAME = ItemName
+        //    };
 
-            dbcontext.ITEMS.Add(itm);
-            dbcontext.SaveChanges();
-            XtraMessageBox.Show("Ekleme Başarılı.", "Bilgi");
+        //    dbcontext.ITEMS.Add(itm);
+        //    dbcontext.SaveChanges();
+        //    XtraMessageBox.Show("Ekleme Başarılı.", "Bilgi");
         }
 
         #endregion

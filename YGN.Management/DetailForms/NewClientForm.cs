@@ -16,13 +16,13 @@ namespace YGN.Management.DetailForms
     public partial class NewClientForm : XtraForm
     {
         #region members
-        EntityModelContainer dbcontext;
+
         #endregion
 
         #region constructor
         public NewClientForm()
         {
-            dbcontext = new EntityModelContainer();
+
             InitializeComponent();
         }
 
@@ -49,44 +49,44 @@ namespace YGN.Management.DetailForms
 
         public void addClient()
         {          
-            if (IsDuplicate(ClientName, ClientSurname, ClientAddress, ClientStore))
-            {
-                XtraMessageBox.Show("Cari zaten eklenmiş.", "Hata");
-                return;
-            }
-            CLIENT client = new CLIENT
-            {
-                NAME = ClientName,
-                SURNAME = ClientSurname,
-                ADDRESS = ClientAddress,
-                STORENAME = ClientStore
-            };
+            //if (IsDuplicate(ClientName, ClientSurname, ClientAddress, ClientStore))
+            //{
+            //    XtraMessageBox.Show("Cari zaten eklenmiş.", "Hata");
+            //    return;
+            //}
+            //CLIENT client = new CLIENT
+            //{
+            //    NAME = ClientName,
+            //    SURNAME = ClientSurname,
+            //    ADDRESS = ClientAddress,
+            //    STORENAME = ClientStore
+            //};
 
-            dbcontext.CLIENT.Add(client);
-            dbcontext.SaveChanges();
+            //dbcontext.CLIENT.Add(client);
+            //dbcontext.SaveChanges();
             XtraMessageBox.Show("Ekleme Başarılı.", "Bilgi");
         }
 
         public void addToTransaction()
         {
-            int lastClientId = dbcontext.CLIENT.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
+            //int lastClientId = dbcontext.CLIENT.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
 
-            CLIENT_TRANSACTION clientTransaction = new CLIENT_TRANSACTION
-            {
-                CLIENTID = lastClientId,
-                PROCESSDATE = DateTime.Now
-            };
-            dbcontext.CLIENT_TRANSACTION.Add(clientTransaction);
-            dbcontext.SaveChanges();
+            //CLIENT_TRANSACTION clientTransaction = new CLIENT_TRANSACTION
+            //{
+            //    CLIENTID = lastClientId,
+            //    PROCESSDATE = DateTime.Now
+            //};
+            //dbcontext.CLIENT_TRANSACTION.Add(clientTransaction);
+            //dbcontext.SaveChanges();
         }
-        private bool IsDuplicate(string name, string surname, string address, string storeName)
-        {
-            return dbcontext.CLIENT.Any(c =>
-                c.NAME == name &&
-                c.SURNAME == surname &&
-                c.ADDRESS == address &&
-                c.STORENAME == storeName);
-        }
+        //private bool IsDuplicate(string name, string surname, string address, string storeName)
+        //{
+        //    return dbcontext.CLIENT.Any(c =>
+        //        c.NAME == name &&
+        //        c.SURNAME == surname &&
+        //        c.ADDRESS == address &&
+        //        c.STORENAME == storeName);
+        //}
         #endregion
 
         #region properties

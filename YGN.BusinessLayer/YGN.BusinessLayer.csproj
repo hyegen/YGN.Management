@@ -41,7 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer\CoreLayer.csproj">
+      <Project>{3EC13A85-0303-4417-973E-4D4A5BABADEE}</Project>
+      <Name>CoreLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{569CB811-4E29-41D5-BAD9-F60E0F1CE6C3}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YGN.DataAccesLayer\YGN.DataAccesLayer.csproj">
+      <Project>{708C3AC0-A5A1-4E65-9E20-B2150FE59E66}</Project>
+      <Name>YGN.DataAccesLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

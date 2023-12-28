@@ -13,14 +13,14 @@ namespace YGN.Management.Forms
     public partial class ItemsForm : XtraForm
     {
         #region members
-        EntityModelContainer dbcontext;
+
         #endregion
 
         #region constructor
         public ItemsForm()
         {
             InitializeComponent();
-            dbcontext = new EntityModelContainer();
+
         }
         #endregion
 
@@ -58,14 +58,14 @@ namespace YGN.Management.Forms
         #region methods
         public void getData()
         {
-            var query = from i in dbcontext.ITEMS
-                        select new ITEMS_VIEW
-                        {
-                            ID = i.ID,
-                            ITEMCODE = i.ITEMCODE,
-                            ITEMNAME = i.ITEMNAME
-                        };
-            itemsGridControl.DataSource = query.ToList();
+            //var query = from i in dbcontext.ITEMS
+            //            select new ITEMS_VIEW
+            //            {
+            //                ID = i.ID,
+            //                ITEMCODE = i.ITEMCODE,
+            //                ITEMNAME = i.ITEMNAME
+            //            };
+            //itemsGridControl.DataSource = query.ToList();
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {

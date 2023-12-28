@@ -15,14 +15,14 @@ namespace YGN.Management
     public partial class MainView : XtraForm
     {
         #region members
-        EntityModelContainer dbcontext;
+
         #endregion
 
         #region constructor
         public MainView()
         {
             InitializeComponent();
-            dbcontext = new EntityModelContainer();
+
         }
         #endregion
 
@@ -50,28 +50,28 @@ namespace YGN.Management
         #region events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (checkUSer())
-            {
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                XtraMessageBox.Show("Giriş Başarısız..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //if (checkUSer())
+            //{
+            //    MainForm mainForm = new MainForm();
+            //    mainForm.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Giriş Başarısız..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
         #endregion
 
         #region methods
-        private bool checkUSer()
-        {
-            var check = from u in dbcontext.USER
-                        where u.USERNAME == UserName && u.PASSWORD == Password
-                        select u;
+        //private bool checkUSer()
+        //{
+        //    var check = from u in dbcontext.USER
+        //                where u.USERNAME == UserName && u.PASSWORD == Password
+        //                select u;
 
-            return check.Any();
-        }
+        //    return check.Any();
+        //}
         #endregion
 
     }
