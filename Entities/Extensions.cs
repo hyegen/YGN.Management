@@ -14,8 +14,5 @@ namespace Entities
             public string ITEMCODE { get; set; }
             public string ITEMNAME { get; set; }
         }
-        #region procedures
-
-        #endregion
     }
 }
