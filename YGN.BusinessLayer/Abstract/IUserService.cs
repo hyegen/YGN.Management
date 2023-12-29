@@ -10,5 +10,6 @@ namespace YGN.BusinessLayer.Abstract
     public interface IUserService
     {
         void AddUser(User user);
+        bool GetUserByUserNameAndPassword(string userName,string password);
     }
 }

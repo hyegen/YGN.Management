@@ -58,6 +58,18 @@
     <Compile Include="Migrations\202312281529063_mig1.designer.cs">
       <DependentUpon>202312281529063_mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312291704383_user_entity_has_been_updated.cs" />
+    <Compile Include="Migrations\202312291704383_user_entity_has_been_updated.Designer.cs">
+      <DependentUpon>202312291704383_user_entity_has_been_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.cs" />
+    <Compile Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.Designer.cs">
+      <DependentUpon>202312291712494_in_user_entity_date_format_has_been_changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.cs" />
+    <Compile Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.Designer.cs">
+      <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +90,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312281529063_mig1.resx">
       <DependentUpon>202312281529063_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291704383_user_entity_has_been_updated.resx">
+      <DependentUpon>202312291704383_user_entity_has_been_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.resx">
+      <DependentUpon>202312291712494_in_user_entity_date_format_has_been_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.resx">
+      <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

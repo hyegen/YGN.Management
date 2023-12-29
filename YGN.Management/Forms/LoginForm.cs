@@ -8,6 +8,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using YGN.BusinessLayer.Concrete;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.Forms;
 
 namespace YGN.Management
@@ -15,7 +17,7 @@ namespace YGN.Management
     public partial class MainView : XtraForm
     {
         #region members
-
+        UserManager userManager = new UserManager(new EfUserDal());
         #endregion
 
         #region constructor
@@ -50,28 +52,17 @@ namespace YGN.Management
         #region events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (checkUSer())
-            //{
-            //    MainForm mainForm = new MainForm();
-            //    mainForm.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("Giriş Başarısız..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+
+            bool checkInfo = userManager.GetUserByUserNameAndPassword(UserName, Password);
+            if (checkInfo)
+            {
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+                XtraMessageBox.Show("Giriş Başarısız..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        #endregion
-
-        #region methods
-        //private bool checkUSer()
-        //{
-        //    var check = from u in dbcontext.USER
-        //                where u.USERNAME == UserName && u.PASSWORD == Password
-        //                select u;
-
-        //    return check.Any();
-        //}
         #endregion
 
     }

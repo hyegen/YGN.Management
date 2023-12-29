@@ -10,6 +10,6 @@ namespace YGN.DataAccesLayer.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {
-
+       
     }
 }
