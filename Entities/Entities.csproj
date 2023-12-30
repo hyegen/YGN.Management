@@ -60,6 +60,7 @@
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\OrderDetail.cs" />
     <Compile Include="Concrete\Payment.cs" />
+    <Compile Include="Concrete\StockTransaction.cs" />
     <Compile Include="Concrete\Town.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Extensions.cs" />

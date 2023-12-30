@@ -70,6 +70,26 @@
     <Compile Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.Designer.cs">
       <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312301012078_mig_reload_stock.cs" />
+    <Compile Include="Migrations\202312301012078_mig_reload_stock.Designer.cs">
+      <DependentUpon>202312301012078_mig_reload_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301033262_stock_1.cs" />
+    <Compile Include="Migrations\202312301033262_stock_1.Designer.cs">
+      <DependentUpon>202312301033262_stock_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.cs" />
+    <Compile Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.Designer.cs">
+      <DependentUpon>202312301053382_mig_stock_transaction_entity_has_been_changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.cs" />
+    <Compile Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.Designer.cs">
+      <DependentUpon>202312301055228_mig_stock_transaction_entity_has_been_changed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312301143256_mig_city_chanhed.cs" />
+    <Compile Include="Migrations\202312301143256_mig_city_chanhed.Designer.cs">
+      <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +119,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.resx">
       <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301012078_mig_reload_stock.resx">
+      <DependentUpon>202312301012078_mig_reload_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301033262_stock_1.resx">
+      <DependentUpon>202312301033262_stock_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.resx">
+      <DependentUpon>202312301053382_mig_stock_transaction_entity_has_been_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.resx">
+      <DependentUpon>202312301055228_mig_stock_transaction_entity_has_been_changed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301143256_mig_city_chanhed.resx">
+      <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

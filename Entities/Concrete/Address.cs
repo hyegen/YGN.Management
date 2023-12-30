@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
+    public class AddressConfiguration : EntityTypeConfiguration<Address>
+    {
+        public AddressConfiguration()
+        {
+            Property(e => e.AddressText)
+                .IsRequired();
+        }
+    }
     public class Address
     {
+        [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
         public int CountryId { get; set; }

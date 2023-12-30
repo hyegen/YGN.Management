@@ -13,6 +13,8 @@ namespace YGN.DataAccesLayer.Concrete
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new StockTransactionConfiguration());
+            modelBuilder.Configurations.Add(new CityConfiguration());
         }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<City> Cities { get; set; }
@@ -26,5 +28,7 @@ namespace YGN.DataAccesLayer.Concrete
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Town> Towns { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<StockTransaction> StockTransactions { get; set; }
+
     }
 }
