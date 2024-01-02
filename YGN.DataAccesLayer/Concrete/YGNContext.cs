@@ -12,9 +12,22 @@ namespace YGN.DataAccesLayer.Concrete
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new UserConfiguration());
+            #region Fluent API
+
+            #region StockTransaction
             modelBuilder.Configurations.Add(new StockTransactionConfiguration());
-            modelBuilder.Configurations.Add(new CityConfiguration());
+            #endregion
+
+            #region User
+            modelBuilder.Configurations.Add(new UserConfiguration());
+
+            #endregion
+
+            #region City
+            modelBuilder.Entity<City>().Property(e => e.Description).HasMaxLength(50);
+            #endregion
+
+            #endregion
         }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<City> Cities { get; set; }

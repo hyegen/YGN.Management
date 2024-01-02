@@ -21,7 +21,7 @@ namespace Entities.Concrete
         [Key]
         public int Id { get; set; }
         public int CountryId { get; set; }
-        public string Description { get; set; } ///Nullable Yapılacak
+        public string Description { get; set; } 
         public int? District { get; set; }
     }
 }

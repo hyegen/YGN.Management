@@ -90,6 +90,22 @@
     <Compile Include="Migrations\202312301143256_mig_city_chanhed.Designer.cs">
       <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401021009109_mig_city_update3.cs" />
+    <Compile Include="Migrations\202401021009109_mig_city_update3.Designer.cs">
+      <DependentUpon>202401021009109_mig_city_update3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401021018004_mig_city_chngs1.cs" />
+    <Compile Include="Migrations\202401021018004_mig_city_chngs1.Designer.cs">
+      <DependentUpon>202401021018004_mig_city_chngs1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401021019274_mig_city_chngs3.cs" />
+    <Compile Include="Migrations\202401021019274_mig_city_chngs3.Designer.cs">
+      <DependentUpon>202401021019274_mig_city_chngs3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401021024377_mig_city_chngs5.cs" />
+    <Compile Include="Migrations\202401021024377_mig_city_chngs5.Designer.cs">
+      <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,6 +150,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312301143256_mig_city_chanhed.resx">
       <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401021009109_mig_city_update3.resx">
+      <DependentUpon>202401021009109_mig_city_update3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401021018004_mig_city_chngs1.resx">
+      <DependentUpon>202401021018004_mig_city_chngs1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401021019274_mig_city_chngs3.resx">
+      <DependentUpon>202401021019274_mig_city_chngs3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401021024377_mig_city_chngs5.resx">
+      <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
