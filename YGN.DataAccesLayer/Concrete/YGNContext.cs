@@ -27,6 +27,10 @@ namespace YGN.DataAccesLayer.Concrete
             modelBuilder.Entity<City>().Property(e => e.Description).HasMaxLength(50);
             #endregion
 
+            #region Invoice
+            modelBuilder.Configurations.Add(new InvoiceConfiguration());
+            #endregion
+
             #endregion
         }
         public DbSet<Address> Addresses { get; set; }

@@ -106,6 +106,10 @@
     <Compile Include="Migrations\202401021024377_mig_city_chngs5.Designer.cs">
       <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.cs" />
+    <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.Designer.cs">
+      <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401021024377_mig_city_chngs5.resx">
       <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401021036485_mig_invocide_updtd2.resx">
+      <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
