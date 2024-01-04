@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IItemDal.cs" />
     <Compile Include="Abstract\IPersonDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\YGNContext.cs" />
     <Compile Include="Migrations\202312281529063_mig1.cs" />
@@ -109,6 +111,10 @@
     <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.cs" />
     <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.Designer.cs">
       <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401041925577_item-entity-changed.cs" />
+    <Compile Include="Migrations\202401041925577_item-entity-changed.Designer.cs">
+      <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401021036485_mig_invocide_updtd2.resx">
       <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401041925577_item-entity-changed.resx">
+      <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

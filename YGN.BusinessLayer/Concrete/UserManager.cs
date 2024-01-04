@@ -22,10 +22,10 @@ namespace YGN.BusinessLayer.Concrete
             _userDal.Add(user);
         }
 
-        public bool GetUserByUserNameAndPassword(string userName, string password)
+        public bool Login(string userName, string password)
         {
-            var checkInfo = _userDal.Login(userName, password);
-            return checkInfo;
+            var loginValue= _userDal.LoginByUsernameAndPassword(userName,password);
+            return loginValue;
         }
     }
 }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace YGN.BusinessLayer.Abstract
 {
-    public interface IUserService
+    public interface IItemService
     {
-        void AddUser(User user);
-        bool Login(string userName,string password);
+        void AddItem(Item item);
     }
 }

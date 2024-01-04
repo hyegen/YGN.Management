@@ -52,8 +52,7 @@ namespace YGN.Management
         #region events
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            bool checkInfo = userManager.GetUserByUserNameAndPassword(UserName, Password);
+            bool checkInfo = userManager.Login(UserName, Password);
             if (checkInfo)
             {
                 MainForm mainForm = new MainForm();

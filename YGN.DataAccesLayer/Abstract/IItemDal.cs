@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Abstract
 {
-    public interface IUserDal : IEntityRepository<User>
+    public interface IItemDal : IEntityRepository<Item>
     {
-        bool LoginByUsernameAndPassword(string userName, string password);
+
     }
 }

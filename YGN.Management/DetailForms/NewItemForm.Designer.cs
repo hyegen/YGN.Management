@@ -30,44 +30,53 @@ namespace YGN.Management.DetailForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewItemForm));
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.newItemRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.closeBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.itemDetailGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.amountTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.amountLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.itemNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.itemCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            this.itemCodeLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.itemNameLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.unitPriceTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.unitPriceLabelControl = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.newItemRibbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).BeginInit();
+            this.itemDetailGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbonControl1
+            // newItemRibbonControl
             // 
-            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Orange;
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
-            this.ribbonControl1.SearchEditItem,
+            this.newItemRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Orange;
+            this.newItemRibbonControl.ExpandCollapseItem.Id = 0;
+            this.newItemRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.newItemRibbonControl.ExpandCollapseItem,
             this.saveBarButtonItem,
             this.closeBarButtonItem});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.newItemRibbonControl.Location = new System.Drawing.Point(0, 0);
+            this.newItemRibbonControl.MaxItemId = 3;
+            this.newItemRibbonControl.Name = "newItemRibbonControl";
+            this.newItemRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(379, 95);
-            this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            // 
+            // 
+            // 
+            this.newItemRibbonControl.SearchEditItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            this.newItemRibbonControl.SearchEditItem.EditWidth = 150;
+            this.newItemRibbonControl.SearchEditItem.Id = -5000;
+            this.newItemRibbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.newItemRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.newItemRibbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
+            this.newItemRibbonControl.Size = new System.Drawing.Size(391, 95);
+            this.newItemRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // saveBarButtonItem
             // 
@@ -101,38 +110,40 @@ namespace YGN.Management.DetailForms
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
             // 
-            // groupControl1
+            // itemDetailGroupControl
             // 
-            this.groupControl1.Controls.Add(this.amountTextEdit);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.itemNameTextEdit);
-            this.groupControl1.Controls.Add(this.itemCodeTextEdit);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 101);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(353, 143);
-            this.groupControl1.TabIndex = 10;
-            this.groupControl1.Text = "Yeni ";
+            this.itemDetailGroupControl.Controls.Add(this.unitPriceTextEdit);
+            this.itemDetailGroupControl.Controls.Add(this.unitPriceLabelControl);
+            this.itemDetailGroupControl.Controls.Add(this.amountTextEdit);
+            this.itemDetailGroupControl.Controls.Add(this.amountLabelControl);
+            this.itemDetailGroupControl.Controls.Add(this.itemNameTextEdit);
+            this.itemDetailGroupControl.Controls.Add(this.itemCodeTextEdit);
+            this.itemDetailGroupControl.Controls.Add(this.itemCodeLabelControl);
+            this.itemDetailGroupControl.Controls.Add(this.itemNameLabelControl);
+            this.itemDetailGroupControl.Location = new System.Drawing.Point(12, 101);
+            this.itemDetailGroupControl.Name = "itemDetailGroupControl";
+            this.itemDetailGroupControl.Size = new System.Drawing.Size(367, 213);
+            this.itemDetailGroupControl.TabIndex = 10;
+            this.itemDetailGroupControl.Text = "Yeni ";
             // 
             // amountTextEdit
             // 
-            this.amountTextEdit.Location = new System.Drawing.Point(97, 103);
+            this.amountTextEdit.Location = new System.Drawing.Point(97, 107);
             this.amountTextEdit.Name = "amountTextEdit";
             this.amountTextEdit.Size = new System.Drawing.Size(84, 20);
             this.amountTextEdit.TabIndex = 13;
             // 
-            // labelControl3
+            // amountLabelControl
             // 
-            this.labelControl3.Location = new System.Drawing.Point(23, 109);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(29, 13);
-            this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "Miktar";
+            this.amountLabelControl.Location = new System.Drawing.Point(23, 109);
+            this.amountLabelControl.Name = "amountLabelControl";
+            this.amountLabelControl.Size = new System.Drawing.Size(29, 13);
+            this.amountLabelControl.TabIndex = 12;
+            this.amountLabelControl.Text = "Miktar";
             // 
             // itemNameTextEdit
             // 
-            this.itemNameTextEdit.Location = new System.Drawing.Point(97, 73);
+            this.itemNameTextEdit.Location = new System.Drawing.Point(97, 75);
             this.itemNameTextEdit.Name = "itemNameTextEdit";
             this.itemNameTextEdit.Size = new System.Drawing.Size(238, 20);
             this.itemNameTextEdit.TabIndex = 11;
@@ -144,56 +155,74 @@ namespace YGN.Management.DetailForms
             this.itemCodeTextEdit.Size = new System.Drawing.Size(238, 20);
             this.itemCodeTextEdit.TabIndex = 10;
             // 
-            // labelControl2
+            // itemCodeLabelControl
             // 
-            this.labelControl2.Location = new System.Drawing.Point(23, 46);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 13);
-            this.labelControl2.TabIndex = 9;
-            this.labelControl2.Text = "Malzeme Kodu";
+            this.itemCodeLabelControl.Location = new System.Drawing.Point(23, 46);
+            this.itemCodeLabelControl.Name = "itemCodeLabelControl";
+            this.itemCodeLabelControl.Size = new System.Drawing.Size(68, 13);
+            this.itemCodeLabelControl.TabIndex = 9;
+            this.itemCodeLabelControl.Text = "Malzeme Kodu";
             // 
-            // labelControl1
+            // itemNameLabelControl
             // 
-            this.labelControl1.Location = new System.Drawing.Point(23, 79);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(59, 13);
-            this.labelControl1.TabIndex = 8;
-            this.labelControl1.Text = "Malzeme Adı";
+            this.itemNameLabelControl.Location = new System.Drawing.Point(23, 79);
+            this.itemNameLabelControl.Name = "itemNameLabelControl";
+            this.itemNameLabelControl.Size = new System.Drawing.Size(59, 13);
+            this.itemNameLabelControl.TabIndex = 8;
+            this.itemNameLabelControl.Text = "Malzeme Adı";
+            // 
+            // unitPriceTextEdit
+            // 
+            this.unitPriceTextEdit.Location = new System.Drawing.Point(97, 139);
+            this.unitPriceTextEdit.Name = "unitPriceTextEdit";
+            this.unitPriceTextEdit.Size = new System.Drawing.Size(84, 20);
+            this.unitPriceTextEdit.TabIndex = 15;
+            // 
+            // unitPriceLabelControl
+            // 
+            this.unitPriceLabelControl.Location = new System.Drawing.Point(23, 142);
+            this.unitPriceLabelControl.Name = "unitPriceLabelControl";
+            this.unitPriceLabelControl.Size = new System.Drawing.Size(49, 13);
+            this.unitPriceLabelControl.TabIndex = 14;
+            this.unitPriceLabelControl.Text = "Birim Fiyat";
             // 
             // NewItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 252);
-            this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.ribbonControl1);
+            this.ClientSize = new System.Drawing.Size(391, 326);
+            this.Controls.Add(this.itemDetailGroupControl);
+            this.Controls.Add(this.newItemRibbonControl);
             this.Name = "NewItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Malzeme";
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newItemRibbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).EndInit();
+            this.itemDetailGroupControl.ResumeLayout(false);
+            this.itemDetailGroupControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl newItemRibbonControl;
         private DevExpress.XtraBars.BarButtonItem saveBarButtonItem;
         private DevExpress.XtraBars.BarButtonItem closeBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl itemDetailGroupControl;
         private DevExpress.XtraEditors.TextEdit itemNameTextEdit;
         private DevExpress.XtraEditors.TextEdit itemCodeTextEdit;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl itemCodeLabelControl;
+        private DevExpress.XtraEditors.LabelControl itemNameLabelControl;
         private DevExpress.XtraEditors.TextEdit amountTextEdit;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl amountLabelControl;
+        private DevExpress.XtraEditors.TextEdit unitPriceTextEdit;
+        private DevExpress.XtraEditors.LabelControl unitPriceLabelControl;
     }
 }

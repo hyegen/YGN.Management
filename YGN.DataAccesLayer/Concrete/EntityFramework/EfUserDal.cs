@@ -11,7 +11,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfUserDal : EfGenericRepositoryBase<User, YGNContext>, IUserDal
     {
-        public bool Login(string userName, string password)
+        public bool LoginByUsernameAndPassword(string userName, string password)
         {
             using (YGNContext context = new YGNContext())
             {
@@ -19,7 +19,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                     from i in context.Users
                     where i.UserName == userName && i.Password == password
                     select i;
-               
+
                 return result.Any();
             }
         }
