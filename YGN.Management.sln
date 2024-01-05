@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YGN.CoreLayer", "YGN.CoreLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{3EC13A85-0303-4417-973E-4D4A5BABADEE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YGN.Management.System", "YGN.Management.System", "{418B01A6-8140-4A0B-830E-5A99A0756CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YGN.Management.Sys", "YGN.Management.Sys\YGN.Management.Sys.csproj", "{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{3EC13A85-0303-4417-973E-4D4A5BABADEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC13A85-0303-4417-973E-4D4A5BABADEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC13A85-0303-4417-973E-4D4A5BABADEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,7 @@ Global
 		{AA14FF8D-1A33-47E0-AB0F-611288661D60} = {59620EE1-595B-4BB0-BCC9-345BA4522B4B}
 		{708C3AC0-A5A1-4E65-9E20-B2150FE59E66} = {D7B6AC2A-2DD5-495A-993D-8180801745C0}
 		{3EC13A85-0303-4417-973E-4D4A5BABADEE} = {6B74B73B-3D5A-490E-8170-7472D21ACD11}
+		{610A4BD1-18C2-4A43-A9BE-F1035A11ED6C} = {418B01A6-8140-4A0B-830E-5A99A0756CEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1FFCD1E-A689-4546-AC7C-91848C5C28FB}
