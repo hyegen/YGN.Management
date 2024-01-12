@@ -5,6 +5,8 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using YGN.BusinessLayer.Concrete;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
 using static Entities.Extensions;
 
@@ -13,14 +15,13 @@ namespace YGN.Management.Forms
     public partial class ItemsForm : XtraForm
     {
         #region members
-
+        ItemManager itemManager = new ItemManager(new EfItemDal());
         #endregion
 
         #region constructor
         public ItemsForm()
         {
             InitializeComponent();
-
         }
         #endregion
 
@@ -39,7 +40,7 @@ namespace YGN.Management.Forms
             NewItemForm newItemForm = new NewItemForm();
             newItemForm.ShowDialog();
         }
-        
+
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Close();
@@ -48,7 +49,6 @@ namespace YGN.Management.Forms
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {
-                // Sağ tık menüsü oluştur
                 DXMenuItem menuItemExportToPdf = new DXMenuItem("PDF'e Aktar", new EventHandler(ExportToPdf_Click));
                 e.Menu.Items.Add(menuItemExportToPdf);
             }
@@ -58,18 +58,11 @@ namespace YGN.Management.Forms
         #region methods
         public void getData()
         {
-            //var query = from i in dbcontext.ITEMS
-            //            select new ITEMS_VIEW
-            //            {
-            //                ID = i.ID,
-            //                ITEMCODE = i.ITEMCODE,
-            //                ITEMNAME = i.ITEMNAME
-            //            };
-            //itemsGridControl.DataSource = query.ToList();
+            var allDatas = itemManager.GetItemsAll();
+            itemsGridControl.DataSource = allDatas;
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {
-            // Grid verilerini PDF'e export et
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";

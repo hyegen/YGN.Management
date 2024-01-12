@@ -37,13 +37,16 @@ namespace YGN.Management.Forms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.itemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.itemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colITEMCODE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colITEMNAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCategory1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCategory2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBrand = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -119,6 +122,11 @@ namespace YGN.Management.Forms
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             resources.ApplyResources(this.ribbonPageGroup2, "ribbonPageGroup2");
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            resources.ApplyResources(this.ribbonPageGroup3, "ribbonPageGroup3");
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.itemsGridControl);
@@ -137,37 +145,53 @@ namespace YGN.Management.Forms
             // itemsGridView
             // 
             this.itemsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
-            this.colITEMCODE,
-            this.colITEMNAME});
+            this.colItemCode,
+            this.colItemName,
+            this.colUnitPrice,
+            this.colCategory1,
+            this.colCategory2,
+            this.colBrand});
             this.itemsGridView.GridControl = this.itemsGridControl;
             this.itemsGridView.Name = "itemsGridView";
             this.itemsGridView.OptionsBehavior.Editable = false;
             this.itemsGridView.OptionsView.ShowGroupPanel = false;
             this.itemsGridView.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.itemsGridView_PopupMenuShowing);
             // 
-            // colID
+            // colItemCode
             // 
-            resources.ApplyResources(this.colID, "colID");
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
+            resources.ApplyResources(this.colItemCode, "colItemCode");
+            this.colItemCode.FieldName = "ItemCode";
+            this.colItemCode.Name = "colItemCode";
             // 
-            // colITEMCODE
+            // colItemName
             // 
-            resources.ApplyResources(this.colITEMCODE, "colITEMCODE");
-            this.colITEMCODE.FieldName = "ITEMCODE";
-            this.colITEMCODE.Name = "colITEMCODE";
+            resources.ApplyResources(this.colItemName, "colItemName");
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
             // 
-            // colITEMNAME
+            // colUnitPrice
             // 
-            resources.ApplyResources(this.colITEMNAME, "colITEMNAME");
-            this.colITEMNAME.FieldName = "ITEMNAME";
-            this.colITEMNAME.Name = "colITEMNAME";
+            resources.ApplyResources(this.colUnitPrice, "colUnitPrice");
+            this.colUnitPrice.FieldName = "UnitPrice";
+            this.colUnitPrice.Name = "colUnitPrice";
             // 
-            // ribbonPageGroup3
+            // colCategory1
             // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            resources.ApplyResources(this.ribbonPageGroup3, "ribbonPageGroup3");
+            resources.ApplyResources(this.colCategory1, "colCategory1");
+            this.colCategory1.FieldName = "Category1";
+            this.colCategory1.Name = "colCategory1";
+            // 
+            // colCategory2
+            // 
+            resources.ApplyResources(this.colCategory2, "colCategory2");
+            this.colCategory2.FieldName = "Category2";
+            this.colCategory2.Name = "colCategory2";
+            // 
+            // colBrand
+            // 
+            resources.ApplyResources(this.colBrand, "colBrand");
+            this.colBrand.FieldName = "Brand";
+            this.colBrand.Name = "colBrand";
             // 
             // ItemsForm
             // 
@@ -199,9 +223,12 @@ namespace YGN.Management.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView itemsGridView;
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colITEMCODE;
-        private DevExpress.XtraGrid.Columns.GridColumn colITEMNAME;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategory1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategory2;
+        private DevExpress.XtraGrid.Columns.GridColumn colBrand;
     }
 }

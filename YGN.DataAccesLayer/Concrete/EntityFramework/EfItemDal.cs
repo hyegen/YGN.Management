@@ -11,6 +11,6 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfItemDal : EfGenericRepositoryBase<Item, YGNContext>, IItemDal
     {
-
+       
     }
 }

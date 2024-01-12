@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
-        public float UnitPrice { get; set; }
+        public double? UnitPrice { get; set; }
         public string Categorty1 { get; set; }
         public string Categorty2 { get; set; }
         public string Categorty3 { get; set; }

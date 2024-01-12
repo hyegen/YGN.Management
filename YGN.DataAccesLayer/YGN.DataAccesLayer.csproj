@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IItemDal.cs" />
-    <Compile Include="Abstract\IPersonDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
@@ -116,6 +115,10 @@
     <Compile Include="Migrations\202401041925577_item-entity-changed.Designer.cs">
       <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401121220156_mig_changes8.cs" />
+    <Compile Include="Migrations\202401121220156_mig_changes8.Designer.cs">
+      <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -178,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401041925577_item-entity-changed.resx">
       <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401121220156_mig_changes8.resx">
+      <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

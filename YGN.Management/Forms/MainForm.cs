@@ -62,18 +62,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-            //var trans = (from i in dbcontext.ITEMS
-            //             join t in dbcontext.TRANSACTIONS on i.ID equals t.ITEMID into n
-            //             from yt in n.DefaultIfEmpty()
-            //             select new
-            //             {
-            //                 i.ITEMCODE,
-            //                 i.ITEMNAME,
-            //                 yt.AMOUNT,
-            //                 yt.PROCESSDATE,
-            //                 TRCODEDescription = yt.TRCODE == 1 ? "Satınalma" : yt.TRCODE == 4 ? "Satış" : "Diğer"
-            //             }).ToList();
-            //gridControlMainForm.DataSource = trans;
+          
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {

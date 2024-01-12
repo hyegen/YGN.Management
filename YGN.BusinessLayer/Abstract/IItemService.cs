@@ -9,6 +9,6 @@ namespace YGN.BusinessLayer.Abstract
 {
     public interface IItemService
     {
-        void AddItem(Item item);
+        
     }
 }

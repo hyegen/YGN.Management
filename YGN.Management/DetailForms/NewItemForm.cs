@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
-using Entities;
+using Entities.Concrete;
 
 
 namespace YGN.Management.DetailForms
@@ -22,30 +22,9 @@ namespace YGN.Management.DetailForms
     public partial class NewItemForm : XtraForm
     {
         #region members
-        ItemManager itemManager = new ItemManager(new EfItemDal());
-        #endregion
 
-        #region properties
-        public string ItemCode
-        {
-            get { return itemCodeTextEdit.Text; }
-            set { itemCodeTextEdit.Text = value; }
-        }
-        public string ItemName
-        {
-            get { return itemNameTextEdit.Text; }
-            set { itemNameTextEdit.Text = value; }
-        }
-        public int Amount
-        {
-            get { return int.Parse(amountTextEdit.Text); }
-            set { amountTextEdit.Text = value.ToString(); }
-        }
-        public float UnitPrice
-        {
-            get { return int.Parse(unitPriceTextEdit.Text); }
-            set { unitPriceTextEdit.Text = value.ToString(); }
-        }
+        ItemManager itemManager = new ItemManager(new EfItemDal());
+
         #endregion
 
         #region constructor
@@ -53,22 +32,57 @@ namespace YGN.Management.DetailForms
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region properties
+
+        public string ItemCode
+        {
+            get { return itemCodeTextEdit?.Text; }
+            set { itemCodeTextEdit.Text = value; }
+        }
+
+        public string ItemName
+        {
+            get { return itemNameTextEdit?.Text; }
+            set { itemNameTextEdit.Text = value; }
+        }
+
+        public double? UnitPrice
+        {
+            get
+            {
+                if (double.TryParse(unitPriceTextEdit?.Text, out double result))
+                {
+                    return result;
+                }
+                return null; 
+            }
+            set { unitPriceTextEdit.Text = value?.ToString(); }
+        }
+
+        public string Category
+        {        
+            get { return categoryComboBoxEdit?.Text; }
+            set { categoryComboBoxEdit.Text = value?.ToString(); }
+        }
+
         #endregion
 
         #region events
         private void saveBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //if (string.IsNullOrEmpty(ItemCode) || string.IsNullOrEmpty(ItemName))
-            //{
-            //    XtraMessageBox.Show("Bilgileri Eksiksiz Giriniz..", "Hata");
-            //    return;
-            //}
-            //else
-            //{
-            //    addItem();
-            //    addToTransaction();
-            //    Close();
-            //}
+            var newItem = new Item
+            {
+                ItemCode =ItemCode,
+                ItemName = ItemName,
+                UnitPrice = UnitPrice,
+                Categorty1 = Category
+            };
+
+            itemManager.AddItem(newItem);
+
         }
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -94,21 +108,6 @@ namespace YGN.Management.DetailForms
             //dbcontext.SaveChanges();
         }
 
-        public void addItem()
-        {
-            //    ITEMS itm = new ITEMS
-            //    {
-            //        ITEMCODE = ItemCode,
-            //        ITEMNAME = ItemName
-            //    };
-
-            //    dbcontext.ITEMS.Add(itm);
-            //    dbcontext.SaveChanges();
-            //    XtraMessageBox.Show("Ekleme Başarılı.", "Bilgi");
-        }
-
         #endregion
-
-
     }
 }

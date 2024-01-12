@@ -18,7 +18,15 @@ namespace YGN.BusinessLayer.Concrete
         }
         public void AddItem(Item item)
         {
+            if (item ==null )
+            {
+                throw new ArgumentNullException(nameof(item), "Item parameter cannot be null.");
+            }
             _itemDal.Add(item);
+        }
+        public List<Item> GetItemsAll()
+        {
+            return _itemDal.GetAll();
         }
     }
 }
