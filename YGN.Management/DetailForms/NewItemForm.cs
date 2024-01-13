@@ -15,7 +15,8 @@ using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using Entities.Concrete;
-
+using YGN.BusinessLayer.FluentValidation;
+using FluentValidation.Results;
 
 namespace YGN.Management.DetailForms
 {
@@ -24,6 +25,7 @@ namespace YGN.Management.DetailForms
         #region members
 
         ItemManager itemManager = new ItemManager(new EfItemDal());
+        StringBuilder stringBuilder = new StringBuilder();
 
         #endregion
 
@@ -57,13 +59,13 @@ namespace YGN.Management.DetailForms
                 {
                     return result;
                 }
-                return null; 
+                return null;
             }
             set { unitPriceTextEdit.Text = value?.ToString(); }
         }
 
         public string Category
-        {        
+        {
             get { return categoryComboBoxEdit?.Text; }
             set { categoryComboBoxEdit.Text = value?.ToString(); }
         }
@@ -75,15 +77,30 @@ namespace YGN.Management.DetailForms
         {
             var newItem = new Item
             {
-                ItemCode =ItemCode,
+                ItemCode = ItemCode,
                 ItemName = ItemName,
                 UnitPrice = UnitPrice,
-                Categorty1 = Category
+                Category1 = Category
             };
-
-            itemManager.AddItem(newItem);
+            ItemValidator itemValidator = new ItemValidator();
+            ValidationResult result = itemValidator.Validate(newItem);
+            if (result.IsValid)
+            {
+                itemManager.AddItem(newItem);
+                XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı kayıt başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName));
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    stringBuilder.AppendLine(item.ErrorMessage);
+                }
+                XtraMessageBox.Show(stringBuilder.ToString(),"Error");
+                Close();
+            }
 
         }
+
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Close();

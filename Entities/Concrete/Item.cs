@@ -15,10 +15,10 @@ namespace Entities.Concrete
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public double? UnitPrice { get; set; }
-        public string Categorty1 { get; set; }
-        public string Categorty2 { get; set; }
-        public string Categorty3 { get; set; }
-        public string Categorty4 { get; set; }
+        public string Category1 { get; set; }
+        public string Category2 { get; set; }
+        public string Category3 { get; set; }
+        public string Category4 { get; set; }
         public string Brand { get; set; }
        // public bool ItemStatus { get; set; }
     }

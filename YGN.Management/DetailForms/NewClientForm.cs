@@ -31,11 +31,6 @@ namespace YGN.Management.DetailForms
         #region events
         private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (string.IsNullOrEmpty(ClientName) || string.IsNullOrEmpty(ClientSurname) || string.IsNullOrEmpty(ClientAddress) || string.IsNullOrEmpty(ClientStore))
-            {
-                XtraMessageBox.Show("Bilgileri Eksiksiz Giriniz..", "Hata");
-                return;
-            }
             addClient();
             addToTransaction();
         }
