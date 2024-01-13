@@ -52,6 +52,19 @@ namespace YGN.Management
         #region events
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+        private void passwordTextEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
+        #endregion
+
+        private void Login()
+        {
             bool checkInfo = userManager.Login(UserName, Password);
             if (checkInfo)
             {
@@ -62,7 +75,5 @@ namespace YGN.Management
             else
                 XtraMessageBox.Show("Giriş Başarısız..", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        #endregion
-
     }
 }

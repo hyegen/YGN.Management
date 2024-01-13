@@ -24,7 +24,7 @@ namespace YGN.BusinessLayer.Concrete
 
         public bool Login(string userName, string password)
         {
-            var loginValue= _userDal.LoginByUsernameAndPassword(userName,password);
+            var loginValue = _userDal.LoginByUsernameAndPassword(userName, password);
             return loginValue;
         }
     }

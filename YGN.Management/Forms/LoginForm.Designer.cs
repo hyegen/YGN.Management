@@ -77,6 +77,7 @@ namespace YGN.Management
             this.passwordTextEdit.Properties.PasswordChar = '*';
             this.passwordTextEdit.Size = new System.Drawing.Size(139, 20);
             this.passwordTextEdit.TabIndex = 3;
+            this.passwordTextEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextEdit_KeyDown);
             // 
             // userNameTextEdit
             // 
@@ -107,6 +108,7 @@ namespace YGN.Management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 194);
             this.Controls.Add(this.groupControl1);
+            this.KeyPreview = true;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş";

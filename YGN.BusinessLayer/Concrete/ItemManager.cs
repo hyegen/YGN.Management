@@ -11,7 +11,7 @@ namespace YGN.BusinessLayer.Concrete
 {
     public class ItemManager : IItemService
     {
-        IItemDal _itemDal;
+        private readonly IItemDal _itemDal;
         public ItemManager(IItemDal itemDal)
         {
             _itemDal = itemDal;

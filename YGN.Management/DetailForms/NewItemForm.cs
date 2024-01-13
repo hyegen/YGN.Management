@@ -87,7 +87,7 @@ namespace YGN.Management.DetailForms
             if (result.IsValid)
             {
                 itemManager.AddItem(newItem);
-                XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı kayıt başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName));
+                XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı kayıt başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName),"Bilgi");
             }
             else
             {
