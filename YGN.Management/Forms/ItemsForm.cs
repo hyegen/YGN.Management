@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
-using static Entities.Extensions;
 
 namespace YGN.Management.Forms
 {
