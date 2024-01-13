@@ -75,6 +75,5 @@ namespace YGN.Management.Forms
             }
         }
         #endregion
-
     }
 }

@@ -14,14 +14,10 @@ namespace YGN.BusinessLayer.Concrete
         IItemDal _itemDal;
         public ItemManager(IItemDal itemDal)
         {
-            _itemDal= itemDal;        
+            _itemDal = itemDal;
         }
         public void AddItem(Item item)
         {
-            if (item ==null )
-            {
-                throw new ArgumentNullException(nameof(item), "Item parameter cannot be null.");
-            }
             _itemDal.Add(item);
         }
         public List<Item> GetItemsAll()

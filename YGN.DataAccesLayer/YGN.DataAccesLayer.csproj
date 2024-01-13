@@ -119,6 +119,10 @@
     <Compile Include="Migrations\202401121220156_mig_changes8.Designer.cs">
       <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs" />
+    <Compile Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.Designer.cs">
+      <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401121220156_mig_changes8.resx">
       <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.resx">
+      <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -29,7 +29,6 @@ namespace YGN.Management.DetailForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewItemForm));
             this.newItemRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -37,23 +36,21 @@ namespace YGN.Management.DetailForms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.itemDetailGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.categoryLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.categoryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.unitPriceTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.unitPriceLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.itemNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.itemCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.itemCodeLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.itemNameLabelControl = new DevExpress.XtraEditors.LabelControl();
-            this.addItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.categoryLabelControl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.newItemRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).BeginInit();
             this.itemDetailGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryComboBoxEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // newItemRibbonControl
@@ -62,9 +59,9 @@ namespace YGN.Management.DetailForms
             this.newItemRibbonControl.ExpandCollapseItem.Id = 0;
             this.newItemRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.newItemRibbonControl.ExpandCollapseItem,
+            this.newItemRibbonControl.SearchEditItem,
             this.saveBarButtonItem,
-            this.closeBarButtonItem,
-            this.newItemRibbonControl.SearchEditItem});
+            this.closeBarButtonItem});
             this.newItemRibbonControl.Location = new System.Drawing.Point(0, 0);
             this.newItemRibbonControl.MaxItemId = 3;
             this.newItemRibbonControl.Name = "newItemRibbonControl";
@@ -123,9 +120,26 @@ namespace YGN.Management.DetailForms
             this.itemDetailGroupControl.TabIndex = 10;
             this.itemDetailGroupControl.Text = "Yeni ";
             // 
+            // categoryLabelControl
+            // 
+            this.categoryLabelControl.Location = new System.Drawing.Point(42, 146);
+            this.categoryLabelControl.Name = "categoryLabelControl";
+            this.categoryLabelControl.Size = new System.Drawing.Size(40, 13);
+            this.categoryLabelControl.TabIndex = 17;
+            this.categoryLabelControl.Text = "Kategori";
+            // 
+            // categoryComboBoxEdit
+            // 
+            this.categoryComboBoxEdit.Location = new System.Drawing.Point(97, 143);
+            this.categoryComboBoxEdit.MenuManager = this.newItemRibbonControl;
+            this.categoryComboBoxEdit.Name = "categoryComboBoxEdit";
+            this.categoryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.categoryComboBoxEdit.Size = new System.Drawing.Size(100, 20);
+            this.categoryComboBoxEdit.TabIndex = 16;
+            // 
             // unitPriceTextEdit
             // 
-            this.unitPriceTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.addItemBindingSource, "UnitPrice", true));
             this.unitPriceTextEdit.Location = new System.Drawing.Point(97, 108);
             this.unitPriceTextEdit.Name = "unitPriceTextEdit";
             this.unitPriceTextEdit.Size = new System.Drawing.Size(100, 20);
@@ -141,7 +155,6 @@ namespace YGN.Management.DetailForms
             // 
             // itemNameTextEdit
             // 
-            this.itemNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.addItemBindingSource, "ItemName", true));
             this.itemNameTextEdit.Location = new System.Drawing.Point(97, 75);
             this.itemNameTextEdit.Name = "itemNameTextEdit";
             this.itemNameTextEdit.Size = new System.Drawing.Size(238, 20);
@@ -149,7 +162,6 @@ namespace YGN.Management.DetailForms
             // 
             // itemCodeTextEdit
             // 
-            this.itemCodeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.addItemBindingSource, "ItemCode", true));
             this.itemCodeTextEdit.Location = new System.Drawing.Point(97, 43);
             this.itemCodeTextEdit.Name = "itemCodeTextEdit";
             this.itemCodeTextEdit.Size = new System.Drawing.Size(238, 20);
@@ -171,29 +183,6 @@ namespace YGN.Management.DetailForms
             this.itemNameLabelControl.TabIndex = 8;
             this.itemNameLabelControl.Text = "Malzeme Adı";
             // 
-            // addItemBindingSource
-            // 
-            this.addItemBindingSource.DataSource = typeof(Entities.Concrete.Item);
-            // 
-            // categoryComboBoxEdit
-            // 
-            this.categoryComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.addItemBindingSource, "Categorty1", true));
-            this.categoryComboBoxEdit.Location = new System.Drawing.Point(97, 143);
-            this.categoryComboBoxEdit.MenuManager = this.newItemRibbonControl;
-            this.categoryComboBoxEdit.Name = "categoryComboBoxEdit";
-            this.categoryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.categoryComboBoxEdit.Size = new System.Drawing.Size(100, 20);
-            this.categoryComboBoxEdit.TabIndex = 16;
-            // 
-            // categoryLabelControl
-            // 
-            this.categoryLabelControl.Location = new System.Drawing.Point(42, 146);
-            this.categoryLabelControl.Name = "categoryLabelControl";
-            this.categoryLabelControl.Size = new System.Drawing.Size(40, 13);
-            this.categoryLabelControl.TabIndex = 17;
-            this.categoryLabelControl.Text = "Kategori";
-            // 
             // NewItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,11 +197,10 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).EndInit();
             this.itemDetailGroupControl.ResumeLayout(false);
             this.itemDetailGroupControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryComboBoxEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +219,6 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.LabelControl itemNameLabelControl;
         private DevExpress.XtraEditors.TextEdit unitPriceTextEdit;
         private DevExpress.XtraEditors.LabelControl unitPriceLabelControl;
-        private System.Windows.Forms.BindingSource addItemBindingSource;
         private DevExpress.XtraEditors.LabelControl categoryLabelControl;
         private DevExpress.XtraEditors.ComboBoxEdit categoryComboBoxEdit;
     }
