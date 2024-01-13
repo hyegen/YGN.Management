@@ -6,4 +6,5 @@ We are under construction :)
  *n-Tier Architecture
  *Entity Framework
  *DevExpress
+ *Fluent Validation
 )
