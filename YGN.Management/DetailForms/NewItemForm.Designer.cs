@@ -162,6 +162,7 @@ namespace YGN.Management.DetailForms
             // 
             // itemCodeTextEdit
             // 
+            this.itemCodeTextEdit.EditValue = "TK";
             this.itemCodeTextEdit.Location = new System.Drawing.Point(97, 43);
             this.itemCodeTextEdit.Name = "itemCodeTextEdit";
             this.itemCodeTextEdit.Size = new System.Drawing.Size(238, 20);

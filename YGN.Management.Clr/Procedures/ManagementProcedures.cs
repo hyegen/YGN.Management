@@ -6,10 +6,34 @@ using Microsoft.SqlServer.Server;
 
 public partial class ManagementProcedures
 {
-    [SqlProcedure(Name ="TestProcedure")]
-    public static void TestProcedure()
+    [SqlProcedure(Name = "GET_ITEM_TEST")]
+    public static void GET_ITEM_TEST()
     {
-        SqlPipe sqlPipe = SqlContext.Pipe;
-        sqlPipe.Send("First Procedure of my own project.");
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                SELECT * FROM Items
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
+    [SqlProcedure(Name = "GET_CLIENT_TEST")]
+    public static void GET_CLIENT_TEST()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                SELECT * FROM Clients
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
     }
 }

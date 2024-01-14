@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Concrete
 {
-    public class YGNContext : DbContext
+    public partial class YGNContext : DbContext
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,6 +29,11 @@ namespace YGN.DataAccesLayer.Concrete
 
             #region Invoice
             modelBuilder.Configurations.Add(new InvoiceConfiguration());
+            #endregion
+
+            #region Client
+
+            modelBuilder.Configurations.Add(new ClientConfiguration());
             #endregion
 
             #endregion

@@ -10,14 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGN.DataAccesLayer.Concrete;
 using YGN.Management.DetailForms;
 
 namespace YGN.Management.Forms
 {
-    public partial class ClientsForm : DevExpress.XtraEditors.XtraForm
+    public partial class ClientsForm : XtraForm
     {
         #region members
-
+        YGNContext dbcontext = new YGNContext();
         #endregion
 
         #region constructor
@@ -60,6 +61,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
+
             //clientGridControl.DataSource = dbcontext.CLIENT.ToList();
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
@@ -76,6 +78,6 @@ namespace YGN.Management.Forms
             }
         }
         #endregion
-      
+
     }
 }

@@ -123,6 +123,14 @@
     <Compile Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.Designer.cs">
       <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401141952485_client_entity_has_been_created.cs" />
+    <Compile Include="Migrations\202401141952485_client_entity_has_been_created.Designer.cs">
+      <DependentUpon>202401141952485_client_entity_has_been_created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs" />
+    <Compile Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.Designer.cs">
+      <DependentUpon>202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -191,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.resx">
       <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401141952485_client_entity_has_been_created.resx">
+      <DependentUpon>202401141952485_client_entity_has_been_created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.resx">
+      <DependentUpon>202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YGN.Management.Clr", "YGN.Management.Clr", "{BF6ACC51-23ED-44DF-9F64-42A67646105C}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "YGN.Management.Clr", "YGN.Management.Clr\YGN.Management.Clr.sqlproj", "{EBC0B44A-5210-4D0A-876F-8FCDCF725BC6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{708C3AC0-A5A1-4E65-9E20-B2150FE59E66} = {708C3AC0-A5A1-4E65-9E20-B2150FE59E66}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YGN.BusinessLayer", "YGN.BusinessLayer", "{59620EE1-595B-4BB0-BCC9-345BA4522B4B}"
 EndProject
