@@ -40,11 +40,6 @@ namespace YGN.Management.Forms
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.clientGridControl = new DevExpress.XtraGrid.GridControl();
             this.clientGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSURNAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colADDRESS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTORENAME = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -143,57 +138,11 @@ namespace YGN.Management.Forms
             // 
             // clientGridView
             // 
-            this.clientGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
-            this.colNAME,
-            this.colSURNAME,
-            this.colADDRESS,
-            this.colSTORENAME});
             this.clientGridView.GridControl = this.clientGridControl;
             this.clientGridView.Name = "clientGridView";
             this.clientGridView.OptionsBehavior.Editable = false;
             this.clientGridView.OptionsView.ShowGroupPanel = false;
             this.clientGridView.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.clientGridView_PopupMenuShowing);
-            // 
-            // colID
-            // 
-            this.colID.Caption = "Cari Kodu";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
-            // 
-            // colNAME
-            // 
-            this.colNAME.Caption = "Cari Ad";
-            this.colNAME.FieldName = "NAME";
-            this.colNAME.Name = "colNAME";
-            this.colNAME.Visible = true;
-            this.colNAME.VisibleIndex = 1;
-            // 
-            // colSURNAME
-            // 
-            this.colSURNAME.Caption = "Cari Soyad";
-            this.colSURNAME.FieldName = "SURNAME";
-            this.colSURNAME.Name = "colSURNAME";
-            this.colSURNAME.Visible = true;
-            this.colSURNAME.VisibleIndex = 2;
-            // 
-            // colADDRESS
-            // 
-            this.colADDRESS.Caption = "Cari Adres";
-            this.colADDRESS.FieldName = "ADDRESS";
-            this.colADDRESS.Name = "colADDRESS";
-            this.colADDRESS.Visible = true;
-            this.colADDRESS.VisibleIndex = 3;
-            // 
-            // colSTORENAME
-            // 
-            this.colSTORENAME.Caption = "Firma Adı";
-            this.colSTORENAME.FieldName = "STORENAME";
-            this.colSTORENAME.Name = "colSTORENAME";
-            this.colSTORENAME.Visible = true;
-            this.colSTORENAME.VisibleIndex = 4;
             // 
             // ClientsForm
             // 
@@ -228,10 +177,5 @@ namespace YGN.Management.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView clientGridView;
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colNAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colSURNAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colADDRESS;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTORENAME;
     }
 }

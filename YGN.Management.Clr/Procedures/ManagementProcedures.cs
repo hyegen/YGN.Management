@@ -6,8 +6,8 @@ using Microsoft.SqlServer.Server;
 
 public partial class ManagementProcedures
 {
-    [SqlProcedure(Name = "GET_ITEM_TEST")]
-    public static void GET_ITEM_TEST()
+    [SqlProcedure(Name = "YGN_GET_ALL_ITEM")]
+    public static void YGN_GET_ITEM()
     {
         using (var sqlConn = new SqlConnection("context connection=true"))
         {
@@ -21,8 +21,8 @@ public partial class ManagementProcedures
             sqlConn.Close();
         }
     }
-    [SqlProcedure(Name = "GET_CLIENT_TEST")]
-    public static void GET_CLIENT_TEST()
+    [SqlProcedure(Name = "YGN_GET_ALL_CLIENT")]
+    public static void YGN_GET_ALL_CLIENT()
     {
         using (var sqlConn = new SqlConnection("context connection=true"))
         {

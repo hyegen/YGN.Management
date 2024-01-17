@@ -365,64 +365,10 @@
   <data name="itemsGridControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
-  <data name="colItemCode.Caption" xml:space="preserve">
-    <value>Malzeme Kodu</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="colItemCode.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colItemCode.VisibleIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="colItemName.Caption" xml:space="preserve">
-    <value>Malzeme Adı</value>
-  </data>
-  <data name="colItemName.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colItemName.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="colUnitPrice.Caption" xml:space="preserve">
-    <value>Birim Fiyat</value>
-  </data>
-  <data name="colUnitPrice.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colUnitPrice.VisibleIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="colCategory1.Caption" xml:space="preserve">
-    <value>Kategori 1</value>
-  </data>
-  <data name="colCategory1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colCategory1.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="colCategory2.Caption" xml:space="preserve">
-    <value>Kategori 2</value>
-  </data>
-  <data name="colCategory2.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colCategory2.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="colBrand.Caption" xml:space="preserve">
-    <value>Marka</value>
-  </data>
-  <data name="colBrand.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colBrand.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="itemsGridControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>693, 314</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="itemsGridControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -524,42 +470,6 @@
   </data>
   <data name="&gt;&gt;itemsGridView.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colItemCode.Name" xml:space="preserve">
-    <value>colItemCode</value>
-  </data>
-  <data name="&gt;&gt;colItemCode.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colItemName.Name" xml:space="preserve">
-    <value>colItemName</value>
-  </data>
-  <data name="&gt;&gt;colItemName.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colUnitPrice.Name" xml:space="preserve">
-    <value>colUnitPrice</value>
-  </data>
-  <data name="&gt;&gt;colUnitPrice.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colCategory1.Name" xml:space="preserve">
-    <value>colCategory1</value>
-  </data>
-  <data name="&gt;&gt;colCategory1.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colCategory2.Name" xml:space="preserve">
-    <value>colCategory2</value>
-  </data>
-  <data name="&gt;&gt;colCategory2.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;colBrand.Name" xml:space="preserve">
-    <value>colBrand</value>
-  </data>
-  <data name="&gt;&gt;colBrand.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ItemsForm</value>

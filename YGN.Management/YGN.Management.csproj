@@ -77,6 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonForm\PleaseWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\PleaseWaitForm.Designer.cs">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\PleaseWaitManager.cs" />
     <Compile Include="DetailForms\NewClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +134,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CommonForm\PleaseWaitForm.resx">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailForms\NewClientForm.resx">
       <DependentUpon>NewClientForm.cs</DependentUpon>
     </EmbeddedResource>
