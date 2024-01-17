@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGN.Management.CommonForm;
 
 namespace YGN.Management.Forms
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
         #region members
-     
+
         #endregion
 
         #region constructor
@@ -62,7 +63,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-          
+
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {
@@ -78,6 +79,6 @@ namespace YGN.Management.Forms
             }
         }
         #endregion
-      
+
     }
 }

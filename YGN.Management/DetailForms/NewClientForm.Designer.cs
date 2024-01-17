@@ -43,14 +43,23 @@ namespace YGN.Management.DetailForms
             this.nameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.addressTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.emailTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.telNr1labelControl = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.clientTelNr1textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.clientTelNr2textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.taxNrLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.taxNrTextEdit = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.firmTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.surnameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -69,7 +78,7 @@ namespace YGN.Management.DetailForms
             this.ribbonPage1});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(320, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(539, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // saveBarButtonItem
@@ -106,6 +115,12 @@ namespace YGN.Management.DetailForms
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.taxNrTextEdit);
+            this.groupControl1.Controls.Add(this.taxNrLabelControl);
+            this.groupControl1.Controls.Add(this.clientTelNr2textEdit);
+            this.groupControl1.Controls.Add(this.clientTelNr1textEdit);
+            this.groupControl1.Controls.Add(this.labelControl6);
+            this.groupControl1.Controls.Add(this.telNr1labelControl);
             this.groupControl1.Controls.Add(this.firmTextEdit);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -113,23 +128,23 @@ namespace YGN.Management.DetailForms
             this.groupControl1.Controls.Add(this.nameTextEdit);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.addressTextEdit);
-            this.groupControl1.Location = new System.Drawing.Point(12, 113);
+            this.groupControl1.Controls.Add(this.emailTextEdit);
+            this.groupControl1.Location = new System.Drawing.Point(12, 101);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(296, 192);
+            this.groupControl1.Size = new System.Drawing.Size(515, 271);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Yeni ";
             // 
             // firmTextEdit
             // 
-            this.firmTextEdit.Location = new System.Drawing.Point(77, 139);
+            this.firmTextEdit.Location = new System.Drawing.Point(115, 127);
             this.firmTextEdit.Name = "firmTextEdit";
             this.firmTextEdit.Size = new System.Drawing.Size(142, 20);
             this.firmTextEdit.TabIndex = 15;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(23, 109);
+            this.labelControl3.Location = new System.Drawing.Point(69, 100);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(28, 13);
             this.labelControl3.TabIndex = 13;
@@ -137,7 +152,7 @@ namespace YGN.Management.DetailForms
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(23, 142);
+            this.labelControl4.Location = new System.Drawing.Point(53, 130);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(44, 13);
             this.labelControl4.TabIndex = 12;
@@ -145,21 +160,21 @@ namespace YGN.Management.DetailForms
             // 
             // surnameTextEdit
             // 
-            this.surnameTextEdit.Location = new System.Drawing.Point(77, 76);
+            this.surnameTextEdit.Location = new System.Drawing.Point(115, 67);
             this.surnameTextEdit.Name = "surnameTextEdit";
             this.surnameTextEdit.Size = new System.Drawing.Size(142, 20);
             this.surnameTextEdit.TabIndex = 11;
             // 
             // nameTextEdit
             // 
-            this.nameTextEdit.Location = new System.Drawing.Point(77, 46);
+            this.nameTextEdit.Location = new System.Drawing.Point(115, 37);
             this.nameTextEdit.Name = "nameTextEdit";
             this.nameTextEdit.Size = new System.Drawing.Size(142, 20);
             this.nameTextEdit.TabIndex = 10;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(23, 46);
+            this.labelControl2.Location = new System.Drawing.Point(84, 40);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
             this.labelControl2.TabIndex = 9;
@@ -167,24 +182,72 @@ namespace YGN.Management.DetailForms
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(23, 79);
+            this.labelControl1.Location = new System.Drawing.Point(67, 70);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(30, 13);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Soyad";
             // 
-            // addressTextEdit
+            // emailTextEdit
             // 
-            this.addressTextEdit.Location = new System.Drawing.Point(77, 109);
-            this.addressTextEdit.Name = "addressTextEdit";
-            this.addressTextEdit.Size = new System.Drawing.Size(142, 20);
-            this.addressTextEdit.TabIndex = 14;
+            this.emailTextEdit.Location = new System.Drawing.Point(115, 97);
+            this.emailTextEdit.Name = "emailTextEdit";
+            this.emailTextEdit.Size = new System.Drawing.Size(142, 20);
+            this.emailTextEdit.TabIndex = 14;
+            // 
+            // telNr1labelControl
+            // 
+            this.telNr1labelControl.Location = new System.Drawing.Point(56, 160);
+            this.telNr1labelControl.Name = "telNr1labelControl";
+            this.telNr1labelControl.Size = new System.Drawing.Size(41, 13);
+            this.telNr1labelControl.TabIndex = 16;
+            this.telNr1labelControl.Text = "Tel Nr. 1";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(56, 190);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(41, 13);
+            this.labelControl6.TabIndex = 17;
+            this.labelControl6.Text = "Tel Nr. 2";
+            // 
+            // clientTelNr1textEdit
+            // 
+            this.clientTelNr1textEdit.Location = new System.Drawing.Point(115, 157);
+            this.clientTelNr1textEdit.MenuManager = this.ribbonControl1;
+            this.clientTelNr1textEdit.Name = "clientTelNr1textEdit";
+            this.clientTelNr1textEdit.Size = new System.Drawing.Size(142, 20);
+            this.clientTelNr1textEdit.TabIndex = 18;
+            // 
+            // clientTelNr2textEdit
+            // 
+            this.clientTelNr2textEdit.Location = new System.Drawing.Point(115, 187);
+            this.clientTelNr2textEdit.MenuManager = this.ribbonControl1;
+            this.clientTelNr2textEdit.Name = "clientTelNr2textEdit";
+            this.clientTelNr2textEdit.Size = new System.Drawing.Size(142, 20);
+            this.clientTelNr2textEdit.TabIndex = 19;
+            // 
+            // taxNrLabelControl
+            // 
+            this.taxNrLabelControl.Location = new System.Drawing.Point(26, 220);
+            this.taxNrLabelControl.Name = "taxNrLabelControl";
+            this.taxNrLabelControl.Size = new System.Drawing.Size(71, 13);
+            this.taxNrLabelControl.TabIndex = 20;
+            this.taxNrLabelControl.Text = "Vergi Numarası";
+            // 
+            // taxNrTextEdit
+            // 
+            this.taxNrTextEdit.Location = new System.Drawing.Point(115, 217);
+            this.taxNrTextEdit.MenuManager = this.ribbonControl1;
+            this.taxNrTextEdit.Name = "taxNrTextEdit";
+            this.taxNrTextEdit.Size = new System.Drawing.Size(142, 20);
+            this.taxNrTextEdit.TabIndex = 21;
             // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 319);
+            this.ClientSize = new System.Drawing.Size(539, 384);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "NewClientForm";
@@ -197,7 +260,10 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.firmTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.surnameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +284,12 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.TextEdit firmTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit addressTextEdit;
+        private DevExpress.XtraEditors.TextEdit emailTextEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl telNr1labelControl;
+        private DevExpress.XtraEditors.TextEdit clientTelNr2textEdit;
+        private DevExpress.XtraEditors.TextEdit clientTelNr1textEdit;
+        private DevExpress.XtraEditors.TextEdit taxNrTextEdit;
+        private DevExpress.XtraEditors.LabelControl taxNrLabelControl;
     }
 }

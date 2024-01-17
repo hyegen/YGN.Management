@@ -24,5 +24,9 @@ namespace YGN.BusinessLayer.Concrete
         {
             return _itemDal.GetAll();
         }
+        public List<Item> getItemsTest()
+        {
+            return _itemDal.getAllItems();
+        }     
     }
 }

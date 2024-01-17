@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IClientDal.cs" />
     <Compile Include="Abstract\IItemDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfClientDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\YGNContext.cs" />

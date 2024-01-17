@@ -50,10 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IClientService.cs" />
     <Compile Include="Abstract\IItemService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\ClientManager.cs" />
     <Compile Include="Concrete\ItemManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
+    <Compile Include="FluentValidation\ClientValidator.cs" />
     <Compile Include="FluentValidation\ItemValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

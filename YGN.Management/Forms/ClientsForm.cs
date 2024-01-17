@@ -10,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
 
 namespace YGN.Management.Forms
@@ -18,7 +20,7 @@ namespace YGN.Management.Forms
     public partial class ClientsForm : XtraForm
     {
         #region members
-        YGNContext dbcontext = new YGNContext();
+        ClientManager clientManager = new ClientManager(new EfClientDal());
         #endregion
 
         #region constructor
@@ -38,7 +40,6 @@ namespace YGN.Management.Forms
             NewClientForm newClientForm = new NewClientForm();
             newClientForm.ShowDialog();
         }
-
         private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             getData();
@@ -61,7 +62,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-
+            clientGridControl.DataSource = clientManager.getAllClients();
             //clientGridControl.DataSource = dbcontext.CLIENT.ToList();
         }
         private void ExportToPdf_Click(object sender, EventArgs e)

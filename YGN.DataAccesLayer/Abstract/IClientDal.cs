@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Abstract
 {
-    public interface IItemDal : IEntityRepository<Item>
+    public interface IClientDal : IEntityRepository<Client>
     {
-        List<Item> getAllItems();
+        List<Client> getAllItems();
     }
 }

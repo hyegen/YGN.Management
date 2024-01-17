@@ -1,6 +1,8 @@
 ﻿using Commons.Enums;
 using DevExpress.XtraEditors;
 using Entities;
+using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,19 +12,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGN.BusinessLayer.Concrete;
+using YGN.BusinessLayer.FluentValidation;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 
 namespace YGN.Management.DetailForms
 {
     public partial class NewClientForm : XtraForm
     {
         #region members
-
+        ClientManager clientManager = new ClientManager(new EfClientDal());
+        StringBuilder stringBuilder = new StringBuilder();
         #endregion
 
         #region constructor
         public NewClientForm()
         {
-
             InitializeComponent();
         }
 
@@ -43,45 +48,41 @@ namespace YGN.Management.DetailForms
         #region methods
 
         public void addClient()
-        {          
-            //if (IsDuplicate(ClientName, ClientSurname, ClientAddress, ClientStore))
-            //{
-            //    XtraMessageBox.Show("Cari zaten eklenmiş.", "Hata");
-            //    return;
-            //}
-            //CLIENT client = new CLIENT
-            //{
-            //    NAME = ClientName,
-            //    SURNAME = ClientSurname,
-            //    ADDRESS = ClientAddress,
-            //    STORENAME = ClientStore
-            //};
+        {
+            var addClient = new Client
+            {
+                ClientName = ClientName,
+                ClientSurname = ClientSurname,
+                Email = ClientEmail,
+                FirmDescription = ClientFirmDescription,
+                TelNr1 = ClientTelNr1,
+                TelNr2 = ClientTelNr2,
+                TaxIdentificationNumber = ClientTaxNr
+            };
 
-            //dbcontext.CLIENT.Add(client);
-            //dbcontext.SaveChanges();
-            XtraMessageBox.Show("Ekleme Başarılı.", "Bilgi");
+            ClientValidator itemValidator = new ClientValidator();
+            ValidationResult result = itemValidator.Validate(addClient);
+            if (result.IsValid)
+            {
+                clientManager.addClient(addClient);
+                XtraMessageBox.Show(string.Format("{0} {1} olarak tanımlanan cari başarıyla eklenmiştir.", addClient.ClientName, addClient.ClientSurname), "Bilgi");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    stringBuilder.AppendLine(item.ErrorMessage);
+                }
+                XtraMessageBox.Show(stringBuilder.ToString(), "Error");
+                Close();
+            }
         }
 
         public void addToTransaction()
         {
-            //int lastClientId = dbcontext.CLIENT.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
 
-            //CLIENT_TRANSACTION clientTransaction = new CLIENT_TRANSACTION
-            //{
-            //    CLIENTID = lastClientId,
-            //    PROCESSDATE = DateTime.Now
-            //};
-            //dbcontext.CLIENT_TRANSACTION.Add(clientTransaction);
-            //dbcontext.SaveChanges();
         }
-        //private bool IsDuplicate(string name, string surname, string address, string storeName)
-        //{
-        //    return dbcontext.CLIENT.Any(c =>
-        //        c.NAME == name &&
-        //        c.SURNAME == surname &&
-        //        c.ADDRESS == address &&
-        //        c.STORENAME == storeName);
-        //}
+    
         #endregion
 
         #region properties
@@ -96,17 +97,31 @@ namespace YGN.Management.DetailForms
             get { return surnameTextEdit.Text; }
             set { surnameTextEdit.Text = value; }
         }
-        public string ClientAddress
+        public string ClientEmail
         {
-            get { return addressTextEdit.Text; }
-            set { addressTextEdit.Text = value; }
+            get { return emailTextEdit.Text; }
+            set { emailTextEdit.Text = value; }
         }
-        public string ClientStore
+        public string ClientFirmDescription
         {
             get { return firmTextEdit.Text; }
             set { firmTextEdit.Text = value; }
         }
-
+        public string ClientTelNr1
+        {
+            get { return clientTelNr1textEdit.Text; }
+            set { clientTelNr1textEdit.Text = value; }
+        }
+        public string ClientTelNr2
+        {
+            get { return clientTelNr2textEdit.Text; }
+            set { clientTelNr2textEdit.Text = value; }
+        }
+        public string ClientTaxNr
+        {
+            get { return taxNrTextEdit.Text; }
+            set { taxNrTextEdit.Text = value; }
+        }
         #endregion
 
     }
