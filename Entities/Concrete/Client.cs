@@ -21,12 +21,14 @@ namespace Entities.Concrete
             Property(x => x.TelNr2).HasMaxLength(11);
             Property(x => x.FirmDescription).HasMaxLength(150);
             Property(x => x.TaxIdentificationNumber).HasMaxLength(10);
+            Property(x=>x.ClientCode).HasMaxLength(40);
         }
     }
     public class Client : IEntity
     {
         [Key]
         public int Id { get; set; }
+        public string ClientCode { get; set; }
         [Required]
         public string ClientName { get; set; }
         public string ClientSurname { get; set; }
@@ -35,5 +37,7 @@ namespace Entities.Concrete
         public string TelNr2 { get; set; }
         public string FirmDescription { get; set; }
         public string TaxIdentificationNumber { get; set; }
+        public virtual ICollection<ClientTransaction> ClientTransactions { get; set; }
+
     }
 }

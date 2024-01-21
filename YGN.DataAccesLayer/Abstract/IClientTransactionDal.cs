@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Abstract
 {
-    public interface IClientDal : IEntityRepository<Client>
+    public interface IClientTransactionDal : IEntityRepository<ClientTransaction>
     {
-        List<Client> getAllClient();
+        void addToTranaction(ClientTransaction clientTransaction);
     }
 }

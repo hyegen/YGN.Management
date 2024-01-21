@@ -34,6 +34,11 @@ namespace YGN.DataAccesLayer.Concrete
             #region Client
 
             modelBuilder.Configurations.Add(new ClientConfiguration());
+
+            modelBuilder.Entity<Client>()
+                 .HasMany(c => c.ClientTransactions) // Bir müşteri birden çok işlem yapabilir
+                 .WithRequired(t => t.Client)   // Her işlemin bir müşterisi olmalı
+                 .HasForeignKey(t => t.ClientId);   
             #endregion
 
             #endregion
@@ -51,6 +56,7 @@ namespace YGN.DataAccesLayer.Concrete
         public DbSet<Town> Towns { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<StockTransaction> StockTransactions { get; set; }
+        public DbSet<ClientTransaction> ClientTransactions { get; set; }
 
     }
 }

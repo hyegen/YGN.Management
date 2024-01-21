@@ -18,11 +18,34 @@ namespace YGN.BusinessLayer.Concrete
         }
         public List<Client> getAllClients()
         {
-            return _clientDal.getAllItems();
+            return _clientDal.getAllClient();
         }
         public void addClient(Client client)
         {
-            _clientDal.Add(client);
+            if (!IsSimilarClientExists(client))
+            {
+                _clientDal.Add(client);
+            }
+        }
+        public bool IsSimilarClientExists(Client newClient)
+        {
+            foreach (var existingClient in _clientDal.getAllClient())
+            {
+                if (existingClient != null && existingClient.ClientCode != null && IsSimilarName(existingClient.ClientCode, newClient.ClientCode))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsSimilarName(string existClientCode, string newClientCode)
+        {
+            if (existClientCode == null || newClientCode == null)
+            {
+                return false;
+            }
+            return existClientCode.Equals(newClientCode, StringComparison.OrdinalIgnoreCase);
         }
     }
 }
