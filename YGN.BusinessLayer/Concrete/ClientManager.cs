@@ -31,15 +31,14 @@ namespace YGN.BusinessLayer.Concrete
         {
             foreach (var existingClient in _clientDal.getAllClient())
             {
-                if (existingClient != null && existingClient.ClientCode != null && IsSimilarName(existingClient.ClientCode, newClient.ClientCode))
+                if (existingClient != null && existingClient.ClientCode != null && IsSimilarCode(existingClient.ClientCode, newClient.ClientCode))
                 {
                     return true;
                 }
             }
             return false;
         }
-
-        public bool IsSimilarName(string existClientCode, string newClientCode)
+        public bool IsSimilarCode(string existClientCode, string newClientCode)
         {
             if (existClientCode == null || newClientCode == null)
             {
@@ -47,5 +46,9 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existClientCode.Equals(newClientCode, StringComparison.OrdinalIgnoreCase);
         }
+        public string getClientCode()
+        {
+            return _clientDal.getClientCode();
+        } 
     }
 }

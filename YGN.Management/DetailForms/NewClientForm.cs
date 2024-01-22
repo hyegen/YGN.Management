@@ -12,15 +12,18 @@ namespace YGN.Management.DetailForms
     public partial class NewClientForm : XtraForm
     {
         #region members
+
         ClientManager clientManager = new ClientManager(new EfClientDal());
-        StringBuilder stringBuilder = new StringBuilder();
         ClientTransactionManager clientTransactionManager = new ClientTransactionManager(new EfClientTransactionDal());
+        StringBuilder stringBuilder = new StringBuilder();
+
         #endregion
 
         #region constructor
         public NewClientForm()
         {
             InitializeComponent();
+            clientCodeTextEdit.EditValue = clientManager.getClientCode();
         }
 
         #endregion
@@ -72,7 +75,6 @@ namespace YGN.Management.DetailForms
         private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             addClient();
-            addToTransaction();
         }
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -89,15 +91,12 @@ namespace YGN.Management.DetailForms
                 ClientCode = ClientCode,
                 ClientName = ClientName,
                 ClientSurname = ClientSurname,
-                Email = ClientEmail,
+                Address = ClientEmail,
                 FirmDescription = ClientFirmDescription,
                 TelNr1 = ClientTelNr1,
                 TelNr2 = ClientTelNr2,
                 TaxIdentificationNumber = ClientTaxNr
             };
-
-        
-          
 
             ClientValidator itemValidator = new ClientValidator();
             ValidationResult result = itemValidator.Validate(addClient);
@@ -105,7 +104,7 @@ namespace YGN.Management.DetailForms
             {
                 if (clientManager.IsSimilarClientExists(addClient))     //New Client Control
                 {
-                    XtraMessageBox.Show("Cari zaten mevcut. Tekrar Deneyiniz.");
+                    XtraMessageBox.Show(string.Format("{0} kodlu cari zaten mevcut. Lütfen yeni bir cari kod giriniz.",clientCodeTextEdit.Text));
                 }
                 else
                 {
@@ -131,12 +130,6 @@ namespace YGN.Management.DetailForms
             }
         }
 
-        public void addToTransaction()
-        {
-
-        }
-
         #endregion
-
     }
 }

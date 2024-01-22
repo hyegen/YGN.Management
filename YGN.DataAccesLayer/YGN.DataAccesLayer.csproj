@@ -163,6 +163,10 @@
     <Compile Include="Migrations\202401221442101_mig_client_relation_change4.Designer.cs">
       <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401221502567_mig_client_relation_change7.cs" />
+    <Compile Include="Migrations\202401221502567_mig_client_relation_change7.Designer.cs">
+      <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401221442101_mig_client_relation_change4.resx">
       <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221502567_mig_client_relation_change7.resx">
+      <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
