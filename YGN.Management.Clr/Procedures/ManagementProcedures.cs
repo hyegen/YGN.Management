@@ -66,7 +66,7 @@ public partial class ManagementProcedures
                SET @STRINGVALUE=(SELECT  TOP 1 SUBSTRING(ClientCode, 1, PATINDEX('%[0-9]%', ClientCode) - 1) 
                FROM Clients CLNT 
                    INNER JOIN ClientTransactions CLTRNS ON CLTRNS.ClientId=CLNT.Id
-               WHERE PATINDEX('%[0-9]%', ClientCode) > 0 --AND CLNT.Id=@LASTINDEX-1
+               WHERE PATINDEX('%[0-9]%', ClientCode) > 0 
                ORDER BY ClientCode DESC) + CONVERT(nvarchar(50),@LASTINDEX)
                
                SET @LASTSTRINGVALUE=@STRINGVALUE
