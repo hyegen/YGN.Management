@@ -18,7 +18,10 @@ namespace YGN.BusinessLayer.Concrete
         }
         public void AddItem(Item item)
         {
-            _itemDal.Add(item);
+            if (!IsSimilarItemExists(item))
+            {
+                _itemDal.Add(item);
+            }
         }
         public List<Item> GetItemsAll()
         {
@@ -27,6 +30,26 @@ namespace YGN.BusinessLayer.Concrete
         public List<Item> getItemsTest()
         {
             return _itemDal.getAllItems();
-        }     
+        }
+        public bool IsSimilarItemExists(Item newItem)
+        {
+            foreach (var existingItem in _itemDal.GetAll())
+            {
+                if (existingItem != null && existingItem.ItemCode != null && IsSimilarItem(existingItem.ItemCode, newItem.ItemCode))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsSimilarItem(string existItemCode, string newItemCode)
+        {
+            if (existItemCode == null || newItemCode == null)
+            {
+                return false;
+            }
+            return existItemCode.Equals(newItemCode, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

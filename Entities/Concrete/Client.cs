@@ -16,7 +16,7 @@ namespace Entities.Concrete
             Property(x => x.ClientName).IsRequired();
             Property(x => x.ClientName).HasMaxLength(50);
             Property(x => x.ClientSurname).HasMaxLength(50);
-            Property(x => x.Email).HasMaxLength(30);
+            Property(x => x.Address).HasMaxLength(30);
             Property(x => x.TelNr1).HasMaxLength(11);
             Property(x => x.TelNr2).HasMaxLength(11);
             Property(x => x.FirmDescription).HasMaxLength(150);
@@ -32,7 +32,7 @@ namespace Entities.Concrete
         [Required]
         public string ClientName { get; set; }
         public string ClientSurname { get; set; }
-        public string Email { get; set; }
+        public string Address { get; set; }
         public string TelNr1 { get; set; }
         public string TelNr2 { get; set; }
         public string FirmDescription { get; set; }

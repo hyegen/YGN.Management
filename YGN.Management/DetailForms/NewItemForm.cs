@@ -86,8 +86,15 @@ namespace YGN.Management.DetailForms
             ValidationResult result = itemValidator.Validate(newItem);
             if (result.IsValid)
             {
-                itemManager.AddItem(newItem);
-                XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı kayıt başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName),"Bilgi");
+                if (itemManager.IsSimilarItemExists(newItem))
+                {
+                    XtraMessageBox.Show(string.Format("{0} kodlu malzeme zaten mevcut. Lütfen yeni bir malzeme kodu giriniz.", itemCodeTextEdit.Text));
+                }
+                else
+                {
+                    itemManager.AddItem(newItem);
+                    XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı malzeme başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName), "Bilgi");
+                }
             }
             else
             {
@@ -110,19 +117,7 @@ namespace YGN.Management.DetailForms
         #region methods
         public void addToTransaction()
         {
-            //int lastItemId = dbcontext.ITEMS.OrderByDescending(x => x.ID).Select(x => x.ID).FirstOrDefault();
 
-            //TRANSACTIONS transaction = new TRANSACTIONS
-            //{
-            //    TRCODE = (int)Trcode.Input,
-            //    PROCESSDATE = DateTime.Now,
-            //    ITEMID = lastItemId,
-            //    USERID = GlobalVariables.USERID,
-            //    AMOUNT = Amount
-            //};
-
-            //dbcontext.TRANSACTIONS.Add(transaction);
-            //dbcontext.SaveChanges();
         }
 
         #endregion

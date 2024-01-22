@@ -29,6 +29,7 @@ namespace YGN.Management.DetailForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewClientForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -37,6 +38,7 @@ namespace YGN.Management.DetailForms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.clientCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.clientCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientCodelabelControl = new DevExpress.XtraEditors.LabelControl();
             this.taxNrTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.taxNrLabelControl = new DevExpress.XtraEditors.LabelControl();
@@ -56,6 +58,7 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).BeginInit();
@@ -279,6 +282,7 @@ namespace YGN.Management.DetailForms
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCodeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).EndInit();
@@ -315,5 +319,6 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.LabelControl taxNrLabelControl;
         private DevExpress.XtraEditors.TextEdit clientCodeTextEdit;
         private DevExpress.XtraEditors.LabelControl clientCodelabelControl;
+        private System.Windows.Forms.BindingSource clientCodeBindingSource;
     }
 }

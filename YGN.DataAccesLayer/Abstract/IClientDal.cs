@@ -11,5 +11,6 @@ namespace YGN.DataAccesLayer.Abstract
     public interface IClientDal : IEntityRepository<Client>
     {
         List<Client> getAllClient();
+        string getClientCode(); 
     }
 }

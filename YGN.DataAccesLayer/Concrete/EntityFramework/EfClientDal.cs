@@ -22,5 +22,15 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
             }
             return clients;
         }
+        public string getClientCode()
+        {
+            string str;
+            using (YGNContext context= new YGNContext())
+            {
+                var result = context.Database.SqlQuery<string>("EXEC YGN_CLIENTCODECREATOR").FirstOrDefault();
+                str = result;
+            }
+            return str;
+        }
     }
 }

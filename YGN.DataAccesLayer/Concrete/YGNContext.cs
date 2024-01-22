@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Entities.Extensions.Extensions;
 
 namespace YGN.DataAccesLayer.Concrete
 {
@@ -34,6 +35,7 @@ namespace YGN.DataAccesLayer.Concrete
             #region Client
 
             modelBuilder.Configurations.Add(new ClientConfiguration());
+            //modelBuilder.Entity<YGN_CLIENTCODECREATOR>().MapToStoredProcedures();
 
             #endregion
 
@@ -53,6 +55,18 @@ namespace YGN.DataAccesLayer.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<StockTransaction> StockTransactions { get; set; }
         public DbSet<ClientTransaction> ClientTransactions { get; set; }
+
+
+        //PROCEDURES
+
+        #region PROCEDURES
+
+        #region CLIENT PROCEDURES
+       // public DbSet<YGN_CLIENTCODECREATOR> YGN_CLIENTCODECREATOR { get; set; }
+
+        #endregion
+
+        #endregion
 
     }
 }
