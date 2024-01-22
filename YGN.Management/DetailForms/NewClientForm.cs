@@ -111,13 +111,10 @@ namespace YGN.Management.DetailForms
                 {
                     clientManager.addClient(addClient);
 
-                    int clientId = addClient.Id;
-
                     var addToTransaction = new ClientTransaction
                     {
-                        Client = addClient,
-                        ClientId = clientId,
-                        ProcessDate = DateTime.Now
+                           ClientId=addClient.Id,
+                           ProcessDate=DateTime.Now
                     };
                     clientTransactionManager.addToTranaction(addToTransaction);
                     XtraMessageBox.Show(string.Format("{0} {1} olarak tanımlanan cari başarıyla eklenmiştir.", addClient.ClientName, addClient.ClientSurname), "Bilgi");

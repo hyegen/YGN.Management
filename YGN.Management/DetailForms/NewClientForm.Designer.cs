@@ -36,6 +36,8 @@ namespace YGN.Management.DetailForms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.clientCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.clientCodelabelControl = new DevExpress.XtraEditors.LabelControl();
             this.taxNrTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.taxNrLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.clientTelNr2textEdit = new DevExpress.XtraEditors.TextEdit();
@@ -50,11 +52,10 @@ namespace YGN.Management.DetailForms
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.emailTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.clientCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.clientCodelabelControl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).BeginInit();
@@ -62,7 +63,6 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.surnameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -139,6 +139,22 @@ namespace YGN.Management.DetailForms
             this.groupControl1.Size = new System.Drawing.Size(561, 298);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Yeni ";
+            // 
+            // clientCodeTextEdit
+            // 
+            this.clientCodeTextEdit.Location = new System.Drawing.Point(121, 41);
+            this.clientCodeTextEdit.MenuManager = this.ribbonControl1;
+            this.clientCodeTextEdit.Name = "clientCodeTextEdit";
+            this.clientCodeTextEdit.Size = new System.Drawing.Size(278, 20);
+            this.clientCodeTextEdit.TabIndex = 9;
+            // 
+            // clientCodelabelControl
+            // 
+            this.clientCodelabelControl.Location = new System.Drawing.Point(56, 44);
+            this.clientCodelabelControl.Name = "clientCodelabelControl";
+            this.clientCodelabelControl.Size = new System.Drawing.Size(46, 13);
+            this.clientCodelabelControl.TabIndex = 26;
+            this.clientCodelabelControl.Text = "Cari Kodu";
             // 
             // taxNrTextEdit
             // 
@@ -248,22 +264,6 @@ namespace YGN.Management.DetailForms
             this.emailTextEdit.Size = new System.Drawing.Size(278, 20);
             this.emailTextEdit.TabIndex = 14;
             // 
-            // clientCodeTextEdit
-            // 
-            this.clientCodeTextEdit.Location = new System.Drawing.Point(121, 41);
-            this.clientCodeTextEdit.MenuManager = this.ribbonControl1;
-            this.clientCodeTextEdit.Name = "clientCodeTextEdit";
-            this.clientCodeTextEdit.Size = new System.Drawing.Size(278, 20);
-            this.clientCodeTextEdit.TabIndex = 27;
-            // 
-            // clientCodelabelControl
-            // 
-            this.clientCodelabelControl.Location = new System.Drawing.Point(56, 44);
-            this.clientCodelabelControl.Name = "clientCodelabelControl";
-            this.clientCodelabelControl.Size = new System.Drawing.Size(46, 13);
-            this.clientCodelabelControl.TabIndex = 26;
-            this.clientCodelabelControl.Text = "Cari Kodu";
-            // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +278,7 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNrTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr2textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientTelNr1textEdit.Properties)).EndInit();
@@ -285,7 +286,6 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.surnameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCodeTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

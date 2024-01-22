@@ -37,7 +37,5 @@ namespace Entities.Concrete
         public string TelNr2 { get; set; }
         public string FirmDescription { get; set; }
         public string TaxIdentificationNumber { get; set; }
-        public virtual ICollection<ClientTransaction> ClientTransactions { get; set; }
-
     }
 }

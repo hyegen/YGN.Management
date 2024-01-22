@@ -147,6 +147,22 @@
     <Compile Include="Migrations\202401211926385_mig_ClientCode_column_added_to_client_table.Designer.cs">
       <DependentUpon>202401211926385_mig_ClientCode_column_added_to_client_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401221426459_mig_client_relation_changed.cs" />
+    <Compile Include="Migrations\202401221426459_mig_client_relation_changed.Designer.cs">
+      <DependentUpon>202401221426459_mig_client_relation_changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221437372_mig_client_relation_change1.cs" />
+    <Compile Include="Migrations\202401221437372_mig_client_relation_change1.Designer.cs">
+      <DependentUpon>202401221437372_mig_client_relation_change1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221438222_mig_client_relation_change2.cs" />
+    <Compile Include="Migrations\202401221438222_mig_client_relation_change2.Designer.cs">
+      <DependentUpon>202401221438222_mig_client_relation_change2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401221442101_mig_client_relation_change4.cs" />
+    <Compile Include="Migrations\202401221442101_mig_client_relation_change4.Designer.cs">
+      <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -230,6 +246,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401211926385_mig_ClientCode_column_added_to_client_table.resx">
       <DependentUpon>202401211926385_mig_ClientCode_column_added_to_client_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221426459_mig_client_relation_changed.resx">
+      <DependentUpon>202401221426459_mig_client_relation_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221437372_mig_client_relation_change1.resx">
+      <DependentUpon>202401221437372_mig_client_relation_change1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221438222_mig_client_relation_change2.resx">
+      <DependentUpon>202401221438222_mig_client_relation_change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401221442101_mig_client_relation_change4.resx">
+      <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

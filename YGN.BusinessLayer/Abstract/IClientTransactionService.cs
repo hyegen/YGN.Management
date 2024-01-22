@@ -9,6 +9,5 @@ namespace YGN.BusinessLayer.Abstract
 {
     public interface IClientTransactionService
     {
-        void addToTranaction(ClientTransaction clientTransaction);
     }
 }

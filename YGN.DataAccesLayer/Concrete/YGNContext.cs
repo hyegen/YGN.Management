@@ -35,10 +35,6 @@ namespace YGN.DataAccesLayer.Concrete
 
             modelBuilder.Configurations.Add(new ClientConfiguration());
 
-            modelBuilder.Entity<Client>()
-                 .HasMany(c => c.ClientTransactions) // Bir müşteri birden çok işlem yapabilir
-                 .WithRequired(t => t.Client)   // Her işlemin bir müşterisi olmalı
-                 .HasForeignKey(t => t.ClientId);   
             #endregion
 
             #endregion
