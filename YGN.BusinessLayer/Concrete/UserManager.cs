@@ -17,6 +17,12 @@ namespace YGN.BusinessLayer.Concrete
             _userDal.Add(user);
         }
 
+        public int GetUser()
+        {
+            var user = _userDal.GetUsers();
+            return user;
+        }
+
         public bool Login(string userName, string password)
         {
             var loginValue = _userDal.LoginByUsernameAndPassword(userName, password);

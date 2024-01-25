@@ -23,5 +23,15 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                 return result.Any();
             }
         }
+        public int GetUsers()
+        {
+            List<User> user = new List<User>();
+            using (YGNContext context = new YGNContext())
+            {
+                var result = (from u in context.Users
+                             select u.Id).FirstOrDefault();
+                return result;
+            }
+        }
     }
 }

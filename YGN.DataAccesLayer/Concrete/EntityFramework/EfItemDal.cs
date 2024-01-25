@@ -21,7 +21,6 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                 items.AddRange(itemsFromDb);
             }
             return items;
-
         }
     }
 }

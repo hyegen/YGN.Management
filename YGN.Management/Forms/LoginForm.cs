@@ -61,8 +61,8 @@ namespace YGN.Management
             bool checkInfo = userManager.Login(UserName, Password);
             if (checkInfo)
             {
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
+                MainForm mainform = new MainForm();
+                mainform.Show();
                 this.Hide();
             }
             else

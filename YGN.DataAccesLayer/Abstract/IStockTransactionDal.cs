@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Abstract
 {
-    public interface IUserDal : IEntityRepository<User>
+    public interface IStockTransactionDal : IEntityRepository<StockTransaction>
     {
-        bool LoginByUsernameAndPassword(string userName, string password);
-        int GetUsers();
+        void addToStockTranaction(StockTransaction stockTransaction);
     }
 }

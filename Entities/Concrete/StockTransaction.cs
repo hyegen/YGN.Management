@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
@@ -16,12 +17,12 @@ namespace Entities.Concrete
                 .HasColumnType("date");
         }
     }
-    public class StockTransaction
+    public class StockTransaction : IEntity
     {
         [Key]
         public int Id { get; set; }
         public int ItemId { get; set; }
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
         public int UserId { get; set; }
         public DateTime ProcessDate { get; set; }
         public int TrCode { get; set; }

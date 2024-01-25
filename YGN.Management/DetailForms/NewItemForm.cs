@@ -26,7 +26,8 @@ namespace YGN.Management.DetailForms
 
         ItemManager itemManager = new ItemManager(new EfItemDal());
         StringBuilder stringBuilder = new StringBuilder();
-
+        StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
+        UserManager userManager = new UserManager(new EfUserDal());
         #endregion
 
         #region constructor
@@ -93,6 +94,15 @@ namespace YGN.Management.DetailForms
                 else
                 {
                     itemManager.AddItem(newItem);
+                    var addToStockTransaction = new StockTransaction
+                    {
+                        ItemId = newItem.Id,
+                        OrderId = null,
+                        ProcessDate = DateTime.Now,
+                        UserId = userManager.GetUser(),
+                        TrCode=(int)Trcode.Input
+                    };
+                    stockTransactionManager.addToStockTransaction(addToStockTransaction);
                     XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı malzeme başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName), "Bilgi");
                 }
             }
@@ -102,7 +112,7 @@ namespace YGN.Management.DetailForms
                 {
                     stringBuilder.AppendLine(item.ErrorMessage);
                 }
-                XtraMessageBox.Show(stringBuilder.ToString(),"Error");
+                XtraMessageBox.Show(stringBuilder.ToString(), "Error");
                 Close();
             }
 

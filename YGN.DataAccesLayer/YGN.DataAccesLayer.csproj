@@ -53,10 +53,12 @@
     <Compile Include="Abstract\IClientDal.cs" />
     <Compile Include="Abstract\IClientTransactionDal.cs" />
     <Compile Include="Abstract\IItemDal.cs" />
+    <Compile Include="Abstract\IStockTransactionDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfStockTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\YGNContext.cs" />
     <Compile Include="Migrations\202312281529063_mig1.cs" />
@@ -167,6 +169,10 @@
     <Compile Include="Migrations\202401221502567_mig_client_relation_change7.Designer.cs">
       <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.cs" />
+    <Compile Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.Designer.cs">
+      <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401221502567_mig_client_relation_change7.resx">
       <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.resx">
+      <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,6 +15,7 @@ namespace YGN.Management.DetailForms
 
         ClientManager clientManager = new ClientManager(new EfClientDal());
         ClientTransactionManager clientTransactionManager = new ClientTransactionManager(new EfClientTransactionDal());
+
         StringBuilder stringBuilder = new StringBuilder();
 
         #endregion

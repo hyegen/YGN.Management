@@ -42,11 +42,6 @@ namespace YGN.Management.Forms
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControlMainForm = new DevExpress.XtraGrid.GridControl();
             this.gridViewMainForm = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colITEMCODE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colITEMNAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPROCESSDATE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTRCODE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAMOUNT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -161,57 +156,11 @@ namespace YGN.Management.Forms
             // 
             // gridViewMainForm
             // 
-            this.gridViewMainForm.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colITEMCODE,
-            this.colITEMNAME,
-            this.colPROCESSDATE,
-            this.colTRCODE,
-            this.colAMOUNT});
             this.gridViewMainForm.GridControl = this.gridControlMainForm;
             this.gridViewMainForm.Name = "gridViewMainForm";
             this.gridViewMainForm.OptionsView.ShowFooter = true;
             this.gridViewMainForm.OptionsView.ShowGroupPanel = false;
             this.gridViewMainForm.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewMainForm_PopupMenuShowing);
-            // 
-            // colITEMCODE
-            // 
-            this.colITEMCODE.Caption = "Malzeme Kodu";
-            this.colITEMCODE.FieldName = "ITEMCODE";
-            this.colITEMCODE.Name = "colITEMCODE";
-            this.colITEMCODE.Visible = true;
-            this.colITEMCODE.VisibleIndex = 0;
-            // 
-            // colITEMNAME
-            // 
-            this.colITEMNAME.Caption = "Malzeme Adı";
-            this.colITEMNAME.FieldName = "ITEMNAME";
-            this.colITEMNAME.Name = "colITEMNAME";
-            this.colITEMNAME.Visible = true;
-            this.colITEMNAME.VisibleIndex = 1;
-            // 
-            // colPROCESSDATE
-            // 
-            this.colPROCESSDATE.Caption = "İşlem Tarihi";
-            this.colPROCESSDATE.FieldName = "PROCESSDATE";
-            this.colPROCESSDATE.Name = "colPROCESSDATE";
-            this.colPROCESSDATE.Visible = true;
-            this.colPROCESSDATE.VisibleIndex = 2;
-            // 
-            // colTRCODE
-            // 
-            this.colTRCODE.Caption = "Satınalma - Satış";
-            this.colTRCODE.FieldName = "TRCODEDescription";
-            this.colTRCODE.Name = "colTRCODE";
-            this.colTRCODE.Visible = true;
-            this.colTRCODE.VisibleIndex = 3;
-            // 
-            // colAMOUNT
-            // 
-            this.colAMOUNT.Caption = "Miktar";
-            this.colAMOUNT.FieldName = "AMOUNT";
-            this.colAMOUNT.Name = "colAMOUNT";
-            this.colAMOUNT.Visible = true;
-            this.colAMOUNT.VisibleIndex = 4;
             // 
             // MainForm
             // 
@@ -246,11 +195,6 @@ namespace YGN.Management.Forms
         private DevExpress.XtraBars.BarButtonItem clientBarButtonItem;
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn colITEMCODE;
-        private DevExpress.XtraGrid.Columns.GridColumn colITEMNAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colTRCODE;
-        private DevExpress.XtraGrid.Columns.GridColumn colPROCESSDATE;
-        private DevExpress.XtraGrid.Columns.GridColumn colAMOUNT;
         private DevExpress.XtraBars.BarButtonItem reportsBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }

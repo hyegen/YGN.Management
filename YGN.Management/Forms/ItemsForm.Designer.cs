@@ -150,6 +150,7 @@ namespace YGN.Management.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "ItemsForm";
             this.Load += new System.EventHandler(this.ItemsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

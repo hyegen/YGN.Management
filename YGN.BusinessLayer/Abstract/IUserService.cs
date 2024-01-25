@@ -11,5 +11,6 @@ namespace YGN.BusinessLayer.Abstract
     {
         void AddUser(User user);
         bool Login(string userName,string password);
+        int GetUser();
     }
 }
