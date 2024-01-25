@@ -57,7 +57,7 @@ namespace YGN.Management.Forms
         #region methods
         public void getData()
         {
-            var datas = itemManager.getItemsTest();
+            var datas = itemManager.GetAllItemsByProcedure();
             itemsGridControl.DataSource = datas;
         }
         private void ExportToPdf_Click(object sender, EventArgs e)

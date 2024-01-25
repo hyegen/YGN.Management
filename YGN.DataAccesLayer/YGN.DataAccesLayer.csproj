@@ -53,10 +53,12 @@
     <Compile Include="Abstract\IClientDal.cs" />
     <Compile Include="Abstract\IClientTransactionDal.cs" />
     <Compile Include="Abstract\IItemDal.cs" />
+    <Compile Include="Abstract\IItemCategoryDal.cs" />
     <Compile Include="Abstract\IStockTransactionDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientTransactionDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfItemCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfStockTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
@@ -173,6 +175,10 @@
     <Compile Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.Designer.cs">
       <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..cs" />
+    <Compile Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..Designer.cs">
+      <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.resx">
       <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..resx">
+      <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

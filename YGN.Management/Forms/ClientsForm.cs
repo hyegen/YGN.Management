@@ -62,7 +62,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-            clientGridControl.DataSource = clientManager.getAllClients();
+            clientGridControl.DataSource = clientManager.GetAllClients();
             //clientGridControl.DataSource = dbcontext.CLIENT.ToList();
         }
         private void ExportToPdf_Click(object sender, EventArgs e)

@@ -10,6 +10,6 @@ namespace YGN.DataAccesLayer.Abstract
 {
     public interface IClientTransactionDal : IEntityRepository<ClientTransaction>
     {
-        void addToTranaction(ClientTransaction clientTransaction);
+        void AddToTranaction(ClientTransaction clientTransaction);
     }
 }

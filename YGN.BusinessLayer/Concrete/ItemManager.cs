@@ -23,13 +23,9 @@ namespace YGN.BusinessLayer.Concrete
                 _itemDal.Add(item);
             }
         }
-        public List<Item> GetItemsAll()
+        public List<Item> GetAllItemsByProcedure()
         {
-            return _itemDal.GetAll();
-        }
-        public List<Item> getItemsTest()
-        {
-            return _itemDal.getAllItems();
+            return _itemDal.GetAllItems();
         }
         public bool IsSimilarItemExists(Item newItem)
         {
@@ -42,7 +38,6 @@ namespace YGN.BusinessLayer.Concrete
             }
             return false;
         }
-
         public bool IsSimilarItem(string existItemCode, string newItemCode)
         {
             if (existItemCode == null || newItemCode == null)
@@ -51,5 +46,9 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existItemCode.Equals(newItemCode, StringComparison.OrdinalIgnoreCase);
         }
+        //public List<string> GetAllCategories()
+        //{
+        //    return _itemDal.GetCategories();
+        //}
     }
 }

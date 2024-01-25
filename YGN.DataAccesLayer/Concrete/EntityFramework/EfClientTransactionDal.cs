@@ -11,7 +11,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfClientTransactionDal : EfGenericRepositoryBase<ClientTransaction, YGNContext>, IClientTransactionDal
     {
-        public void addToTranaction(ClientTransaction clientTransaction)
+        public void AddToTranaction(ClientTransaction clientTransaction)
         {
             using (YGNContext context= new YGNContext())
             {

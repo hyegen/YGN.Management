@@ -16,11 +16,11 @@ namespace YGN.BusinessLayer.Concrete
         {
             _clientDal = clientDal;
         }
-        public List<Client> getAllClients()
+        public List<Client> GetAllClients()
         {
-            return _clientDal.getAllClient();
+            return _clientDal.GetAllClient();
         }
-        public void addClient(Client client)
+        public void AddClient(Client client)
         {
             if (!IsSimilarClientExists(client))
             {
@@ -29,7 +29,7 @@ namespace YGN.BusinessLayer.Concrete
         }
         public bool IsSimilarClientExists(Client newClient)
         {
-            foreach (var existingClient in _clientDal.getAllClient())
+            foreach (var existingClient in _clientDal.GetAllClient())
             {
                 if (existingClient != null && existingClient.ClientCode != null && IsSimilarCode(existingClient.ClientCode, newClient.ClientCode))
                 {
@@ -46,9 +46,9 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existClientCode.Equals(newClientCode, StringComparison.OrdinalIgnoreCase);
         }
-        public string getClientCode()
+        public string GetClientCode()
         {
-            return _clientDal.getClientCode();
+            return _clientDal.GetClientCode();
         } 
     }
 }

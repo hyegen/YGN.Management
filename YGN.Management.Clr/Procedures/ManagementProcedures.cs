@@ -80,6 +80,24 @@ public partial class ManagementProcedures
                 SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
             sqlConn.Close();
         }
+
+    }
+
+    [SqlProcedure(Name = "YGN_GET_CATEGORIES")]
+    public static void YGN_GET_CATEGORIES()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                   SELECT Category1 FROM Items WITH(NOLOCK)
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
     }
     #endregion
+
 }

@@ -9,18 +9,17 @@ using YGN.DataAccesLayer.Abstract;
 
 namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
-    public class EfItemDal : EfGenericRepositoryBase<Item, YGNContext>, IItemDal
+    public class EfItemCategoryDal : EfGenericRepositoryBase<ItemCategory, YGNContext>, IItemCategoryDal
     {
-        public List<Item> GetAllItems()
+        public List<ItemCategory> GetCategories()
         {
-            List<Item> items = new List<Item>();
-
             using (YGNContext context = new YGNContext())
             {
-                var itemsFromDb = context.Database.SqlQuery<Item>("EXEC YGN_GET_ALL_ITEM").ToList();
-                items.AddRange(itemsFromDb);
+                var query = from c in context.ItemCategories
+                            select c;
+        
+                return query.ToList();
             }
-            return items;
         }
     }
 }

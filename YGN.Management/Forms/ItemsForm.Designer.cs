@@ -50,6 +50,7 @@ namespace YGN.Management.Forms
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.AllowMdiChildButtons = false;
             this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Orange;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {

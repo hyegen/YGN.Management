@@ -182,6 +182,8 @@
     </Compile>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Entities.Concrete.Item.datasource" />
+    <None Include="Properties\DataSources\Entities.Concrete.ItemCategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,9 +216,7 @@
       <Name>YGN.DataAccesLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="TO_DO_LIST.txt" />
   </ItemGroup>

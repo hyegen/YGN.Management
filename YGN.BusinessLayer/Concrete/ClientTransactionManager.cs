@@ -17,7 +17,7 @@ namespace YGN.BusinessLayer.Concrete
             _clientTransactionDal = clientTransactionDal;
         }
 
-        public void addToTranaction(ClientTransaction clientTransaction)
+        public void AddToTranaction(ClientTransaction clientTransaction)
         {
             _clientTransactionDal.Add(clientTransaction);
         }

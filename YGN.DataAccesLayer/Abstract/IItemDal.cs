@@ -10,6 +10,7 @@ namespace YGN.DataAccesLayer.Abstract
 {
     public interface IItemDal : IEntityRepository<Item>
     {
-        List<Item> getAllItems();
+        List<Item> GetAllItems();
+       // List<string> GetCategories();
     }
 }

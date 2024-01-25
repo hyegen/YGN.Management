@@ -11,7 +11,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfClientDal : EfGenericRepositoryBase<Client, YGNContext>, IClientDal
     {
-        public List<Client> getAllClient()
+        public List<Client> GetAllClient()
         {
             List<Client> clients = new List<Client>();
 
@@ -22,7 +22,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
             }
             return clients;
         }
-        public string getClientCode()
+        public string GetClientCode()
         {
             string str;
             using (YGNContext context= new YGNContext())

@@ -17,5 +17,7 @@ namespace Entities.Extensions
             [DataMember]
             public string NEWCLIENTCODE { get; set; }
         }
+
+   
     }
 }

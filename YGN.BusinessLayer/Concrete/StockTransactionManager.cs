@@ -18,7 +18,7 @@ namespace YGN.BusinessLayer.Concrete
             _stockTransactionDal = stockTransactionDal;
         }
 
-        public void addToStockTransaction(StockTransaction stockTransaction)
+        public void AddToStockTransaction(StockTransaction stockTransaction)
         {
             _stockTransactionDal.Add(stockTransaction);
         }

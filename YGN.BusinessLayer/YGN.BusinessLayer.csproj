@@ -51,12 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IClientService.cs" />
+    <Compile Include="Abstract\IItemCategoryService.cs" />
     <Compile Include="Abstract\IItemService.cs" />
     <Compile Include="Abstract\IClientTransactionService.cs" />
     <Compile Include="Abstract\IStockTransactionService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\ClientManager.cs" />
     <Compile Include="Concrete\ClientTransactionManager.cs" />
+    <Compile Include="Concrete\ItemCategoryManager.cs" />
     <Compile Include="Concrete\ItemManager.cs" />
     <Compile Include="Concrete\StockTransactionManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />

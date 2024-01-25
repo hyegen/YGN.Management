@@ -24,7 +24,7 @@ namespace YGN.Management.DetailForms
         public NewClientForm()
         {
             InitializeComponent();
-            clientCodeTextEdit.EditValue = clientManager.getClientCode();
+            clientCodeTextEdit.EditValue = clientManager.GetClientCode();
         }
 
         #endregion
@@ -109,14 +109,14 @@ namespace YGN.Management.DetailForms
                 }
                 else
                 {
-                    clientManager.addClient(addClient);
+                    clientManager.AddClient(addClient);
 
                     var addToTransaction = new ClientTransaction
                     {
                            ClientId=addClient.Id,
                            ProcessDate=DateTime.Now
                     };
-                    clientTransactionManager.addToTranaction(addToTransaction);
+                    clientTransactionManager.AddToTranaction(addToTransaction);
                     XtraMessageBox.Show(string.Format("{0} {1} olarak tanımlanan cari başarıyla eklenmiştir.", addClient.ClientName, addClient.ClientSurname), "Bilgi");
                 }
             }
