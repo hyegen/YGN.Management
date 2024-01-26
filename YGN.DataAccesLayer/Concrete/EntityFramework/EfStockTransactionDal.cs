@@ -11,9 +11,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfStockTransactionDal : EfGenericRepositoryBase<StockTransaction, YGNContext>, IStockTransactionDal
     {
-        public void AddToStockTranaction(StockTransaction stockTransaction)
-        {
-            throw new NotImplementedException();
-        }
+
+ 
     }
 }

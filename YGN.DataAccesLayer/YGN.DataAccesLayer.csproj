@@ -179,6 +179,18 @@
     <Compile Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..Designer.cs">
       <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs" />
+    <Compile Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.Designer.cs">
+      <DependentUpon>202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.cs" />
+    <Compile Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.Designer.cs">
+      <DependentUpon>202401261655322_mig_item_entity_hasbeen_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.cs" />
+    <Compile Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.Designer.cs">
+      <DependentUpon>202401261704197_mig_Item_entity_has_been_upgraded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -283,6 +295,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..resx">
       <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.resx">
+      <DependentUpon>202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.resx">
+      <DependentUpon>202401261655322_mig_item_entity_hasbeen_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.resx">
+      <DependentUpon>202401261704197_mig_Item_entity_has_been_upgraded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

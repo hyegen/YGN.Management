@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public StockTransactionConfiguration()
         {
             Property(u => u.ProcessDate)
-                .HasColumnType("date");
+                .HasColumnType("datetime");
         }
     }
     public class StockTransaction : IEntity

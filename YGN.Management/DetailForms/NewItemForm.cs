@@ -28,34 +28,19 @@ namespace YGN.Management.DetailForms
         StringBuilder stringBuilder = new StringBuilder();
         StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
         UserManager userManager = new UserManager(new EfUserDal());
-        ItemCategoryManager iItemCategoryManager = new ItemCategoryManager(new EfItemCategoryDal());
+
         #endregion
 
         #region constructor
         public NewItemForm()
         {
             InitializeComponent();
-           // categoriesBindingSource.DataSource = iItemCategoryManager.GetCategories();
-          // comboBoxEdit1.EditValue= iItemCategoryManager.GetCategories();
         }
 
         #endregion
 
         #region properties
 
-        public Item DetailDataSource
-        {
-            get
-            {
-                return (Item)detailBindingSource.DataSource;
-            }
-            set
-            {
-                detailBindingSource.DataSource = value;
-            }
-        }
-
-        
         public string ItemCode
         {
             get { return itemCodeTextEdit?.Text; }
@@ -81,11 +66,11 @@ namespace YGN.Management.DetailForms
             set { unitPriceTextEdit.Text = value?.ToString(); }
         }
 
-        //public string Category
-        //{
-        //    //get { return categoryComboBoxEdit?.Text; }
-        //    //set { categoryComboBoxEdit.Text = value?.ToString(); }
-        //}
+        public string Brand
+        {
+            get { return brandTextEdit.Text; }
+            set { brandTextEdit.Text = value; }
+        }
 
         #endregion
 
@@ -97,7 +82,7 @@ namespace YGN.Management.DetailForms
                 ItemCode = ItemCode,
                 ItemName = ItemName,
                 UnitPrice = UnitPrice,
-              //  Category1 = Category
+                Brand = Brand
             };
             ItemValidator itemValidator = new ItemValidator();
             ValidationResult result = itemValidator.Validate(newItem);
@@ -116,7 +101,7 @@ namespace YGN.Management.DetailForms
                         OrderId = null,
                         ProcessDate = DateTime.Now,
                         UserId = userManager.GetUser(),
-                        TrCode=(int)Trcode.Input
+                        TrCode = (int)Trcode.Input
                     };
                     stockTransactionManager.AddToStockTransaction(addToStockTransaction);
                     XtraMessageBox.Show(string.Format("{0} kodlu, {1} adlı malzeme başarıyla eklenmiştir.", newItem.ItemCode, newItem.ItemName), "Bilgi");

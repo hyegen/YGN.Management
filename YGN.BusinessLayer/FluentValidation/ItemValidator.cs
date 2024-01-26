@@ -12,9 +12,9 @@ namespace YGN.BusinessLayer.FluentValidation
     {
         public ItemValidator()
         {
-            RuleFor(x => x.ItemCode).NotEmpty().WithMessage("Material Code field cannot be left blank.");
-            RuleFor(x => x.ItemName).NotEmpty().WithMessage("Material Name field cannot be left blank.");
-            RuleFor(x => x.UnitPrice).NotEmpty().WithMessage("Unit Price field cannot be left blank.");
+            RuleFor(x => x.ItemCode).NotEmpty().WithMessage("Malzeme kodu boş bırakılamaz.");
+            RuleFor(x => x.ItemName).NotEmpty().WithMessage("Malzeme adı boş bırakılamaz.");
+            RuleFor(x => x.UnitPrice).NotEmpty().WithMessage("Birim fiyat boş bırakılamaz.");
         }
     }
 }

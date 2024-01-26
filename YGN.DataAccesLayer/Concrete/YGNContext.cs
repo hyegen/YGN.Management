@@ -39,6 +39,12 @@ namespace YGN.DataAccesLayer.Concrete
 
             #endregion
 
+            #region Items
+
+            modelBuilder.Configurations.Add(new ItemConfiguration());
+
+            #endregion
+
             #endregion
         }
         public DbSet<Address> Addresses { get; set; }
