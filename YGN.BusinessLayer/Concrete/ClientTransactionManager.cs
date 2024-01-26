@@ -11,7 +11,7 @@ namespace YGN.BusinessLayer.Concrete
 {
     public class ClientTransactionManager : IClientTransactionService
     {
-        IClientTransactionDal _clientTransactionDal;
+        private readonly IClientTransactionDal _clientTransactionDal;
         public ClientTransactionManager(IClientTransactionDal clientTransactionDal)
         {
             _clientTransactionDal = clientTransactionDal;

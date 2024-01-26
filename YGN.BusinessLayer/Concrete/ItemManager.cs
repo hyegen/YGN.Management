@@ -46,9 +46,5 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existItemCode.Equals(newItemCode, StringComparison.OrdinalIgnoreCase);
         }
-        //public List<string> GetAllCategories()
-        //{
-        //    return _itemDal.GetCategories();
-        //}
     }
 }

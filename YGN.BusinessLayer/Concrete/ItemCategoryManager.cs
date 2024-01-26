@@ -9,16 +9,16 @@ using YGN.DataAccesLayer.Abstract;
 
 namespace YGN.BusinessLayer.Concrete
 {
-    public class ItemCategoryManager: IItemCategoryService
+    public class ItemCategoryManager : IItemCategoryService
     {
-        IItemCategoryDal _iItemcategoryDal;
+        private readonly IItemCategoryDal _iItemcategoryDal;
         public ItemCategoryManager(IItemCategoryDal iItemcategoryDal)
         {
             _iItemcategoryDal = iItemcategoryDal;
         }
         public List<ItemCategory> GetCategories()
         {
-           return _iItemcategoryDal.GetCategories();
+            return _iItemcategoryDal.GetCategories();
         }
     }
 }

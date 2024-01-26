@@ -8,5 +8,6 @@ namespace YGN.BusinessLayer.Abstract
 {
     public interface IItemCategoryService
     {
+
     }
 }

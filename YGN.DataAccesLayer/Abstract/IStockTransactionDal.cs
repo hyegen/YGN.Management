@@ -10,6 +10,6 @@ namespace YGN.DataAccesLayer.Abstract
 {
     public interface IStockTransactionDal : IEntityRepository<StockTransaction>
     {
-        //void AddToStockTranaction(StockTransaction stockTransaction);
+        List<StockTransaction> GetStockTransactions();
     }
 }

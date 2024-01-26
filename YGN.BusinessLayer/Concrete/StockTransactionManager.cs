@@ -11,7 +11,7 @@ namespace YGN.BusinessLayer.Concrete
 {
     public class StockTransactionManager : IStockTransactionService
     {
-       private readonly IStockTransactionDal _stockTransactionDal;
+        private readonly IStockTransactionDal _stockTransactionDal;
 
         public StockTransactionManager(IStockTransactionDal stockTransactionDal)
         {
@@ -21,6 +21,11 @@ namespace YGN.BusinessLayer.Concrete
         public void AddToStockTransaction(StockTransaction stockTransaction)
         {
             _stockTransactionDal.Add(stockTransaction);
+        }
+
+        public List<StockTransaction> GetStockTransactions()
+        {
+            return _stockTransactionDal.GetStockTransactions();
         }
     }
 }

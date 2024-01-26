@@ -11,7 +11,13 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfStockTransactionDal : EfGenericRepositoryBase<StockTransaction, YGNContext>, IStockTransactionDal
     {
-
- 
+        public List<StockTransaction> GetStockTransactions()
+        {
+            using (YGNContext context = new YGNContext())
+            {
+                var result = context.StockTransactions.ToList();
+                return result;
+            }
+        }
     }
 }
