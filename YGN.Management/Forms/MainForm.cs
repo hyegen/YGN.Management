@@ -1,23 +1,16 @@
 ﻿using DevExpress.Utils.Menu;
 using DevExpress.XtraEditors;
-using Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using YGN.Management.CommonForm;
+using YGN.BusinessLayer.Concrete;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 
 namespace YGN.Management.Forms
 {
-    public partial class MainForm : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm : XtraForm
     {
         #region members
-
+        StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
         #endregion
 
         #region constructor
@@ -31,7 +24,6 @@ namespace YGN.Management.Forms
         #region events
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // gridControlMainForm.DataSource = dbcontext.TRANSACTIONS.ToList();
             getData();
         }
         private void itemsBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -63,7 +55,8 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-
+            var result = stockTransactionManager.GetStockTransactions();
+            gridControlMainForm.DataSource = result;
         }
         private void ExportToPdf_Click(object sender, EventArgs e)
         {

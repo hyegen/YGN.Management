@@ -38,10 +38,12 @@ namespace YGN.Management.Forms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControlMainForm = new DevExpress.XtraGrid.GridControl();
             this.gridViewMainForm = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.transactionRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.purchaseBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.salesBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -59,9 +61,11 @@ namespace YGN.Management.Forms
             this.itemsBarButtonItem,
             this.clientBarButtonItem,
             this.refreshBarButtonItem,
-            this.reportsBarButtonItem});
+            this.reportsBarButtonItem,
+            this.purchaseBarButtonItem,
+            this.salesBarButtonItem});
             this.mainFormRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainFormRibbonControl.MaxItemId = 8;
+            this.mainFormRibbonControl.MaxItemId = 10;
             this.mainFormRibbonControl.Name = "mainFormRibbonControl";
             this.mainFormRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -110,7 +114,7 @@ namespace YGN.Management.Forms
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.transactionRibbonPageGroup});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -126,12 +130,6 @@ namespace YGN.Management.Forms
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBarButtonItem);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Durum";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.reportsBarButtonItem);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Raporlar";
             // 
             // panelControl1
             // 
@@ -158,9 +156,33 @@ namespace YGN.Management.Forms
             // 
             this.gridViewMainForm.GridControl = this.gridControlMainForm;
             this.gridViewMainForm.Name = "gridViewMainForm";
+            this.gridViewMainForm.OptionsBehavior.ReadOnly = true;
             this.gridViewMainForm.OptionsView.ShowFooter = true;
             this.gridViewMainForm.OptionsView.ShowGroupPanel = false;
             this.gridViewMainForm.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewMainForm_PopupMenuShowing);
+            // 
+            // transactionRibbonPageGroup
+            // 
+            this.transactionRibbonPageGroup.ItemLinks.Add(this.purchaseBarButtonItem);
+            this.transactionRibbonPageGroup.ItemLinks.Add(this.salesBarButtonItem);
+            this.transactionRibbonPageGroup.Name = "transactionRibbonPageGroup";
+            this.transactionRibbonPageGroup.Text = "Hareketler";
+            // 
+            // purchaseBarButtonItem
+            // 
+            this.purchaseBarButtonItem.Caption = "Satınalma";
+            this.purchaseBarButtonItem.Id = 8;
+            this.purchaseBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Satınalma.ImageOptions.Image")));
+            this.purchaseBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Satınalma.ImageOptions.LargeImage")));
+            this.purchaseBarButtonItem.Name = "purchaseBarButtonItem";
+            // 
+            // salesBarButtonItem
+            // 
+            this.salesBarButtonItem.Caption = "Satış";
+            this.salesBarButtonItem.Id = 9;
+            this.salesBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("salesBarButtonItem.ImageOptions.Image")));
+            this.salesBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("salesBarButtonItem.ImageOptions.LargeImage")));
+            this.salesBarButtonItem.Name = "salesBarButtonItem";
             // 
             // MainForm
             // 
@@ -196,6 +218,8 @@ namespace YGN.Management.Forms
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem reportsBarButtonItem;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem purchaseBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem salesBarButtonItem;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup transactionRibbonPageGroup;
     }
 }
