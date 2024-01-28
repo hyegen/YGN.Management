@@ -60,6 +60,7 @@
     <Compile Include="Concrete\ClientTransactionManager.cs" />
     <Compile Include="Concrete\ItemCategoryManager.cs" />
     <Compile Include="Concrete\ItemManager.cs" />
+    <Compile Include="Concrete\PurchasingOrderClientSelectionManager.cs" />
     <Compile Include="Concrete\StockTransactionManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="FluentValidation\ClientValidator.cs" />

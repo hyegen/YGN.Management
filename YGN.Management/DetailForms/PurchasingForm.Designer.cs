@@ -36,28 +36,28 @@ namespace YGN.Management.DetailForms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.clientGroupControl = new DevExpress.XtraEditors.GroupControl();
-            this.itemsGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.selectedItemsGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.selectedItemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.selectedItemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.itemsGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.newItemButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.itemLabelControl = new DevExpress.XtraEditors.LabelControl();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
-            this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
+            this.clientGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.newClientButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
+            this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).BeginInit();
-            this.clientGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsGroupControl)).BeginInit();
-            this.itemsGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGroupControl)).BeginInit();
             this.selectedItemsGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsGroupControl)).BeginInit();
+            this.itemsGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newItemButtonEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).BeginInit();
+            this.clientGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -120,26 +120,6 @@ namespace YGN.Management.DetailForms
             this.panelControl1.Size = new System.Drawing.Size(848, 348);
             this.panelControl1.TabIndex = 2;
             // 
-            // clientGroupControl
-            // 
-            this.clientGroupControl.Controls.Add(this.buttonEdit1);
-            this.clientGroupControl.Controls.Add(this.clientLabelControl);
-            this.clientGroupControl.Location = new System.Drawing.Point(5, 6);
-            this.clientGroupControl.Name = "clientGroupControl";
-            this.clientGroupControl.Size = new System.Drawing.Size(172, 73);
-            this.clientGroupControl.TabIndex = 0;
-            this.clientGroupControl.Text = "Cariler";
-            // 
-            // itemsGroupControl
-            // 
-            this.itemsGroupControl.Controls.Add(this.buttonEdit2);
-            this.itemsGroupControl.Controls.Add(this.itemLabelControl);
-            this.itemsGroupControl.Location = new System.Drawing.Point(183, 6);
-            this.itemsGroupControl.Name = "itemsGroupControl";
-            this.itemsGroupControl.Size = new System.Drawing.Size(179, 73);
-            this.itemsGroupControl.TabIndex = 1;
-            this.itemsGroupControl.Text = "Malzemeler";
-            // 
             // selectedItemsGroupControl
             // 
             this.selectedItemsGroupControl.Controls.Add(this.selectedItemsGridControl);
@@ -167,13 +147,25 @@ namespace YGN.Management.DetailForms
             this.selectedItemsGridView.Name = "selectedItemsGridView";
             this.selectedItemsGridView.OptionsView.ShowGroupPanel = false;
             // 
-            // clientLabelControl
+            // itemsGroupControl
             // 
-            this.clientLabelControl.Location = new System.Drawing.Point(16, 42);
-            this.clientLabelControl.Name = "clientLabelControl";
-            this.clientLabelControl.Size = new System.Drawing.Size(19, 13);
-            this.clientLabelControl.TabIndex = 0;
-            this.clientLabelControl.Text = "Cari";
+            this.itemsGroupControl.Controls.Add(this.newItemButtonEdit);
+            this.itemsGroupControl.Controls.Add(this.itemLabelControl);
+            this.itemsGroupControl.Location = new System.Drawing.Point(337, 5);
+            this.itemsGroupControl.Name = "itemsGroupControl";
+            this.itemsGroupControl.Size = new System.Drawing.Size(328, 73);
+            this.itemsGroupControl.TabIndex = 1;
+            this.itemsGroupControl.Text = "Malzemeler";
+            // 
+            // newItemButtonEdit
+            // 
+            this.newItemButtonEdit.Location = new System.Drawing.Point(72, 39);
+            this.newItemButtonEdit.MenuManager = this.ribbonControl1;
+            this.newItemButtonEdit.Name = "newItemButtonEdit";
+            this.newItemButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.newItemButtonEdit.Size = new System.Drawing.Size(240, 20);
+            this.newItemButtonEdit.TabIndex = 2;
             // 
             // itemLabelControl
             // 
@@ -183,25 +175,34 @@ namespace YGN.Management.DetailForms
             this.itemLabelControl.TabIndex = 1;
             this.itemLabelControl.Text = "Malzeme";
             // 
-            // buttonEdit1
+            // clientGroupControl
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(52, 39);
-            this.buttonEdit1.MenuManager = this.ribbonControl1;
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.clientGroupControl.Controls.Add(this.newClientButtonEdit);
+            this.clientGroupControl.Controls.Add(this.clientLabelControl);
+            this.clientGroupControl.Location = new System.Drawing.Point(5, 6);
+            this.clientGroupControl.Name = "clientGroupControl";
+            this.clientGroupControl.Size = new System.Drawing.Size(326, 73);
+            this.clientGroupControl.TabIndex = 0;
+            this.clientGroupControl.Text = "Cariler";
+            // 
+            // newClientButtonEdit
+            // 
+            this.newClientButtonEdit.Location = new System.Drawing.Point(52, 39);
+            this.newClientButtonEdit.MenuManager = this.ribbonControl1;
+            this.newClientButtonEdit.Name = "newClientButtonEdit";
+            this.newClientButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(99, 20);
-            this.buttonEdit1.TabIndex = 1;
+            this.newClientButtonEdit.Size = new System.Drawing.Size(269, 20);
+            this.newClientButtonEdit.TabIndex = 1;
+            this.newClientButtonEdit.Click += new System.EventHandler(this.newClientButtonEdit_Click);
             // 
-            // buttonEdit2
+            // clientLabelControl
             // 
-            this.buttonEdit2.Location = new System.Drawing.Point(72, 39);
-            this.buttonEdit2.MenuManager = this.ribbonControl1;
-            this.buttonEdit2.Name = "buttonEdit2";
-            this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit2.Size = new System.Drawing.Size(95, 20);
-            this.buttonEdit2.TabIndex = 2;
+            this.clientLabelControl.Location = new System.Drawing.Point(16, 42);
+            this.clientLabelControl.Name = "clientLabelControl";
+            this.clientLabelControl.Size = new System.Drawing.Size(19, 13);
+            this.clientLabelControl.TabIndex = 0;
+            this.clientLabelControl.Text = "Cari";
             // 
             // PurchasingForm
             // 
@@ -211,22 +212,23 @@ namespace YGN.Management.DetailForms
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "PurchasingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satınalma - Yeni";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).EndInit();
-            this.clientGroupControl.ResumeLayout(false);
-            this.clientGroupControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsGroupControl)).EndInit();
-            this.itemsGroupControl.ResumeLayout(false);
-            this.itemsGroupControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGroupControl)).EndInit();
             this.selectedItemsGroupControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsGroupControl)).EndInit();
+            this.itemsGroupControl.ResumeLayout(false);
+            this.itemsGroupControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newItemButtonEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).EndInit();
+            this.clientGroupControl.ResumeLayout(false);
+            this.clientGroupControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +249,7 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraGrid.Views.Grid.GridView selectedItemsGridView;
         private DevExpress.XtraEditors.LabelControl itemLabelControl;
         private DevExpress.XtraEditors.LabelControl clientLabelControl;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit2;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
+        private DevExpress.XtraEditors.ButtonEdit newItemButtonEdit;
+        private DevExpress.XtraEditors.ButtonEdit newClientButtonEdit;
     }
 }
