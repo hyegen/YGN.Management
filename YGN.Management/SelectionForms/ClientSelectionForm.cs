@@ -23,6 +23,7 @@ namespace YGN.Management.SelectionForms
         ClientManager clientManager = new ClientManager(new EfClientDal());
         private PurchasingForm detailForm;
         public Client_View client;
+
         #endregion
 
         #region constructor
@@ -50,15 +51,22 @@ namespace YGN.Management.SelectionForms
 
         private void clientsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            string selectedName = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ClientName") as string;
+            //string selectedName = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ClientName") as string;
             //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
             //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
             //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
             //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
 
 
-            client.ClientName = selectedName;
-            detailForm.CurrClient = client;
-        }        
+            //client.ClientName = selectedName;
+            //detailForm.CurrClient = client;
+        }
+
+        private void ClientSelectionForm_Shown(object sender, EventArgs e)
+        {
+            clientsGridControl.Focus();
+            clientsGridView.FocusedRowHandle = DevExpress.XtraGrid.GridControl.AutoFilterRowHandle;
+            clientsGridView.FocusedColumn =  clientsGridView.VisibleColumns[0];
+        }
     }
 }
