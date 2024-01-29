@@ -9,7 +9,7 @@ namespace YGN.BusinessLayer.Abstract
 {
     public interface IStockTransactionService
     {
-        List<StockTransaction> GetStockTransactions();
+        //List<StockTransaction> GetStockTransactions();
         void AddToStockTransaction(StockTransaction stockTransaction);
     }
 }

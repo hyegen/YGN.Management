@@ -24,5 +24,15 @@ namespace Entities.Extensions
             public string FirmDescription { get; set; }
             public string TaxIdentificationNumber { get; set; }
         }
+
+        public class StockTransaction_View
+        {
+            public int Id { get; set; }
+            public string ItemName { get; set; }
+            public int? OrderId { get; set; }
+            public int UserName { get; set; }
+            public DateTime ProcessDate { get; set; }
+            public int TrCode { get; set; }
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace YGN.Management.Forms
     {
         #region members
         StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
+        EfStockTransactionDal EfStock = new EfStockTransactionDal();
         #endregion
 
         #region constructor
@@ -56,7 +57,8 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-            var result = stockTransactionManager.GetStockTransactions();
+            //var result = stockTransactionManager.GetStockTransactions();
+            var result = EfStock.GetStockTransactions();
             gridControlMainForm.DataSource = result;
         }
         private void ExportToPdf_Click(object sender, EventArgs e)

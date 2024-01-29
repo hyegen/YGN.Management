@@ -23,9 +23,9 @@ namespace YGN.BusinessLayer.Concrete
             _stockTransactionDal.Add(stockTransaction);
         }
 
-        public List<StockTransaction> GetStockTransactions()
-        {
-            return _stockTransactionDal.GetStockTransactions();
-        }
+        //public List<StockTransaction> GetStockTransactions()
+        //{
+        //    return _stockTransactionDal.GetStockTransactions();
+        //}
     }
 }
