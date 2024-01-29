@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YGN.BusinessLayer.Abstract;
 using YGN.DataAccesLayer.Abstract;
+using static Entities.Extensions.Extensions;
 
 namespace YGN.BusinessLayer.Concrete
 {
@@ -23,9 +24,9 @@ namespace YGN.BusinessLayer.Concrete
             _stockTransactionDal.Add(stockTransaction);
         }
 
-        //public List<StockTransaction> GetStockTransactions()
-        //{
-        //    return _stockTransactionDal.GetStockTransactions();
-        //}
+        public List<StockTransaction_View> GetStockTransactions()
+        {
+            return _stockTransactionDal.GetStockTransactions();
+        }
     }
 }

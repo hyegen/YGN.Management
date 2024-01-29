@@ -13,12 +13,10 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfStockTransactionDal : EfGenericRepositoryBase<StockTransaction, YGNContext>, IStockTransactionDal
     {
-
         public List<StockTransaction_View> GetStockTransactions()
         {
             using (YGNContext context = new YGNContext())
             {
-                //var result = context.StockTransactions.ToList();
                 var result = (from st in context.StockTransactions
                               join itm in context.Items on st.ItemId equals itm.Id
                               join us in context.Users on st.UserId equals us.Id
@@ -29,13 +27,11 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                                   OrderId = st.OrderId,
                                   ProcessDate = st.ProcessDate,
                                   TrCode = st.TrCode == (int)Trcode.Input ? "Giriş" : "Çıkış",
-                                  UserName = st.UserId
+                                  UserName = us.NameSurname
                               }).ToList();
 
                 return result;
             }
         }
-
-
     }
 }

@@ -57,8 +57,7 @@ namespace YGN.Management.Forms
         #region methods
         private void getData()
         {
-            //var result = stockTransactionManager.GetStockTransactions();
-            var result = EfStock.GetStockTransactions();
+            var result = stockTransactionManager.GetStockTransactions();
             gridControlMainForm.DataSource = result;
         }
         private void ExportToPdf_Click(object sender, EventArgs e)

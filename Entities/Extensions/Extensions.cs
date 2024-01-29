@@ -30,7 +30,7 @@ namespace Entities.Extensions
             public int Id { get; set; }
             public string ItemName { get; set; }
             public int? OrderId { get; set; }
-            public int UserName { get; set; }
+            public string UserName { get; set; }
             public DateTime ProcessDate { get; set; }
             public string TrCode { get; set; }
         }
