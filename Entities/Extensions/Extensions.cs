@@ -32,7 +32,7 @@ namespace Entities.Extensions
             public int? OrderId { get; set; }
             public int UserName { get; set; }
             public DateTime ProcessDate { get; set; }
-            public int TrCode { get; set; }
+            public string TrCode { get; set; }
         }
     }
 }

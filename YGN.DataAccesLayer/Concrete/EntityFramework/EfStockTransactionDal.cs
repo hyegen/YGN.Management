@@ -1,4 +1,5 @@
-﻿using CoreLayer.DataAccess.EntityFramework;
+﻿using Commons.Enums;
+using CoreLayer.DataAccess.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -23,18 +24,18 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                               join us in context.Users on st.UserId equals us.Id
                               select new StockTransaction_View
                               {
-                                  Id=st.Id,
-                                  ItemName=itm.ItemName,
-                                  OrderId=st.OrderId,
-                                  ProcessDate=st.ProcessDate,
-                                  TrCode=st.TrCode,
-                                  UserName=st.UserId
+                                  Id = st.Id,
+                                  ItemName = itm.ItemName,
+                                  OrderId = st.OrderId,
+                                  ProcessDate = st.ProcessDate,
+                                  TrCode = st.TrCode == (int)Trcode.Input ? "Giriş" : "Çıkış",
+                                  UserName = st.UserId
                               }).ToList();
 
                 return result;
             }
         }
 
-      
+
     }
 }
