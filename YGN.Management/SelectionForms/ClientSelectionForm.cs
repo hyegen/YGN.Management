@@ -60,15 +60,10 @@ namespace YGN.Management.SelectionForms
         {
             var rowHandle = clientsGridView.FocusedRowHandle;
 
-            int val = Convert.ToInt32(clientsGridView.GetRowCellValue(rowHandle, "Id"));
-            string clientCode = clientsGridView.GetRowCellValue(rowHandle, "ClientCode").ToString();
-            string clientName = clientsGridView.GetRowCellValue(rowHandle, "ClientName").ToString();
-            string clientSurname = clientsGridView.GetRowCellValue(rowHandle, "ClientSurname").ToString();
-            string address = clientsGridView.GetRowCellValue(rowHandle, "Address").ToString();
-            string firmDescription = clientsGridView.GetRowCellValue(rowHandle, "FirmDescription").ToString();
-            string telNr1 = clientsGridView.GetRowCellValue(rowHandle, "TelNr1").ToString();
-            string telNr2 = clientsGridView.GetRowCellValue(rowHandle, "TelNr2").ToString();
-            string taxId = clientsGridView.GetRowCellValue(rowHandle, "TaxIdentificationNumber").ToString();
+
+            //client.ClientName = selectedName;
+            //detailForm.CurrClient = client;
+        }
 
             var result = new Client_View
             {
