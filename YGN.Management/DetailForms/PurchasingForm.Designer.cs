@@ -29,6 +29,7 @@ namespace YGN.Management.DetailForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchasingForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.saveBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -45,6 +46,7 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.newClientButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -58,6 +60,7 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).BeginInit();
             this.clientGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -204,6 +207,10 @@ namespace YGN.Management.DetailForms
             this.clientLabelControl.TabIndex = 0;
             this.clientLabelControl.Text = "Cari";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(Entities.Extensions.Extensions.Client_View);
+            // 
             // PurchasingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +236,7 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl.ResumeLayout(false);
             this.clientGroupControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +259,6 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.LabelControl clientLabelControl;
         private DevExpress.XtraEditors.ButtonEdit newItemButtonEdit;
         private DevExpress.XtraEditors.ButtonEdit newClientButtonEdit;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

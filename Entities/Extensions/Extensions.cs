@@ -11,7 +11,7 @@ namespace Entities.Extensions
 {
     public class Extensions
     {
-        [ComplexType]
+  
         public class Client_View
         {
             public int Id { get; set; }

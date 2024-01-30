@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace YGN.Management.SelectionForms
 
         ClientManager clientManager = new ClientManager(new EfClientDal());
         private PurchasingForm detailForm;
-        public Client_View client;
+        private Client_View client;
 
         #endregion
 
@@ -47,26 +48,45 @@ namespace YGN.Management.SelectionForms
             clientsGridControl.DataSource = clientManager.GetAllClients();
         }
 
+
         #endregion
+
+        private void clientsGridView_DoubleClick(object sender, EventArgs e)
+        {
+            var a = clientsGridView.GetFocusedRow();
+        }
 
         private void clientsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //string selectedName = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ClientName") as string;
-            //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
-            //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
-            //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
-            //string selectedFirm = clientsGridView.GetRowCellValue(e.FocusedRowHandle, "ColumnName_Address") as string;
+            var rowHandle = clientsGridView.FocusedRowHandle;
+
+            int val = Convert.ToInt32(clientsGridView.GetRowCellValue(rowHandle, "Id"));
+            string clientCode = clientsGridView.GetRowCellValue(rowHandle, "ClientCode").ToString();
+            string clientName = clientsGridView.GetRowCellValue(rowHandle, "ClientName").ToString();
+            string clientSurname = clientsGridView.GetRowCellValue(rowHandle, "ClientSurname").ToString();
+            string address = clientsGridView.GetRowCellValue(rowHandle, "Address").ToString();
+            string firmDescription = clientsGridView.GetRowCellValue(rowHandle, "FirmDescription").ToString();
+            string telNr1 = clientsGridView.GetRowCellValue(rowHandle, "TelNr1").ToString();
+            string telNr2 = clientsGridView.GetRowCellValue(rowHandle, "TelNr2").ToString();
+            string taxId = clientsGridView.GetRowCellValue(rowHandle, "TaxIdentificationNumber").ToString();
 
 
-            //client.ClientName = selectedName;
-            //detailForm.CurrClient = client;
-        }
 
-        private void ClientSelectionForm_Shown(object sender, EventArgs e)
-        {
-            clientsGridControl.Focus();
-            clientsGridView.FocusedRowHandle = DevExpress.XtraGrid.GridControl.AutoFilterRowHandle;
-            clientsGridView.FocusedColumn =  clientsGridView.VisibleColumns[0];
+            var result = new Client_View
+            {
+                Id = val,
+                ClientCode = clientCode,
+                ClientName = clientName,
+                ClientSurname = clientSurname,
+                Address = address,
+                FirmDescription = firmDescription,
+                TelNr1 = string.IsNullOrEmpty(telNr1) ? "" : "",
+                TelNr2 = string.IsNullOrEmpty(telNr2) ? "" : "",
+                TaxIdentificationNumber = string.IsNullOrEmpty(taxId) ? "" : ""
+            };
+
+            client = result;
+            //detailForm.CurrClient = result;
         }
     }
 }

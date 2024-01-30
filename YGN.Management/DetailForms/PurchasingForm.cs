@@ -26,14 +26,15 @@ namespace YGN.Management.DetailForms
 
         public Client_View CurrClient
         {
-            get { return _currClient; }
+            get { return (Client_View)bindingSource1.DataSource; }
             set
             {
-                if (_currClient != null)
-                {
-                    _currClient = value;
-                    newClientButtonEdit.Text = _currClient.FirmDescription;
-                }
+                //if (_currClient != null)
+                //{
+                bindingSource1.DataSource = value;
+                //    newClientButtonEdit.Text = _currClient.FirmDescription;
+                selectedItemsGridControl.DataSource = _currClient;
+                // }
             }
         }
 

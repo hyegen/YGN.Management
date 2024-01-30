@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.1" />
     <Reference Include="DevExpress.Data.v19.1" />
@@ -194,6 +198,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SelectionForms\ClientSelectionForm.resx">
       <DependentUpon>ClientSelectionForm.cs</DependentUpon>
@@ -202,6 +207,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entities.Concrete.Item.datasource" />
     <None Include="Properties\DataSources\Entities.Concrete.ItemCategory.datasource" />
+    <None Include="Properties\DataSources\Entities.Extensions.Extensions+Client_View.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -236,6 +242,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="OneDrive.ico" />
     <Content Include="TO_DO_LIST.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
