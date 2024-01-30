@@ -11,6 +11,8 @@ namespace YGN.DataAccesLayer.Concrete
 {
     public partial class YGNContext : DbContext
     {
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             #region Fluent API

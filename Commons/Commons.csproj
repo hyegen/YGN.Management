@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonManagers\SplashScreenManager.cs" />
+    <Compile Include="ConnectionInfo.cs" />
     <Compile Include="Enums\GlobalVariables.cs" />
     <Compile Include="Enums\Trcode.cs" />
+    <Compile Include="GlobalConsts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

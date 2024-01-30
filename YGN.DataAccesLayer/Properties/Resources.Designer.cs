@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YGN.Management.Properties {
+namespace YGN.DataAccesLayer.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace YGN.Management.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("YGN.Management.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("YGN.DataAccesLayer.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,32 +61,19 @@ namespace YGN.Management.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;configuration&gt;
-        ///  &lt;configSections&gt;
-        ///    &lt;sectionGroup name=&quot;applicationSettings&quot; type=&quot;System.Configuration.ApplicationSettingsGroup, System&quot;&gt;
-        ///      &lt;section name=&quot;DevExpress.LookAndFeel.Design.AppSettings&quot; type=&quot;System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; requirePermission=&quot;false&quot; /&gt;
-        ///    &lt;/sectionGroup&gt;
-        ///    &lt;!-- For more information on Entity Framework configuration, visit http://go.micros [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to USE [master]
+        ///GO
+        ////****** Object:  Database [YGNManagementDb]    Script Date: 30.01.2024 22:20:25 ******/
+        ///CREATE DATABASE [YGNManagementDb]
+        /// CONTAINMENT = NONE
+        /// ON  PRIMARY 
+        ///( NAME = N&apos;YGNManagementDb&apos;, FILENAME = N&apos;C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\YGNManagementDb.mdf&apos; , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+        /// LOG ON 
+        ///( NAME = N&apos;YGNManagementDb_log&apos;, FILENAME = N&apos;C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\YGNManagementD [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string YGN_ManagementConfiguration {
+        internal static string CreateTables {
             get {
-                return ResourceManager.GetString("YGN_ManagementConfiguration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;configuration&gt;
-        ///	&lt;configSections&gt;
-        ///		&lt;sectionGroup name=&quot;applicationSettings&quot; type=&quot;System.Configuration.ApplicationSettingsGroup, System&quot;&gt;
-        ///			&lt;section name=&quot;DevExpress.LookAndFeel.Design.AppSettings&quot; type=&quot;System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; requirePermission=&quot;false&quot; /&gt;
-        ///		&lt;/sectionGroup&gt;
-        ///		&lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fw [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string YGN_ManagementConfiguration2 {
-            get {
-                return ResourceManager.GetString("YGN_ManagementConfiguration2", resourceCulture);
+                return ResourceManager.GetString("CreateTables", resourceCulture);
             }
         }
     }

@@ -63,23 +63,23 @@ namespace YGN.Management.SelectionForms
 
             //client.ClientName = selectedName;
             //detailForm.CurrClient = client;
-        }
+            //var result = new Client_View
+            //{
+            //    Id = val,
+            //    ClientCode = clientCode,
+            //    ClientName = clientName,
+            //    ClientSurname = clientSurname,
+            //    Address = address,
+            //    FirmDescription = firmDescription,
+            //    TelNr1 = string.IsNullOrEmpty(telNr1) ? "" : "",
+            //    TelNr2 = string.IsNullOrEmpty(telNr2) ? "" : "",
+            //    TaxIdentificationNumber = string.IsNullOrEmpty(taxId) ? "" : ""
+            //};
 
-            var result = new Client_View
-            {
-                Id = val,
-                ClientCode = clientCode,
-                ClientName = clientName,
-                ClientSurname = clientSurname,
-                Address = address,
-                FirmDescription = firmDescription,
-                TelNr1 = string.IsNullOrEmpty(telNr1) ? "" : "",
-                TelNr2 = string.IsNullOrEmpty(telNr2) ? "" : "",
-                TaxIdentificationNumber = string.IsNullOrEmpty(taxId) ? "" : ""
-            };
-
-            client = result;
+            //client = result;
             //detailForm.CurrClient = result;
         }
+
+
     }
 }

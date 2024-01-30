@@ -1,10 +1,15 @@
-﻿using DevExpress.LookAndFeel;
+﻿using Commons.Enums;
+using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using YGN.DataAccesLayer.Concrete;
+using YGN.Management.Config;
 
 namespace YGN.Management
 {
@@ -20,7 +25,16 @@ namespace YGN.Management
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
+
+            GlobalVariables.AppPath = Application.StartupPath;
+            Database.SetInitializer<YGNContext>(null); 
+            if (!new ConfigManager().ReadConnectionSettings())
+            {
+                return;
+            }
             Application.Run(new MainView());
+
+          
         }
     }
 }

@@ -56,12 +56,15 @@
     <Compile Include="Abstract\IItemCategoryDal.cs" />
     <Compile Include="Abstract\IStockTransactionDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\ConfigDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfClientTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfStockTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Concrete\SqlData.cs" />
+    <Compile Include="Concrete\test.cs" />
     <Compile Include="Concrete\YGNContext.cs" />
     <Compile Include="Migrations\202312281529063_mig1.cs" />
     <Compile Include="Migrations\202312281529063_mig1.designer.cs">
@@ -193,6 +196,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -309,6 +317,13 @@
     <EmbeddedResource Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.resx">
       <DependentUpon>202401261704197_mig_Item_entity_has_been_upgraded.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CreateTables.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
