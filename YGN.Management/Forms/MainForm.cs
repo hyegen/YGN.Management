@@ -11,15 +11,16 @@ namespace YGN.Management.Forms
     public partial class MainForm : XtraForm
     {
         #region members
+
         StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
         EfStockTransactionDal EfStock = new EfStockTransactionDal();
+
         #endregion
 
         #region constructor
         public MainForm()
         {
             InitializeComponent();
-
         }
         #endregion
 
@@ -73,12 +74,13 @@ namespace YGN.Management.Forms
                 }
             }
         }
-        #endregion
-
         private void purchaseBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PurchasingForm purchasingForm = new PurchasingForm();
             purchasingForm.Show();
         }
+        #endregion
+
+
     }
 }

@@ -46,5 +46,10 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existItemCode.Equals(newItemCode, StringComparison.OrdinalIgnoreCase);
         }
+
+        public string GetItemCode()
+        {
+            return _itemDal.GetItemCode();
+        }
     }
 }

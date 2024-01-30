@@ -65,7 +65,7 @@ public partial class ManagementProcedures
                BEGIN 
                SET @STRINGVALUE=(SELECT  TOP 1 SUBSTRING(ClientCode, 1, PATINDEX('%[0-9]%', ClientCode) - 1) 
                FROM Clients CLNT 
-                   INNER JOIN ClientTransactions CLTRNS ON CLTRNS.ClientId=CLNT.Id
+                   LEFT JOIN ClientTransactions CLTRNS ON CLTRNS.ClientId=CLNT.Id
                WHERE PATINDEX('%[0-9]%', ClientCode) > 0 
                ORDER BY ClientCode DESC) + CONVERT(nvarchar(50),@LASTINDEX)
                
@@ -100,4 +100,50 @@ public partial class ManagementProcedures
     }
     #endregion
 
+
+    #region Item Procedures
+
+
+    [SqlProcedure(Name = "YGN_ITEMCODECREATOR")]
+    public static void YGN_ITEMCODECREATOR()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                
+                DECLARE @STRINGVALUE NVARCHAR(50)
+                DECLARE @LASTINDEX INT 
+                DECLARE @LASTSTRINGVALUE NVARCHAR(50)
+                               
+                SELECT TOP 1 @LASTINDEX=ItemId FROM StockTransactions  ORDER BY Id DESC
+                    SET @LASTINDEX= @LASTINDEX+1 
+                               
+                IF @LASTINDEX IS NULL
+                BEGIN
+                	SET @LASTSTRINGVALUE= 1
+                END
+                               
+                ELSE 
+                BEGIN 
+                SET @STRINGVALUE=(SELECT  TOP 1 SUBSTRING(ItemCode, 1, PATINDEX('%[0-9]%', ItemCode) - 1) 
+                FROM Items ITM 
+                    LEFT JOIN StockTransactions STTRNS ON STTRNS.ItemId=ITM.Id
+                WHERE PATINDEX('%[0-9]%', ItemCode) > 0 
+                ORDER BY ItemCode DESC) + CONVERT(nvarchar(50),@LASTINDEX)
+                               
+                SET @LASTSTRINGVALUE=@STRINGVALUE
+                               
+                SELECT @LASTSTRINGVALUE AS [RESULT]
+                END
+
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+
+    }
+    #endregion
 }

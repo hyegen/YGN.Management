@@ -63,7 +63,6 @@ namespace YGN.Management.SelectionForms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cari - Seç";
             this.Load += new System.EventHandler(this.ClientSelectionForm_Load);
-            this.Shown += new System.EventHandler(this.ClientSelectionForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.clientsGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsGridView)).EndInit();
             this.ResumeLayout(false);

@@ -22,5 +22,15 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
             }
             return items;
         }
+        public string GetItemCode()
+        {
+            string str;
+            using (YGNContext context = new YGNContext())
+            {
+                var result = context.Database.SqlQuery<string>("EXEC YGN_ITEMCODECREATOR").FirstOrDefault();
+                str = result;
+            }
+            return str;
+        }
     }
 }

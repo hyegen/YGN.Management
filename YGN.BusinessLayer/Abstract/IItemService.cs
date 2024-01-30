@@ -13,5 +13,6 @@ namespace YGN.BusinessLayer.Abstract
         bool IsSimilarItemExists(Item newItem);
         List<Item> GetAllItemsByProcedure();
         void AddItem(Item item);
+        string GetItemCode();
     }
 }

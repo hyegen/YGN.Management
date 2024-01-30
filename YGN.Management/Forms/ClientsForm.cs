@@ -39,6 +39,7 @@ namespace YGN.Management.Forms
         {
             NewClientForm newClientForm = new NewClientForm();
             newClientForm.ShowDialog();
+            getData();
         }
         private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

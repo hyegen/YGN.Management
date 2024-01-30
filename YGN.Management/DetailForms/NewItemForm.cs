@@ -35,6 +35,7 @@ namespace YGN.Management.DetailForms
         public NewItemForm()
         {
             InitializeComponent();
+            itemCodeTextEdit.EditValue = itemManager.GetItemCode();
         }
 
         #endregion

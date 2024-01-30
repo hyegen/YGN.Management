@@ -38,6 +38,7 @@ namespace YGN.Management.Forms
         {
             NewItemForm newItemForm = new NewItemForm();
             newItemForm.ShowDialog();
+            getData();
         }
 
         private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
