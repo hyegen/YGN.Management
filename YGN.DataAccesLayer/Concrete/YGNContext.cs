@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Commons;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +12,10 @@ namespace YGN.DataAccesLayer.Concrete
 {
     public partial class YGNContext : DbContext
     {
+        public YGNContext() : base()
+        {
 
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

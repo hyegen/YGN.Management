@@ -28,6 +28,7 @@ namespace YGN.Management
 
             GlobalVariables.AppPath = Application.StartupPath;
             Database.SetInitializer<YGNContext>(null); 
+
             if (!new ConfigManager().ReadConnectionSettings())
             {
                 return;

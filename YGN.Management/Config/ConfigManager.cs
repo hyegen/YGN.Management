@@ -54,12 +54,12 @@ namespace YGN.Management.Config
                     }
                     else
                     {
-                        XtraMessageBox.Show(string.Format("Logo ile bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
+                        XtraMessageBox.Show(string.Format("Bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
                     }
                 }
                 catch
                 {
-                    XtraMessageBox.Show(string.Format("Logo ile bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
+                    XtraMessageBox.Show(string.Format("Bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
                 }
             }
 
@@ -166,7 +166,7 @@ namespace YGN.Management.Config
            
                 if (!test.TryConnection(connectionInfo.ConnectionString))
                 {
-                XtraMessageBox.Show(string.Format("Logo ile bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
+                XtraMessageBox.Show(string.Format("Bağlantı kurulamıyor.{0}{0}Lütfen veritabanı ayarlarını kontrol ediniz.", Environment.NewLine));
                     return;
                 }
                 
