@@ -27,12 +27,15 @@ namespace YGN.Management
             BonusSkins.Register();
 
             GlobalVariables.AppPath = Application.StartupPath;
-            Database.SetInitializer<YGNContext>(null); 
+            //Database.SetInitializer<YGNContext>(null); 
 
-            if (!new ConfigManager().ReadConnectionSettings())
-            {
-                return;
-            }
+            Database.SetInitializer<YGNContext>(new CreateDatabaseIfNotExists<YGNContext>());
+
+
+            //if (!new ConfigManager().ReadConnectionSettings())
+            //{
+            //    return;
+            //}
             Application.Run(new MainView());
 
           

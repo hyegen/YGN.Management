@@ -12,11 +12,6 @@ namespace YGN.DataAccesLayer.Concrete
 {
     public partial class YGNContext : DbContext
     {
-        public YGNContext() : base()
-        {
-
-        }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             #region Fluent API
@@ -75,7 +70,7 @@ namespace YGN.DataAccesLayer.Concrete
         #region PROCEDURES
 
         #region CLIENT PROCEDURES
-       // public DbSet<YGN_CLIENTCODECREATOR> YGN_CLIENTCODECREATOR { get; set; }
+        // public DbSet<YGN_CLIENTCODECREATOR> YGN_CLIENTCODECREATOR { get; set; }
 
         #endregion
 

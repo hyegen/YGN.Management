@@ -69,12 +69,12 @@ namespace YGN.Management.Config
             this.panelControl1.Controls.Add(this.textEdit1);
             this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(611, 262);
+            this.panelControl1.Size = new System.Drawing.Size(601, 243);
             this.panelControl1.TabIndex = 10;
             // 
             // saveAndNextSimpleButton
             // 
-            this.saveAndNextSimpleButton.Location = new System.Drawing.Point(445, 228);
+            this.saveAndNextSimpleButton.Location = new System.Drawing.Point(444, 206);
             this.saveAndNextSimpleButton.Name = "saveAndNextSimpleButton";
             this.saveAndNextSimpleButton.Size = new System.Drawing.Size(150, 29);
             this.saveAndNextSimpleButton.TabIndex = 19;
@@ -158,9 +158,10 @@ namespace YGN.Management.Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 286);
+            this.ClientSize = new System.Drawing.Size(620, 262);
             this.Controls.Add(this.panelControl1);
             this.Name = "ConfigForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veritabanı Ayarla";
             ((System.ComponentModel.ISupportInitialize)(this.configurationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
