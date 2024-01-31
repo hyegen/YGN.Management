@@ -158,6 +158,7 @@
     <Compile Include="SelectionForms\ClientSelectionForm.Designer.cs">
       <DependentUpon>ClientSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectionForms\ClientSelectionManager.cs" />
     <EmbeddedResource Include="CommonForm\PleaseWaitForm.resx">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </EmbeddedResource>

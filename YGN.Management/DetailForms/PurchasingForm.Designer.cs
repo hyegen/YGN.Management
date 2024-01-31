@@ -209,7 +209,7 @@ namespace YGN.Management.DetailForms
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(Entities.Extensions.Extensions.Client_View);
+
             // 
             // PurchasingForm
             // 

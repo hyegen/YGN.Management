@@ -34,6 +34,10 @@ namespace YGN.Management.SelectionForms
         }
         #endregion
 
+        #region properties
+
+        #endregion
+
         #region events
         private void ClientSelectionForm_Load(object sender, EventArgs e)
         {
@@ -51,18 +55,12 @@ namespace YGN.Management.SelectionForms
 
         #endregion
 
-        private void clientsGridView_DoubleClick(object sender, EventArgs e)
-        {
-            var a = clientsGridView.GetFocusedRow();
-        }
-
         private void clientsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             var rowHandle = clientsGridView.FocusedRowHandle;
 
 
-            //client.ClientName = selectedName;
-            //detailForm.CurrClient = client;
+
             //var result = new Client_View
             //{
             //    Id = val,
