@@ -257,6 +257,7 @@
   <ItemGroup>
     <Content Include="Resources\YGN.ManagementConfiguration2.txt" />
     <Content Include="Resources\YGN.ManagementConfiguration.txt" />
+    <Content Include="TO DO LIST.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

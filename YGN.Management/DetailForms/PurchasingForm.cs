@@ -9,8 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YGN.BusinessLayer.Concrete;
+using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.SelectionForms;
 using static Entities.Extensions.Extensions;
+using static YGN.Management.SelectionForms.ClientSelectionForm;
 
 namespace YGN.Management.DetailForms
 {
@@ -19,6 +22,7 @@ namespace YGN.Management.DetailForms
         #region members
 
         private Client_View _currClient;
+        ClientManager clientManager = new ClientManager(new EfClientDal());
 
         #endregion
 
@@ -44,7 +48,26 @@ namespace YGN.Management.DetailForms
         public PurchasingForm()
         {
             InitializeComponent();
+            
         }
+        private void init()
+        {
+            ClientSelectionForm selectionForm = new ClientSelectionForm();
+            selectionForm.RowSelected += SelectionForm_RowSelected;
+            selectionForm.ShowDialog();
+        }
+
+        private void SelectionForm_RowSelected(int selectedRowID)
+        {
+            var result = clientManager.GetClientById(selectedRowID);
+            // MessageBox.Show("Seçilen Satır ID: " + selectedRowID.ToString());
+        }
+
+        //private void SelectionForm_RowSelected(SelectedRowInfo selectedRow)
+        //{
+        //    // Seçilen satırın bilgilerini içeren nesneyi alabilir ve GridControl'e ekleyebilirsiniz
+        //    selectedItemsGridControl.DataSource = new List<SelectedRowInfo> { selectedRow };
+        //}
         #endregion
 
         #region events
@@ -56,8 +79,6 @@ namespace YGN.Management.DetailForms
 
         #endregion
 
-        #region private methods
 
-        #endregion
     }
 }

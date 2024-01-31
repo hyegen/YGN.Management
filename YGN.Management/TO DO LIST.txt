@@ -1,0 +1,2 @@
+
+-getClientById() methodu yazıldı. PurchasingForm'un selectedGrid'in datasource'una eklenecek 31/01/2024

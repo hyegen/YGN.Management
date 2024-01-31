@@ -50,8 +50,9 @@ namespace YGN.Management.SelectionForms
             // 
             this.clientsGridView.GridControl = this.clientsGridControl;
             this.clientsGridView.Name = "clientsGridView";
+            this.clientsGridView.OptionsBehavior.ReadOnly = true;
             this.clientsGridView.OptionsView.ShowGroupPanel = false;
-            this.clientsGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.clientsGridView_FocusedRowChanged);
+            this.clientsGridView.DoubleClick += new System.EventHandler(this.clientsGridView_DoubleClick);
             // 
             // ClientSelectionForm
             // 

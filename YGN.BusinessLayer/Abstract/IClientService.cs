@@ -14,5 +14,6 @@ namespace YGN.BusinessLayer.Abstract
         bool IsSimilarClientExists(Client newClient);
         bool IsSimilarCode(string existClientCode, string newClientCode);
         string GetClientCode();
+        Client GetClientById(int id);   
     }
 }

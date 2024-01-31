@@ -19,11 +19,14 @@ namespace YGN.Management.SelectionForms
 {
     public partial class ClientSelectionForm : XtraForm
     {
-        #region members
+        public delegate void RowSelectedEventHandler(int selectedRowID);
+        public event RowSelectedEventHandler RowSelected;
 
+        #region members
+        private Guid? salesId;
         ClientManager clientManager = new ClientManager(new EfClientDal());
         private PurchasingForm detailForm;
-        private Client_View client;
+        private IList<Client_View> client;
 
         #endregion
 
@@ -31,6 +34,7 @@ namespace YGN.Management.SelectionForms
         public ClientSelectionForm()
         {
             InitializeComponent();
+            client = new List<Client_View>();
         }
         #endregion
 
@@ -53,31 +57,25 @@ namespace YGN.Management.SelectionForms
         }
 
 
+
         #endregion
 
-        private void clientsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+ 
+        public class SelectedRowInfo
         {
-            var rowHandle = clientsGridView.FocusedRowHandle;
-
-
-
-            //var result = new Client_View
-            //{
-            //    Id = val,
-            //    ClientCode = clientCode,
-            //    ClientName = clientName,
-            //    ClientSurname = clientSurname,
-            //    Address = address,
-            //    FirmDescription = firmDescription,
-            //    TelNr1 = string.IsNullOrEmpty(telNr1) ? "" : "",
-            //    TelNr2 = string.IsNullOrEmpty(telNr2) ? "" : "",
-            //    TaxIdentificationNumber = string.IsNullOrEmpty(taxId) ? "" : ""
-            //};
-
-            //client = result;
-            //detailForm.CurrClient = result;
+            public int ID { get; set; }
         }
 
+        private void clientsGridView_DoubleClick(object sender, EventArgs e)
+        {
+            int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
 
+            if (RowSelected != null)
+                RowSelected(selectedRowID);
+
+            this.Close();
+        }
     }
 }
+
+

@@ -49,6 +49,11 @@ namespace YGN.BusinessLayer.Concrete
         public string GetClientCode()
         {
             return _clientDal.GetClientCode();
-        } 
+        }
+
+        public Client GetClientById(int id)
+        {
+            return _clientDal.GetClientById(id);
+        }
     }
 }

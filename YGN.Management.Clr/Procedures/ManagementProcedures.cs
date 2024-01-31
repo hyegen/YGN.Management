@@ -98,11 +98,29 @@ public partial class ManagementProcedures
             sqlConn.Close();
         }
     }
+
+    [SqlProcedure(Name = "YGN_GET_CLIENT_BY_ID")]
+    public static void YGN_GET_CLIENT_BY_ID(SqlInt32 ID)
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                   SELECT * FROM Clients WITH(NOLOCK) WHERE Id=@ID
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("@ID", SqlDbType.Int) { Value = ID });
+
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
+
     #endregion
 
 
     #region Item Procedures
-
 
     [SqlProcedure(Name = "YGN_ITEMCODECREATOR")]
     public static void YGN_ITEMCODECREATOR()
