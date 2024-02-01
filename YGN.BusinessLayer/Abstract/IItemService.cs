@@ -14,5 +14,6 @@ namespace YGN.BusinessLayer.Abstract
         List<Item> GetAllItemsByProcedure();
         void AddItem(Item item);
         string GetItemCode();
+        Item GetItemById(int id);
     }
 }

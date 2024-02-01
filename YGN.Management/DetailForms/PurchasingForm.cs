@@ -20,27 +20,12 @@ namespace YGN.Management.DetailForms
     public partial class PurchasingForm : XtraForm
     {
         #region members
-
-        private Client_View _currClient;
-        ClientManager clientManager = new ClientManager(new EfClientDal());
-
+        private List<Client> clients = new List<Client>();
+        private List<OrderLine> orderLine = new List<OrderLine>();
+        private List<Item> items = new List<Item>();
         #endregion
 
         #region properties
-
-        public Client_View CurrClient
-        {
-            get { return (Client_View)bindingSource1.DataSource; }
-            set
-            {
-                //if (_currClient != null)
-                //{
-                bindingSource1.DataSource = value;
-                //    newClientButtonEdit.Text = _currClient.FirmDescription;
-                selectedItemsGridControl.DataSource = _currClient;
-                // }
-            }
-        }
 
         #endregion
 
@@ -48,37 +33,60 @@ namespace YGN.Management.DetailForms
         public PurchasingForm()
         {
             InitializeComponent();
-            
-        }
-        private void init()
-        {
-            ClientSelectionForm selectionForm = new ClientSelectionForm();
-            selectionForm.RowSelected += SelectionForm_RowSelected;
-            selectionForm.ShowDialog();
+
         }
 
-        private void SelectionForm_RowSelected(int selectedRowID)
-        {
-            var result = clientManager.GetClientById(selectedRowID);
-            // MessageBox.Show("Seçilen Satır ID: " + selectedRowID.ToString());
-        }
-
-        //private void SelectionForm_RowSelected(SelectedRowInfo selectedRow)
-        //{
-        //    // Seçilen satırın bilgilerini içeren nesneyi alabilir ve GridControl'e ekleyebilirsiniz
-        //    selectedItemsGridControl.DataSource = new List<SelectedRowInfo> { selectedRow };
-        //}
         #endregion
 
         #region events
+
         private void newClientButtonEdit_Click(object sender, EventArgs e)
         {
-            ClientSelectionForm clientSelectionForm = new ClientSelectionForm();
-            clientSelectionForm.ShowDialog();
+            using (ClientSelectionForm clientSelectionForm = new ClientSelectionForm())
+            {
+                if (clientSelectionForm.ShowDialog() == DialogResult.Cancel)
+                {
+                    clients.Clear();
+                    clients.AddRange(clientSelectionForm.returnedList);
+                    newClientButtonEdit.Text = string.Join(", ", clients.Select(client => $"{client.ClientName} {client.ClientSurname}"));
+
+                   // UpdateGrid();
+                }
+            };
         }
 
+        private void UpdateGrid()
+        {
+            selectedItemsGridView.BeginUpdate();
+
+            try
+            {
+                selectedItemsGridView.Columns.Clear();  
+                selectedItemsGridView.Columns.AddVisible("Id", "Id");     
+                selectedItemsGridView.Columns.AddVisible("ItemCode", "Item Code");     
+                selectedItemsGridControl.DataSource = items;
+                selectedItemsGridView.RefreshData();
+            }
+            finally
+            {
+                selectedItemsGridView.EndUpdate();
+            }
+        }
         #endregion
 
+        private void newItemButtonEdit_Click(object sender, EventArgs e)
+        {
+            using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
+            {
+                if (itemSelectionForm.ShowDialog() == DialogResult.Cancel)
+                {
+                    items.Clear();
+                    items.AddRange(itemSelectionForm.returnedList);
+                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
 
+                    UpdateGrid();
+                }
+            };
+        }
     }
 }

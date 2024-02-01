@@ -169,6 +169,7 @@ namespace YGN.Management.DetailForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.newItemButtonEdit.Size = new System.Drawing.Size(240, 20);
             this.newItemButtonEdit.TabIndex = 2;
+            this.newItemButtonEdit.Click += new System.EventHandler(this.newItemButtonEdit_Click);
             // 
             // itemLabelControl
             // 
@@ -206,10 +207,6 @@ namespace YGN.Management.DetailForms
             this.clientLabelControl.Size = new System.Drawing.Size(19, 13);
             this.clientLabelControl.TabIndex = 0;
             this.clientLabelControl.Text = "Cari";
-            // 
-            // bindingSource1
-            // 
-
             // 
             // PurchasingForm
             // 

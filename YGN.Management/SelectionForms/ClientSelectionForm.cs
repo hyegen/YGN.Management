@@ -19,30 +19,41 @@ namespace YGN.Management.SelectionForms
 {
     public partial class ClientSelectionForm : XtraForm
     {
-        public delegate void RowSelectedEventHandler(int selectedRowID);
-        public event RowSelectedEventHandler RowSelected;
-
         #region members
         ClientManager clientManager = new ClientManager(new EfClientDal());
-        private PurchasingForm detailForm;
-
+ 
+        private List<Client> _returnedList;
         #endregion
 
         #region constructor
         public ClientSelectionForm()
         {
             InitializeComponent();
+            returnedList = new List<Client>();
         }
         #endregion
 
         #region properties
-
+        public List<Client> returnedList
+        {
+            get { return _returnedList; }
+            set { _returnedList = value; }
+        }
         #endregion
 
         #region events
         private void ClientSelectionForm_Load(object sender, EventArgs e)
         {
             getClients();
+        }
+        private void clientsGridView_DoubleClick(object sender, EventArgs e)
+        {
+      
+            int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
+            var result = clientManager.GetClientById(selectedRowID);
+            _returnedList.Add(result);
+
+            this.Close();
         }
         #endregion
 
@@ -53,23 +64,10 @@ namespace YGN.Management.SelectionForms
             clientsGridControl.DataSource = clientManager.GetAllClients();
         }
 
+
         #endregion
 
-        public class SelectedRowInfo
-        {
-            public int ID { get; set; }
-        }
-
-        private void clientsGridView_DoubleClick(object sender, EventArgs e)
-        {
-         
-            int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
-
-          //  if (RowSelected != null)
-                RowSelected(selectedRowID);
-
-            this.Close();
-        }
+     
     }
 }
 

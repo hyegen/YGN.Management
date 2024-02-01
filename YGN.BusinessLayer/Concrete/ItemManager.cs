@@ -51,5 +51,9 @@ namespace YGN.BusinessLayer.Concrete
         {
             return _itemDal.GetItemCode();
         }
+        public Item GetItemById(int id)
+        {
+            return _itemDal.GetItemById(id);
+        }
     }
 }

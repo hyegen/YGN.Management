@@ -62,6 +62,8 @@
     <Compile Include="Concrete\ItemCategory.cs" />
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\OrderDetail.cs" />
+    <Compile Include="Concrete\OrderFiche.cs" />
+    <Compile Include="Concrete\OrderLine.cs" />
     <Compile Include="Concrete\Payment.cs" />
     <Compile Include="Concrete\StockTransaction.cs" />
     <Compile Include="Concrete\Town.cs" />

@@ -63,7 +63,8 @@ namespace YGN.DataAccesLayer.Concrete
         public DbSet<StockTransaction> StockTransactions { get; set; }
         public DbSet<ClientTransaction> ClientTransactions { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
-
+        public DbSet<OrderLine> OrderLines { get; set; }
+        public DbSet<OrderFiche> OrderFiches { get; set; }
 
         //PROCEDURES
 

@@ -12,6 +12,6 @@ namespace YGN.DataAccesLayer.Abstract
     {
         List<Item> GetAllItems();
         string GetItemCode();
-        // List<string> GetCategories();
+        Item GetItemById(int id);
     }
 }

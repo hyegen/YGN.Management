@@ -66,133 +66,13 @@
     <Compile Include="Concrete\SqlData.cs" />
     <Compile Include="Concrete\test.cs" />
     <Compile Include="Concrete\YGNContext.cs" />
-    <Compile Include="Migrations\202312281529063_mig1.cs" />
-    <Compile Include="Migrations\202312281529063_mig1.designer.cs">
-      <DependentUpon>202312281529063_mig1.cs</DependentUpon>
+    <Compile Include="Migrations\202402011906389_mig1.cs" />
+    <Compile Include="Migrations\202402011906389_mig1.Designer.cs">
+      <DependentUpon>202402011906389_mig1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312291704383_user_entity_has_been_updated.cs" />
-    <Compile Include="Migrations\202312291704383_user_entity_has_been_updated.Designer.cs">
-      <DependentUpon>202312291704383_user_entity_has_been_updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.cs" />
-    <Compile Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.Designer.cs">
-      <DependentUpon>202312291712494_in_user_entity_date_format_has_been_changed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.cs" />
-    <Compile Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.Designer.cs">
-      <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312301012078_mig_reload_stock.cs" />
-    <Compile Include="Migrations\202312301012078_mig_reload_stock.Designer.cs">
-      <DependentUpon>202312301012078_mig_reload_stock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312301033262_stock_1.cs" />
-    <Compile Include="Migrations\202312301033262_stock_1.Designer.cs">
-      <DependentUpon>202312301033262_stock_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.cs" />
-    <Compile Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.Designer.cs">
-      <DependentUpon>202312301053382_mig_stock_transaction_entity_has_been_changed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.cs" />
-    <Compile Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.Designer.cs">
-      <DependentUpon>202312301055228_mig_stock_transaction_entity_has_been_changed2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312301143256_mig_city_chanhed.cs" />
-    <Compile Include="Migrations\202312301143256_mig_city_chanhed.Designer.cs">
-      <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401021009109_mig_city_update3.cs" />
-    <Compile Include="Migrations\202401021009109_mig_city_update3.Designer.cs">
-      <DependentUpon>202401021009109_mig_city_update3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401021018004_mig_city_chngs1.cs" />
-    <Compile Include="Migrations\202401021018004_mig_city_chngs1.Designer.cs">
-      <DependentUpon>202401021018004_mig_city_chngs1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401021019274_mig_city_chngs3.cs" />
-    <Compile Include="Migrations\202401021019274_mig_city_chngs3.Designer.cs">
-      <DependentUpon>202401021019274_mig_city_chngs3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401021024377_mig_city_chngs5.cs" />
-    <Compile Include="Migrations\202401021024377_mig_city_chngs5.Designer.cs">
-      <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.cs" />
-    <Compile Include="Migrations\202401021036485_mig_invocide_updtd2.Designer.cs">
-      <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401041925577_item-entity-changed.cs" />
-    <Compile Include="Migrations\202401041925577_item-entity-changed.Designer.cs">
-      <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401121220156_mig_changes8.cs" />
-    <Compile Include="Migrations\202401121220156_mig_changes8.Designer.cs">
-      <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs" />
-    <Compile Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.Designer.cs">
-      <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401141952485_client_entity_has_been_created.cs" />
-    <Compile Include="Migrations\202401141952485_client_entity_has_been_created.Designer.cs">
-      <DependentUpon>202401141952485_client_entity_has_been_created.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs" />
-    <Compile Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.Designer.cs">
-      <DependentUpon>202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401211842565_mig_clientTransaction_added.cs" />
-    <Compile Include="Migrations\202401211842565_mig_clientTransaction_added.Designer.cs">
-      <DependentUpon>202401211842565_mig_clientTransaction_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401211850093_mig_clientTransaction_added1.cs" />
-    <Compile Include="Migrations\202401211850093_mig_clientTransaction_added1.Designer.cs">
-      <DependentUpon>202401211850093_mig_clientTransaction_added1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401211926385_mig_ClientCode_column_added_to_client_table.cs" />
-    <Compile Include="Migrations\202401211926385_mig_ClientCode_column_added_to_client_table.Designer.cs">
-      <DependentUpon>202401211926385_mig_ClientCode_column_added_to_client_table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221426459_mig_client_relation_changed.cs" />
-    <Compile Include="Migrations\202401221426459_mig_client_relation_changed.Designer.cs">
-      <DependentUpon>202401221426459_mig_client_relation_changed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221437372_mig_client_relation_change1.cs" />
-    <Compile Include="Migrations\202401221437372_mig_client_relation_change1.Designer.cs">
-      <DependentUpon>202401221437372_mig_client_relation_change1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221438222_mig_client_relation_change2.cs" />
-    <Compile Include="Migrations\202401221438222_mig_client_relation_change2.Designer.cs">
-      <DependentUpon>202401221438222_mig_client_relation_change2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221442101_mig_client_relation_change4.cs" />
-    <Compile Include="Migrations\202401221442101_mig_client_relation_change4.Designer.cs">
-      <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401221502567_mig_client_relation_change7.cs" />
-    <Compile Include="Migrations\202401221502567_mig_client_relation_change7.Designer.cs">
-      <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.cs" />
-    <Compile Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.Designer.cs">
-      <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..cs" />
-    <Compile Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..Designer.cs">
-      <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs" />
-    <Compile Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.Designer.cs">
-      <DependentUpon>202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.cs" />
-    <Compile Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.Designer.cs">
-      <DependentUpon>202401261655322_mig_item_entity_hasbeen_updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.cs" />
-    <Compile Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.Designer.cs">
-      <DependentUpon>202401261704197_mig_Item_entity_has_been_upgraded.cs</DependentUpon>
+    <Compile Include="Migrations\202402011909112_mig2.cs" />
+    <Compile Include="Migrations\202402011909112_mig2.Designer.cs">
+      <DependentUpon>202402011909112_mig2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,101 +101,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312281529063_mig1.resx">
-      <DependentUpon>202312281529063_mig1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202402011906389_mig1.resx">
+      <DependentUpon>202402011906389_mig1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312291704383_user_entity_has_been_updated.resx">
-      <DependentUpon>202312291704383_user_entity_has_been_updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312291712494_in_user_entity_date_format_has_been_changed.resx">
-      <DependentUpon>202312291712494_in_user_entity_date_format_has_been_changed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312291714056_in_user_entity_date_format_has_been_changed2.resx">
-      <DependentUpon>202312291714056_in_user_entity_date_format_has_been_changed2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301012078_mig_reload_stock.resx">
-      <DependentUpon>202312301012078_mig_reload_stock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301033262_stock_1.resx">
-      <DependentUpon>202312301033262_stock_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301053382_mig_stock_transaction_entity_has_been_changed.resx">
-      <DependentUpon>202312301053382_mig_stock_transaction_entity_has_been_changed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301055228_mig_stock_transaction_entity_has_been_changed2.resx">
-      <DependentUpon>202312301055228_mig_stock_transaction_entity_has_been_changed2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301143256_mig_city_chanhed.resx">
-      <DependentUpon>202312301143256_mig_city_chanhed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401021009109_mig_city_update3.resx">
-      <DependentUpon>202401021009109_mig_city_update3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401021018004_mig_city_chngs1.resx">
-      <DependentUpon>202401021018004_mig_city_chngs1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401021019274_mig_city_chngs3.resx">
-      <DependentUpon>202401021019274_mig_city_chngs3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401021024377_mig_city_chngs5.resx">
-      <DependentUpon>202401021024377_mig_city_chngs5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401021036485_mig_invocide_updtd2.resx">
-      <DependentUpon>202401021036485_mig_invocide_updtd2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401041925577_item-entity-changed.resx">
-      <DependentUpon>202401041925577_item-entity-changed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401121220156_mig_changes8.resx">
-      <DependentUpon>202401121220156_mig_changes8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401132100595_mig_in_Items_entity_category_field_has_been_regulated.resx">
-      <DependentUpon>202401132100595_mig_in_Items_entity_category_field_has_been_regulated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401141952485_client_entity_has_been_created.resx">
-      <DependentUpon>202401141952485_client_entity_has_been_created.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401141958489_clien_entity_has_been_updated_using_fluent_validation.resx">
-      <DependentUpon>202401141958489_clien_entity_has_been_updated_using_fluent_validation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401211842565_mig_clientTransaction_added.resx">
-      <DependentUpon>202401211842565_mig_clientTransaction_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401211850093_mig_clientTransaction_added1.resx">
-      <DependentUpon>202401211850093_mig_clientTransaction_added1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401211926385_mig_ClientCode_column_added_to_client_table.resx">
-      <DependentUpon>202401211926385_mig_ClientCode_column_added_to_client_table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221426459_mig_client_relation_changed.resx">
-      <DependentUpon>202401221426459_mig_client_relation_changed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221437372_mig_client_relation_change1.resx">
-      <DependentUpon>202401221437372_mig_client_relation_change1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221438222_mig_client_relation_change2.resx">
-      <DependentUpon>202401221438222_mig_client_relation_change2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221442101_mig_client_relation_change4.resx">
-      <DependentUpon>202401221442101_mig_client_relation_change4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401221502567_mig_client_relation_change7.resx">
-      <DependentUpon>202401221502567_mig_client_relation_change7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401250959327_mig_upgraded_stock_transaction_entity.resx">
-      <DependentUpon>202401250959327_mig_upgraded_stock_transaction_entity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401251930157_mig_YGN_CTGRYOFITMS_added..resx">
-      <DependentUpon>202401251930157_mig_YGN_CTGRYOFITMS_added..cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.resx">
-      <DependentUpon>202401261649064_mig_in_stock_transaction_entity_date_format_has_been_updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401261655322_mig_item_entity_hasbeen_updated.resx">
-      <DependentUpon>202401261655322_mig_item_entity_hasbeen_updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401261704197_mig_Item_entity_has_been_upgraded.resx">
-      <DependentUpon>202401261704197_mig_Item_entity_has_been_upgraded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202402011909112_mig2.resx">
+      <DependentUpon>202402011909112_mig2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

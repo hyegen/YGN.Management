@@ -32,5 +32,13 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
             }
             return str;
         }
+        public Item GetItemById(int id)
+        {
+            using (YGNContext context = new YGNContext())
+            {
+                var result = context.Database.SqlQuery<Item>($"EXEC YGN_GET_ITEM_BY_ID {id}").FirstOrDefault();
+                return result;
+            }
+        }
     }
 }

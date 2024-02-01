@@ -34,5 +34,14 @@ namespace Entities.Extensions
             public DateTime ProcessDate { get; set; }
             public string TrCode { get; set; }
         }
+
+        public class OrderLine_View
+        {
+            public int Id { get; set; }
+            public int ItemId { get; set; }
+            public int Amount { get; set; }
+            public int OrderFicheId { get; set; }
+            public DateTime ProcessDate { get; set; }
+        }
     }
 }
