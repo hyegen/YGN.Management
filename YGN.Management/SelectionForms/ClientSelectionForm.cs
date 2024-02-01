@@ -23,10 +23,8 @@ namespace YGN.Management.SelectionForms
         public event RowSelectedEventHandler RowSelected;
 
         #region members
-        private Guid? salesId;
         ClientManager clientManager = new ClientManager(new EfClientDal());
         private PurchasingForm detailForm;
-        private IList<Client_View> client;
 
         #endregion
 
@@ -34,7 +32,6 @@ namespace YGN.Management.SelectionForms
         public ClientSelectionForm()
         {
             InitializeComponent();
-            client = new List<Client_View>();
         }
         #endregion
 
@@ -56,11 +53,8 @@ namespace YGN.Management.SelectionForms
             clientsGridControl.DataSource = clientManager.GetAllClients();
         }
 
-
-
         #endregion
 
- 
         public class SelectedRowInfo
         {
             public int ID { get; set; }
@@ -68,9 +62,10 @@ namespace YGN.Management.SelectionForms
 
         private void clientsGridView_DoubleClick(object sender, EventArgs e)
         {
+         
             int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
 
-            if (RowSelected != null)
+          //  if (RowSelected != null)
                 RowSelected(selectedRowID);
 
             this.Close();
