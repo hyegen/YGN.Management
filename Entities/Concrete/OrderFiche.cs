@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class OrderFiche
+    public class OrderFiche : IEntity
     {
         [Key]
         public int Id { get; set; }
@@ -18,5 +19,6 @@ namespace Entities.Concrete
         public DateTime ProcessDate { get; set; }
         public decimal TotalPrice { get; set; }
         public List<OrderLine> OrderLines { get; set; }
+       
     }
 }

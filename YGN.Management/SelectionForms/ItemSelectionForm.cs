@@ -45,6 +45,7 @@ namespace YGN.Management.SelectionForms
         }
         #endregion
 
+        #region events
         private void ItemSelectionForm_Load(object sender, EventArgs e)
         {
             getClients();
@@ -57,6 +58,38 @@ namespace YGN.Management.SelectionForms
             _returnedList.Add(result);
 
             this.Close();
+        }
+        #endregion
+
+        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+
+            int[] selectedRowHandles = itemGridView.GetSelectedRows();
+
+            List<Item> selectedRows = new List<Item>();
+
+            foreach (int rowHandle in selectedRowHandles)
+            {
+                if (rowHandle >= 0) // Negatif değerler header veya group satırlarını temsil edebilir
+                {
+                    Item rowData = (Item)itemGridView.GetRow(rowHandle);
+                    _returnedList.Add(rowData);
+                }
+            }
+
+
+            //int selectedRowID = Convert.ToInt32(itemGridView.GetFocusedRowCellValue("Id"));
+            //var result = itemManager.GetItemById(selectedRowID);
+            //_returnedList.Add(result);
+
+            Close();
+ 
+        }
+
+        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
         }
     }
 }

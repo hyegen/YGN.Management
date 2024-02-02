@@ -23,6 +23,7 @@ namespace YGN.Management.SelectionForms
         ClientManager clientManager = new ClientManager(new EfClientDal());
  
         private List<Client> _returnedList;
+        private Client _returnOneClient;
         #endregion
 
         #region constructor
@@ -39,6 +40,11 @@ namespace YGN.Management.SelectionForms
             get { return _returnedList; }
             set { _returnedList = value; }
         }
+        public Client returnOneClient
+        {
+            get { return _returnOneClient; }
+            set { _returnOneClient = value; }
+        }
         #endregion
 
         #region events
@@ -51,9 +57,13 @@ namespace YGN.Management.SelectionForms
       
             int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
             var result = clientManager.GetClientById(selectedRowID);
-            _returnedList.Add(result);
-
+            //_returnedList.Add(result);
+            _returnOneClient = result;
             this.Close();
+        }
+        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
         }
         #endregion
 
@@ -67,7 +77,7 @@ namespace YGN.Management.SelectionForms
 
         #endregion
 
-     
+        
     }
 }
 

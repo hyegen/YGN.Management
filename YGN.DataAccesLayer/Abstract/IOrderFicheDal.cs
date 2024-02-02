@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace YGN.DataAccesLayer.Abstract
 {
-    public interface IClientTransactionDal : IEntityRepository<ClientTransaction>
+    public interface IOrderFicheDal : IEntityRepository<OrderFiche>
     {
-       // void AddToTranaction(ClientTransaction clientTransaction);
+        void AddToOrderFiche(OrderFiche orderFiche);
     }
 }

@@ -23,6 +23,8 @@ namespace YGN.Management.DetailForms
         private List<Client> clients = new List<Client>();
         private List<OrderLine> orderLine = new List<OrderLine>();
         private List<Item> items = new List<Item>();
+        OrderFicheManager orderFicheManager = new OrderFicheManager(new EfOrderFicheDal());
+        private Client cl;
         #endregion
 
         #region properties
@@ -33,7 +35,6 @@ namespace YGN.Management.DetailForms
         public PurchasingForm()
         {
             InitializeComponent();
-
         }
 
         #endregion
@@ -47,23 +48,70 @@ namespace YGN.Management.DetailForms
                 if (clientSelectionForm.ShowDialog() == DialogResult.Cancel)
                 {
                     clients.Clear();
-                    clients.AddRange(clientSelectionForm.returnedList);
-                    newClientButtonEdit.Text = string.Join(", ", clients.Select(client => $"{client.ClientName} {client.ClientSurname}"));
+                    cl = clientSelectionForm.returnOneClient;
+                    //newClientButtonEdit.Text = string.Format(cl.ClientName + " " + cl.ClientSurname) == null ? newClientButtonEdit.Text=string.Empty;
+                    if (cl != null)
+                    {
+                        newClientButtonEdit.Text = string.Format("{0} {1}", cl.ClientName, cl.ClientSurname);
+                    }
+                    else
+                    {
+                        newClientButtonEdit.Text = string.Empty; // veya null;
+                    }
 
-                   // UpdateGrid();
                 }
             };
         }
 
+
+        private void newItemButtonEdit_Click(object sender, EventArgs e)
+        {
+            using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
+            {
+                if (itemSelectionForm.ShowDialog() == DialogResult.OK)
+                {
+                    items.Clear();
+                    items.AddRange(itemSelectionForm.returnedList);
+
+                    foreach (var item in itemSelectionForm.returnedList)
+                    {
+                        var o = new OrderFiche
+                        {
+                            Amount = 5,
+                            ClientId = cl.Id,
+                            ItemId = cl.Id,
+                            OrderLines = new List<OrderLine>(),
+                            ProcessDate = DateTime.Now,
+                            TotalPrice = 100,
+                            UserId = 1
+                        };
+                        orderFicheManager.AddToOrderfiche(o);
+                    }
+
+                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
+
+                    UpdateGrid();
+                }
+            };
+        }
+
+        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
+        #region private methods
         private void UpdateGrid()
         {
             selectedItemsGridView.BeginUpdate();
 
             try
             {
-                selectedItemsGridView.Columns.Clear();  
-                selectedItemsGridView.Columns.AddVisible("Id", "Id");     
-                selectedItemsGridView.Columns.AddVisible("ItemCode", "Item Code");     
+                selectedItemsGridView.Columns.Clear();
+                selectedItemsGridView.Columns.AddVisible("Id", "Id");
+                selectedItemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
+                selectedItemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
                 selectedItemsGridControl.DataSource = items;
                 selectedItemsGridView.RefreshData();
             }
@@ -74,19 +122,10 @@ namespace YGN.Management.DetailForms
         }
         #endregion
 
-        private void newItemButtonEdit_Click(object sender, EventArgs e)
+        private void addToOrderFiche(OrderFiche orderFiche)
         {
-            using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
-            {
-                if (itemSelectionForm.ShowDialog() == DialogResult.Cancel)
-                {
-                    items.Clear();
-                    items.AddRange(itemSelectionForm.returnedList);
-                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
-
-                    UpdateGrid();
-                }
-            };
+            orderFicheManager.AddToOrderfiche(orderFiche);
         }
+
     }
 }
