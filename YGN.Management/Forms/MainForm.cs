@@ -77,7 +77,7 @@ namespace YGN.Management.Forms
         private void purchaseBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             PurchasingForm purchasingForm = new PurchasingForm();
-            purchasingForm.Show();
+            purchasingForm.ShowDialog();
         }
         #endregion
 

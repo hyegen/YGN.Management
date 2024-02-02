@@ -11,7 +11,6 @@ namespace Entities.Extensions
 {
     public class Extensions
     {
-  
         public class Client_View
         {
             public int Id { get; set; }
@@ -39,9 +38,12 @@ namespace Entities.Extensions
         {
             public int Id { get; set; }
             public int ItemId { get; set; }
-            public int Amount { get; set; }
+            public double Amount { get; set; }
             public int OrderFicheId { get; set; }
             public DateTime ProcessDate { get; set; }
+            public int UserId { get; set; }
+            public int ClientId { get; set; }
+            public double TotalPrice { get; set; } 
         }
     }
 }

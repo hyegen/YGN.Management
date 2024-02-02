@@ -40,6 +40,9 @@ namespace YGN.Management.DetailForms
             this.selectedItemsGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.selectedItemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.selectedItemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.itemsGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.newItemButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.itemLabelControl = new DevExpress.XtraEditors.LabelControl();
@@ -89,6 +92,7 @@ namespace YGN.Management.DetailForms
             this.saveBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveBarButtonItem.ImageOptions.Image")));
             this.saveBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveBarButtonItem.ImageOptions.LargeImage")));
             this.saveBarButtonItem.Name = "saveBarButtonItem";
+            this.saveBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveBarButtonItem_ItemClick);
             // 
             // closeBarButtonItem
             // 
@@ -147,9 +151,42 @@ namespace YGN.Management.DetailForms
             // 
             // selectedItemsGridView
             // 
+            this.selectedItemsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colItemCode,
+            this.colItemName,
+            this.colAmount});
             this.selectedItemsGridView.GridControl = this.selectedItemsGridControl;
             this.selectedItemsGridView.Name = "selectedItemsGridView";
+            this.selectedItemsGridView.OptionsDetail.ShowDetailTabs = false;
+            this.selectedItemsGridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.selectedItemsGridView.OptionsView.ShowAutoFilterRow = true;
             this.selectedItemsGridView.OptionsView.ShowGroupPanel = false;
+            // 
+            // colItemCode
+            // 
+            this.colItemCode.Caption = "Malzeme Kodu";
+            this.colItemCode.FieldName = "ItemCode";
+            this.colItemCode.Name = "colItemCode";
+            this.colItemCode.Visible = true;
+            this.colItemCode.VisibleIndex = 0;
+            // 
+            // colItemName
+            // 
+            this.colItemName.Caption = "Malzeme Adı";
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 1;
+            // 
+            // colAmount
+            // 
+            this.colAmount.Caption = "Miktar";
+            this.colAmount.DisplayFormat.FormatString = "n2";
+            this.colAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 2;
             // 
             // itemsGroupControl
             // 
@@ -258,5 +295,8 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.ButtonEdit newItemButtonEdit;
         private DevExpress.XtraEditors.ButtonEdit newClientButtonEdit;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
     }
 }

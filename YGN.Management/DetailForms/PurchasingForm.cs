@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,13 @@ namespace YGN.Management.DetailForms
     public partial class PurchasingForm : XtraForm
     {
         #region members
+
         private List<Client> clients = new List<Client>();
-        private List<OrderLine> orderLine = new List<OrderLine>();
         private List<Item> items = new List<Item>();
+        private Client _client;
         OrderFicheManager orderFicheManager = new OrderFicheManager(new EfOrderFicheDal());
         OrderLineManager orderLineManager = new OrderLineManager(new EfOrderLineDal());
-        private Client cl;
-        private Item itm;
+
         #endregion
 
         #region properties
@@ -50,15 +51,14 @@ namespace YGN.Management.DetailForms
                 if (clientSelectionForm.ShowDialog() == DialogResult.OK)
                 {
                     clients.Clear();
-                    cl = clientSelectionForm.returnOneClient;
-                    //newClientButtonEdit.Text = string.Format(cl.ClientName + " " + cl.ClientSurname) == null ? newClientButtonEdit.Text=string.Empty;
-                    if (cl != null)
+                    _client = clientSelectionForm.returnOneClient;
+                    if (_client != null)
                     {
-                        newClientButtonEdit.Text = string.Format("{0} {1}", cl.ClientName, cl.ClientSurname);
+                        newClientButtonEdit.Text = string.Format("{0} {1}", _client.ClientName, _client.ClientSurname);
                     }
                     else
                     {
-                        newClientButtonEdit.Text = string.Empty; // veya null;
+                        newClientButtonEdit.Text = string.Empty;
                     }
 
                 }
@@ -74,47 +74,40 @@ namespace YGN.Management.DetailForms
                 {
                     items.Clear();
                     items.AddRange(itemSelectionForm.returnedList);
+                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
+                    //UpdateGrid();
+
 
                     var orderFiche = new OrderFiche
                     {
-                        ClientId = cl.Id,
+                        ClientId = _client.Id,
                         ProcessDate = DateTime.Now,
                         TotalPrice = 100,
                         UserId = 1,
                     };
+
                     orderFicheManager.AddToOrderfiche(orderFiche);
+                    int selectedRowHandle = selectedItemsGridView.FocusedRowHandle;
+
+                    // "Amount" kolonunun indeksini veya adını kullanarak hücrenin değerini al
+                    int amountColumnIndex = selectedItemsGridView.Columns["Amount"].VisibleIndex;
+                    double amountValue = Convert.ToDouble(selectedItemsGridView.GetRowCellValue(selectedRowHandle, amountColumnIndex.ToString()));
+
                     foreach (var item in items)
                     {
-                        var orderLine = new OrderLine
+                        var x = new OrderLine_View
                         {
-                            Amount = 5,
-                            ClientId = cl.Id,
+                            ClientId = _client.Id,
+                            Amount = amountValue,
                             ItemId = item.Id,
+                            OrderFicheId = orderFiche.Id,
                             ProcessDate = DateTime.Now,
-                            TotalPrice = 100,
-                            UserId = 1,
-                            OrderFicheId = orderFiche.Id
+                            TotalPrice = amountValue * item.UnitPrice,
+                            UserId = 1
                         };
-                        orderLineManager.AddToOrderLine(orderLine);
                     }
-                    //foreach (var item in itemSelectionForm.returnedList)
-                    //{
-                    //    var orderLine = new OrderLine
-                    //    {
-                    //        Amount = 5,
-                    //        ClientId = cl.Id,
-                    //        ItemId = item.Id,
-                    //        ProcessDate = DateTime.Now,
-                    //        TotalPrice = 100,
-                    //        UserId = 1,
-                    //        OrderFicheId = orderFiche.Id
-                    //    };
-                    //    orderLineManager.AddToOrderLine(orderLine);
-                    //}
 
-                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
-
-                    UpdateGrid();
+                    selectedItemsGridControl.DataSource = items;
                 }
             };
         }
@@ -123,6 +116,19 @@ namespace YGN.Management.DetailForms
         {
             Close();
         }
+        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (validateSave())
+            {
+                addToOrderFicheAndSave();
+            }
+            else
+            {
+                XtraMessageBox.Show("Malzeme(ler) veya Cari seçilmemiş. Lütfen seçiniz.", "Hata");
+            }
+            Close();
+        }
+
         #endregion
 
         #region private methods
@@ -136,6 +142,7 @@ namespace YGN.Management.DetailForms
                 selectedItemsGridView.Columns.AddVisible("Id", "Id");
                 selectedItemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
                 selectedItemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
+
                 selectedItemsGridControl.DataSource = items;
                 selectedItemsGridView.RefreshData();
             }
@@ -144,12 +151,48 @@ namespace YGN.Management.DetailForms
                 selectedItemsGridView.EndUpdate();
             }
         }
-        #endregion
 
-        private void addToOrderFiche(OrderFiche orderFiche)
+        private void addToOrderFicheAndSave()
         {
+            var orderFiche = new OrderFiche
+            {
+                ClientId = _client.Id,
+                ProcessDate = DateTime.Now,
+                TotalPrice = 100,
+                UserId = 1,
+            };
+
             orderFicheManager.AddToOrderfiche(orderFiche);
+            foreach (var item in items)
+            {
+                int selectedRowHandle = selectedItemsGridView.FocusedRowHandle;
+
+                int amountColumnIndex = selectedItemsGridView.Columns["Amount"].VisibleIndex;
+                double amountValue = Convert.ToDouble(selectedItemsGridView.GetRowCellValue(selectedRowHandle, amountColumnIndex.ToString()));
+
+                var orderLine = new OrderLine
+                {
+                    Amount = amountValue,
+                    ClientId = _client.Id,
+                    ItemId = item.Id,
+                    ProcessDate = DateTime.Now,
+                    TotalPrice = 100,
+                    UserId = 1,
+                    OrderFicheId = orderFiche.Id
+                };
+                orderLineManager.AddToOrderLine(orderLine);
+            }
+            XtraMessageBox.Show("{0} kodlu, ");
         }
 
+        private bool validateSave()
+        {
+            if (!items.Any() || _client == null)
+            {
+                return false;
+            }
+            return true;
+        }
+        #endregion
     }
 }

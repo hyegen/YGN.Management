@@ -54,7 +54,7 @@ namespace YGN.Management.DetailForms
             set { itemNameTextEdit.Text = value; }
         }
 
-        public double? UnitPrice
+        public double UnitPrice
         {
             get
             {
@@ -62,9 +62,9 @@ namespace YGN.Management.DetailForms
                 {
                     return result;
                 }
-                return null;
+                return 0;
             }
-            set { unitPriceTextEdit.Text = value?.ToString(); }
+            set { unitPriceTextEdit.Text = value.ToString(); }
         }
 
         public string Brand

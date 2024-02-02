@@ -182,4 +182,29 @@ public partial class ManagementProcedures
         }
     }
     #endregion
+
+    #region ORDER PROCEDURES
+    [SqlProcedure(Name = "YGN_ORDERLINE_VIEW")]
+    public static void YGN_ORDERLINE_VIEW()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                
+                SELECT itm.ItemCode,itm.ItemName,orl.Amount FROM OrderLines orl
+	                inner join OrderFiches orf on orf.Id=orl.OrderFicheId
+	                inner join Items itm on itm.Id= orl.ItemId
+	                inner join Clients cl on cl.Id=orl.ClientId
+	                inner join Users us on us.Id=orl.UserId
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+
+    }
+
+    #endregion
 }
