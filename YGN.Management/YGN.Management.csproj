@@ -229,6 +229,7 @@
     <None Include="Properties\DataSources\Entities.Concrete.Item.datasource" />
     <None Include="Properties\DataSources\Entities.Concrete.ItemCategory.datasource" />
     <None Include="Properties\DataSources\Entities.Extensions.Extensions+Client_View.datasource" />
+    <None Include="Properties\DataSources\Entities.Extensions.Extensions+OrderLine_View.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

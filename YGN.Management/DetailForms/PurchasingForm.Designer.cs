@@ -49,7 +49,7 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.newClientButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.selectedItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -63,7 +63,7 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.clientGroupControl)).BeginInit();
             this.clientGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedItemsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -271,7 +271,7 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl.ResumeLayout(false);
             this.clientGroupControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedItemsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +294,7 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.LabelControl clientLabelControl;
         private DevExpress.XtraEditors.ButtonEdit newItemButtonEdit;
         private DevExpress.XtraEditors.ButtonEdit newClientButtonEdit;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource selectedItemsBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
         private DevExpress.XtraGrid.Columns.GridColumn colItemName;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
