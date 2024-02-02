@@ -55,6 +55,7 @@
     <Compile Include="Abstract\IItemService.cs" />
     <Compile Include="Abstract\IClientTransactionService.cs" />
     <Compile Include="Abstract\IOrderFicheService.cs" />
+    <Compile Include="Abstract\IOrderLineService.cs" />
     <Compile Include="Abstract\IStockTransactionService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\ClientManager.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Concrete\ItemCategoryManager.cs" />
     <Compile Include="Concrete\ItemManager.cs" />
     <Compile Include="Concrete\OrderFicheManager.cs" />
+    <Compile Include="Concrete\OrderLineManager.cs" />
     <Compile Include="Concrete\PurchasingOrderClientSelectionManager.cs" />
     <Compile Include="Concrete\StockTransactionManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />

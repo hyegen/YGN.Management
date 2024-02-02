@@ -24,7 +24,9 @@ namespace YGN.Management.DetailForms
         private List<OrderLine> orderLine = new List<OrderLine>();
         private List<Item> items = new List<Item>();
         OrderFicheManager orderFicheManager = new OrderFicheManager(new EfOrderFicheDal());
+        OrderLineManager orderLineManager = new OrderLineManager(new EfOrderLineDal());
         private Client cl;
+        private Item itm;
         #endregion
 
         #region properties
@@ -45,7 +47,7 @@ namespace YGN.Management.DetailForms
         {
             using (ClientSelectionForm clientSelectionForm = new ClientSelectionForm())
             {
-                if (clientSelectionForm.ShowDialog() == DialogResult.Cancel)
+                if (clientSelectionForm.ShowDialog() == DialogResult.OK)
                 {
                     clients.Clear();
                     cl = clientSelectionForm.returnOneClient;
@@ -73,20 +75,42 @@ namespace YGN.Management.DetailForms
                     items.Clear();
                     items.AddRange(itemSelectionForm.returnedList);
 
-                    foreach (var item in itemSelectionForm.returnedList)
+                    var orderFiche = new OrderFiche
                     {
-                        var o = new OrderFiche
+                        ClientId = cl.Id,
+                        ProcessDate = DateTime.Now,
+                        TotalPrice = 100,
+                        UserId = 1,
+                    };
+                    orderFicheManager.AddToOrderfiche(orderFiche);
+                    foreach (var item in items)
+                    {
+                        var orderLine = new OrderLine
                         {
                             Amount = 5,
                             ClientId = cl.Id,
-                            ItemId = cl.Id,
-                            OrderLines = new List<OrderLine>(),
+                            ItemId = item.Id,
                             ProcessDate = DateTime.Now,
                             TotalPrice = 100,
-                            UserId = 1
+                            UserId = 1,
+                            OrderFicheId = orderFiche.Id
                         };
-                        orderFicheManager.AddToOrderfiche(o);
+                        orderLineManager.AddToOrderLine(orderLine);
                     }
+                    //foreach (var item in itemSelectionForm.returnedList)
+                    //{
+                    //    var orderLine = new OrderLine
+                    //    {
+                    //        Amount = 5,
+                    //        ClientId = cl.Id,
+                    //        ItemId = item.Id,
+                    //        ProcessDate = DateTime.Now,
+                    //        TotalPrice = 100,
+                    //        UserId = 1,
+                    //        OrderFicheId = orderFiche.Id
+                    //    };
+                    //    orderLineManager.AddToOrderLine(orderLine);
+                    //}
 
                     newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
 

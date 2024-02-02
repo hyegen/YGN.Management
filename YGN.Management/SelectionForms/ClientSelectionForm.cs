@@ -54,7 +54,8 @@ namespace YGN.Management.SelectionForms
         }
         private void clientsGridView_DoubleClick(object sender, EventArgs e)
         {
-      
+            DialogResult = DialogResult.OK;
+
             int selectedRowID = Convert.ToInt32(clientsGridView.GetFocusedRowCellValue("Id"));
             var result = clientManager.GetClientById(selectedRowID);
             //_returnedList.Add(result);

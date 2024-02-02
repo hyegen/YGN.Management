@@ -55,6 +55,7 @@
     <Compile Include="Abstract\IItemDal.cs" />
     <Compile Include="Abstract\IItemCategoryDal.cs" />
     <Compile Include="Abstract\IOrderFicheDal.cs" />
+    <Compile Include="Abstract\IOrderLineDal.cs" />
     <Compile Include="Abstract\IStockTransactionDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\ConfigDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Concrete\EntityFramework\EfItemCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfItemDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderFicheDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfOrderLineDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfStockTransactionDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\SqlData.cs" />
@@ -87,6 +89,30 @@
     <Compile Include="Migrations\202402020829596_mig_deleted_item_in_orderfiche_entity.cs" />
     <Compile Include="Migrations\202402020829596_mig_deleted_item_in_orderfiche_entity.Designer.cs">
       <DependentUpon>202402020829596_mig_deleted_item_in_orderfiche_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402020949103_mig_orderline_entity_has_been_updated.cs" />
+    <Compile Include="Migrations\202402020949103_mig_orderline_entity_has_been_updated.Designer.cs">
+      <DependentUpon>202402020949103_mig_orderline_entity_has_been_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402020951076_mig_orderline_entity_has_been_updated1.cs" />
+    <Compile Include="Migrations\202402020951076_mig_orderline_entity_has_been_updated1.Designer.cs">
+      <DependentUpon>202402020951076_mig_orderline_entity_has_been_updated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402021026331_mig_relationship_between_orderline_and_orderfiche_last1.cs" />
+    <Compile Include="Migrations\202402021026331_mig_relationship_between_orderline_and_orderfiche_last1.Designer.cs">
+      <DependentUpon>202402021026331_mig_relationship_between_orderline_and_orderfiche_last1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402021029387_mig_relationship_between_orderline_and_orderfiche_last12.cs" />
+    <Compile Include="Migrations\202402021029387_mig_relationship_between_orderline_and_orderfiche_last12.Designer.cs">
+      <DependentUpon>202402021029387_mig_relationship_between_orderline_and_orderfiche_last12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402021037370_mig_in_orderfiche_entity_has_been_updated3.cs" />
+    <Compile Include="Migrations\202402021037370_mig_in_orderfiche_entity_has_been_updated3.Designer.cs">
+      <DependentUpon>202402021037370_mig_in_orderfiche_entity_has_been_updated3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402021044594_mig_in_orderfiche_entity_has_been_updated5.cs" />
+    <Compile Include="Migrations\202402021044594_mig_in_orderfiche_entity_has_been_updated5.Designer.cs">
+      <DependentUpon>202402021044594_mig_in_orderfiche_entity_has_been_updated5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +155,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402020829596_mig_deleted_item_in_orderfiche_entity.resx">
       <DependentUpon>202402020829596_mig_deleted_item_in_orderfiche_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402020949103_mig_orderline_entity_has_been_updated.resx">
+      <DependentUpon>202402020949103_mig_orderline_entity_has_been_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402020951076_mig_orderline_entity_has_been_updated1.resx">
+      <DependentUpon>202402020951076_mig_orderline_entity_has_been_updated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402021026331_mig_relationship_between_orderline_and_orderfiche_last1.resx">
+      <DependentUpon>202402021026331_mig_relationship_between_orderline_and_orderfiche_last1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402021029387_mig_relationship_between_orderline_and_orderfiche_last12.resx">
+      <DependentUpon>202402021029387_mig_relationship_between_orderline_and_orderfiche_last12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402021037370_mig_in_orderfiche_entity_has_been_updated3.resx">
+      <DependentUpon>202402021037370_mig_in_orderfiche_entity_has_been_updated3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402021044594_mig_in_orderfiche_entity_has_been_updated5.resx">
+      <DependentUpon>202402021044594_mig_in_orderfiche_entity_has_been_updated5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

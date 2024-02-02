@@ -13,12 +13,9 @@ namespace Entities.Concrete
         [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int ItemId { get; set; }
         public int ClientId { get; set; }
-        public double Amount { get; set; }
         public DateTime ProcessDate { get; set; }
         public decimal TotalPrice { get; set; }
-        public List<OrderLine> OrderLines { get; set; }
-       
+        public virtual ICollection<OrderLine> OrderLines { get; set; }
     }
 }

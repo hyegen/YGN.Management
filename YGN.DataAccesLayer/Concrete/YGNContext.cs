@@ -46,6 +46,14 @@ namespace YGN.DataAccesLayer.Concrete
 
             #endregion
 
+            #region OrderFiche
+            modelBuilder.Entity<OrderLine>()
+            .HasRequired(c => c.OrderFiche)
+            .WithMany(p => p.OrderLines)
+            .HasForeignKey(c => c.OrderFicheId);
+
+            #endregion
+
             #endregion
         }
         public DbSet<Address> Addresses { get; set; }
