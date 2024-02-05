@@ -13,7 +13,6 @@ namespace YGN.Management.Forms
         #region members
 
         StockTransactionManager stockTransactionManager = new StockTransactionManager(new EfStockTransactionDal());
-        EfStockTransactionDal EfStock = new EfStockTransactionDal();
 
         #endregion
 
