@@ -205,4 +205,52 @@ public partial class ManagementProcedures
     }
 
     #endregion
+
+    #region ORDER FICHE MAKER PROCEDURE
+
+    [SqlProcedure(Name = "YGN_CREATE_FICHENO")]
+    public static void YGN_CREATE_FICHENO()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                   
+                    DECLARE @LASTFICHENO INT 
+
+                    SELECT TOP 1 @LASTFICHENO=FicheNo  FROM OrderFiches  ORDER BY ProcessDate DESC
+
+	                SET @LASTFICHENO=@LASTFICHENO+1
+	                SELECT @LASTFICHENO [LAST FICHENO]
+               
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
+    [SqlProcedure(Name = "YGN_ORDER_FICHE_MAKER")]
+    public static void YGN_ORDER_FICHE_MAKER()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                
+             SELECT cl.ClientName,ClientSurname,cl.FirmDescription,itm.ItemCode,itm.ItemName,itm.UnitPrice,orl.ProcessDate FROM  OrderFiches orf
+	            inner join Clients cl on cl.Id= orf.ClientId
+	            inner join OrderLines orl on orl.OrderFicheId= orf.Id
+	            left join Items itm on itm.Id= orl.ItemId
+	            group by itm.ItemCode,itm.ItemName,itm.UnitPrice,cl.ClientName,ClientSurname,cl.FirmDescription,orl.ProcessDate
+
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+
+    }
+    #endregion
 }

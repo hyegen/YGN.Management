@@ -118,6 +118,14 @@
     <Compile Include="Migrations\202402021321598_mig70.Designer.cs">
       <DependentUpon>202402021321598_mig70.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402051247215_mig_fiche_no_colum_added_to_orderfiche_entity.cs" />
+    <Compile Include="Migrations\202402051247215_mig_fiche_no_colum_added_to_orderfiche_entity.Designer.cs">
+      <DependentUpon>202402051247215_mig_fiche_no_colum_added_to_orderfiche_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402051316414_mig_fiche_no_colum_added_to_orderfiche_entity3.cs" />
+    <Compile Include="Migrations\202402051316414_mig_fiche_no_colum_added_to_orderfiche_entity3.Designer.cs">
+      <DependentUpon>202402051316414_mig_fiche_no_colum_added_to_orderfiche_entity3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -180,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402021321598_mig70.resx">
       <DependentUpon>202402021321598_mig70.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402051247215_mig_fiche_no_colum_added_to_orderfiche_entity.resx">
+      <DependentUpon>202402051247215_mig_fiche_no_colum_added_to_orderfiche_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402051316414_mig_fiche_no_colum_added_to_orderfiche_entity3.resx">
+      <DependentUpon>202402051316414_mig_fiche_no_colum_added_to_orderfiche_entity3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

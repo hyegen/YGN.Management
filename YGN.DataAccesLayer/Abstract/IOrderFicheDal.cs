@@ -11,5 +11,6 @@ namespace YGN.DataAccesLayer.Abstract
     public interface IOrderFicheDal : IEntityRepository<OrderFiche>
     {
         void AddToOrderFiche(OrderFiche orderFiche);
+
     }
 }

@@ -44,6 +44,8 @@ namespace YGN.Management.Forms
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControlMainForm = new DevExpress.XtraGrid.GridControl();
             this.gridViewMainForm = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -63,9 +65,10 @@ namespace YGN.Management.Forms
             this.refreshBarButtonItem,
             this.reportsBarButtonItem,
             this.purchaseBarButtonItem,
-            this.salesBarButtonItem});
+            this.salesBarButtonItem,
+            this.barButtonItem1});
             this.mainFormRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainFormRibbonControl.MaxItemId = 10;
+            this.mainFormRibbonControl.MaxItemId = 11;
             this.mainFormRibbonControl.Name = "mainFormRibbonControl";
             this.mainFormRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -131,7 +134,8 @@ namespace YGN.Management.Forms
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.transactionRibbonPageGroup});
+            this.transactionRibbonPageGroup,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -185,6 +189,19 @@ namespace YGN.Management.Forms
             this.gridViewMainForm.OptionsView.ShowGroupPanel = false;
             this.gridViewMainForm.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewMainForm_PopupMenuShowing);
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +239,7 @@ namespace YGN.Management.Forms
         private DevExpress.XtraBars.BarButtonItem purchaseBarButtonItem;
         private DevExpress.XtraBars.BarButtonItem salesBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup transactionRibbonPageGroup;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

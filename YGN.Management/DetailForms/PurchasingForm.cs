@@ -1,8 +1,10 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
+using YGN.Management.OrderFicheMaker;
 using YGN.Management.SelectionForms;
 using static Entities.Extensions.Extensions;
 using static YGN.Management.SelectionForms.ClientSelectionForm;
@@ -95,7 +98,7 @@ namespace YGN.Management.DetailForms
                 {
                     items.Clear();
                     items.AddRange(itemSelectionForm.returnedList);
-                  //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
+                    //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
                     newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode}"));
                 }
             };
@@ -115,11 +118,26 @@ namespace YGN.Management.DetailForms
                 XtraMessageBox.Show("Malzeme(ler) veya Cari seçilmemiş. Lütfen seçiniz.", "Hata");
             }
             Close();
+
+
         }
 
         #endregion
 
         #region private methods
+
+        private void createOrderFiche()
+        {
+            OrderFicheXtraReport xtraReport = new OrderFicheXtraReport();
+            // xtraReport.ShowRibbonPreview();
+            ReportDesignTool reportDesignTool = new ReportDesignTool(xtraReport);
+
+            UserLookAndFeel lookAndFeel = new UserLookAndFeel(this);
+            lookAndFeel.UseDefaultLookAndFeel = false;
+            lookAndFeel.SkinName = "Office 2016 Black";
+            reportDesignTool.ShowRibbonDesignerDialog(lookAndFeel);
+        }
+
         private void UpdateGrid()
         {
             itemsGridView.BeginUpdate();
@@ -182,8 +200,11 @@ namespace YGN.Management.DetailForms
             return true;
         }
 
-
         #endregion
 
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            createOrderFiche();
+        }
     }
 }

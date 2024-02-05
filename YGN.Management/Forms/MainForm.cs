@@ -8,6 +8,7 @@ using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
 using YGN.Management.Managers;
+using YGN.Management.OrderFicheMaker;
 
 namespace YGN.Management.Forms
 {
@@ -47,7 +48,7 @@ namespace YGN.Management.Forms
         {
             getData();
         }
-        private void gridViewMainForm_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        private void gridViewMainForm_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {
@@ -80,8 +81,13 @@ namespace YGN.Management.Forms
         {
             new PurchasingDetailManager().Show();
         }
+
         #endregion
 
-
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OrderFicheMakerForm maker = new OrderFicheMakerForm();
+            maker.Show();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace YGN.Management.Managers
         ItemManager itemManager = new ItemManager(new EfItemDal());
         public PurchasingDetailManager()
         {
-        
+            
         }
         public void Show()
         {

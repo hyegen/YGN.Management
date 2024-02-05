@@ -12,6 +12,7 @@ namespace Entities.Concrete
     {
         [Key]
         public int Id { get; set; }
+        public int? FicheNo { get; set; }
         public int UserId { get; set; }
         public int ClientId { get; set; }
         public DateTime ProcessDate { get; set; }

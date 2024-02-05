@@ -51,7 +51,7 @@ namespace YGN.Management.Forms
         {
             Close();
         }
-        private void clientGridView_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        private void clientGridView_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {

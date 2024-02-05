@@ -35,8 +35,10 @@ namespace YGN.Management.DetailForms
             this.saveBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.closeBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.createOrderFicheBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.addToSelectedItems = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -104,9 +106,10 @@ namespace YGN.Management.DetailForms
             this.ribbonControl1.SearchEditItem,
             this.saveBarButtonItem,
             this.closeBarButtonItem,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.createOrderFicheBarButtonItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -138,10 +141,19 @@ namespace YGN.Management.DetailForms
             this.barButtonItem1.Id = 4;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // createOrderFicheBarButtonItem
+            // 
+            this.createOrderFicheBarButtonItem.Caption = "Sipariş Fişi Oluştur";
+            this.createOrderFicheBarButtonItem.Id = 5;
+            this.createOrderFicheBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("createOrderFicheBarButtonItem.ImageOptions.LargeImage")));
+            this.createOrderFicheBarButtonItem.Name = "createOrderFicheBarButtonItem";
+            this.createOrderFicheBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -151,6 +163,12 @@ namespace YGN.Management.DetailForms
             this.ribbonPageGroup1.ItemLinks.Add(this.closeBarButtonItem);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.createOrderFicheBarButtonItem);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Fiş Oluştur";
             // 
             // panelControl1
             // 
@@ -513,5 +531,7 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraGrid.Views.Grid.GridView selectedItemsGridView;
         private DevExpress.XtraEditors.SimpleButton addToSelectedItems;
         private System.Windows.Forms.BindingSource itemsBindingSource;
+        private DevExpress.XtraBars.BarButtonItem createOrderFicheBarButtonItem;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
