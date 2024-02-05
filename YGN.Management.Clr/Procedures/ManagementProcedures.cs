@@ -92,7 +92,7 @@ public partial class ManagementProcedures
         using (var sqlConn = new SqlConnection("context connection=true"))
         {
             var sqlSelect = string.Format(@"
-                SELECT * FROM Items
+                SELECT * FROM Items WITH(NOLOCK)
                 ");
             var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
             sqlConn.Open();
