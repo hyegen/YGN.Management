@@ -6,41 +6,6 @@ using Microsoft.SqlServer.Server;
 
 public partial class ManagementProcedures
 {
-    #region General Get Procedures
-
-    [SqlProcedure(Name = "YGN_GET_ALL_ITEM")]
-    public static void YGN_GET_ITEM()
-    {
-        using (var sqlConn = new SqlConnection("context connection=true"))
-        {
-            var sqlSelect = string.Format(@"
-                SELECT * FROM Items
-                ");
-            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
-            sqlConn.Open();
-            if (SqlContext.Pipe != null)
-                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
-            sqlConn.Close();
-        }
-    }
-    [SqlProcedure(Name = "YGN_GET_ALL_CLIENT")]
-    public static void YGN_GET_ALL_CLIENT()
-    {
-        using (var sqlConn = new SqlConnection("context connection=true"))
-        {
-            var sqlSelect = string.Format(@"
-                SELECT * FROM Clients
-                ");
-            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
-            sqlConn.Open();
-            if (SqlContext.Pipe != null)
-                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
-            sqlConn.Close();
-        }
-    }
-
-    #endregion
-
     #region Client Procedures
     [SqlProcedure(Name = "YGN_CLIENTCODECREATOR")]
     public static void YGN_CLIENTCODECREATOR()
@@ -53,7 +18,7 @@ public partial class ManagementProcedures
                DECLARE @LASTINDEX INT 
                DECLARE @LASTSTRINGVALUE NVARCHAR(50)
                
-               SELECT TOP 1 @LASTINDEX=ClientId FROM ClientTransactions  ORDER BY Id DESC
+               SELECT TOP 1 @LASTINDEX=ClientId FROM ClientTransactions WITH(NOLOCK)  ORDER BY Id DESC
                    SET @LASTINDEX= @LASTINDEX+1 
                
                IF @LASTINDEX IS NULL
@@ -64,7 +29,7 @@ public partial class ManagementProcedures
                ELSE 
                BEGIN 
                SET @STRINGVALUE=(SELECT  TOP 1 SUBSTRING(ClientCode, 1, PATINDEX('%[0-9]%', ClientCode) - 1) 
-               FROM Clients CLNT 
+               FROM Clients CLNT WITH(NOLOCK)
                    LEFT JOIN ClientTransactions CLTRNS ON CLTRNS.ClientId=CLNT.Id
                WHERE PATINDEX('%[0-9]%', ClientCode) > 0 
                ORDER BY ClientCode DESC) + CONVERT(nvarchar(50),@LASTINDEX)
@@ -81,22 +46,6 @@ public partial class ManagementProcedures
             sqlConn.Close();
         }
 
-    }
-
-    [SqlProcedure(Name = "YGN_GET_CATEGORIES")]
-    public static void YGN_GET_CATEGORIES()
-    {
-        using (var sqlConn = new SqlConnection("context connection=true"))
-        {
-            var sqlSelect = string.Format(@"
-                   SELECT Category1 FROM Items WITH(NOLOCK)
-                ");
-            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
-            sqlConn.Open();
-            if (SqlContext.Pipe != null)
-                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
-            sqlConn.Close();
-        }
     }
 
     [SqlProcedure(Name = "YGN_GET_CLIENT_BY_ID")]
@@ -117,10 +66,41 @@ public partial class ManagementProcedures
         }
     }
 
+    [SqlProcedure(Name = "YGN_GET_ALL_CLIENT")]
+    public static void YGN_GET_ALL_CLIENT()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                SELECT * FROM Clients WITH(NOLOCK)
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
+
     #endregion
 
-
     #region Item Procedures
+
+    [SqlProcedure(Name = "YGN_GET_ALL_ITEM")]
+    public static void YGN_GET_ITEM()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                SELECT * FROM Items
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
 
     [SqlProcedure(Name = "YGN_ITEMCODECREATOR")]
     public static void YGN_ITEMCODECREATOR()
@@ -133,7 +113,7 @@ public partial class ManagementProcedures
                 DECLARE @LASTINDEX INT 
                 DECLARE @LASTSTRINGVALUE NVARCHAR(50)
                                
-                SELECT TOP 1 @LASTINDEX=ItemId FROM StockTransactions  ORDER BY Id DESC
+                SELECT TOP 1 @LASTINDEX=ItemId FROM StockTransactions WITH(NOLOCK)  ORDER BY Id DESC
                     SET @LASTINDEX= @LASTINDEX+1 
                                
                 IF @LASTINDEX IS NULL
@@ -144,7 +124,7 @@ public partial class ManagementProcedures
                 ELSE 
                 BEGIN 
                 SET @STRINGVALUE=(SELECT  TOP 1 SUBSTRING(ItemCode, 1, PATINDEX('%[0-9]%', ItemCode) - 1) 
-                FROM Items ITM 
+                FROM Items ITM WITH(NOLOCK)
                     LEFT JOIN StockTransactions STTRNS ON STTRNS.ItemId=ITM.Id
                 WHERE PATINDEX('%[0-9]%', ItemCode) > 0 
                 ORDER BY ItemCode DESC) + CONVERT(nvarchar(50),@LASTINDEX)
@@ -181,6 +161,23 @@ public partial class ManagementProcedures
             sqlConn.Close();
         }
     }
+
+    [SqlProcedure(Name = "YGN_GET_ITEM_FOR_FILLING_PURCHASE_ITEMS_GRID")]
+    public static void YGN_GET_ITEM_FOR_FILLING_PURCHASE_ITEMS_GRID()
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                SELECT ItemCode,ItemName,UnitPrice FROM  Items WITH(NOLOCK)  
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+
+    }
     #endregion
 
     #region ORDER PROCEDURES
@@ -191,7 +188,7 @@ public partial class ManagementProcedures
         {
             var sqlSelect = string.Format(@"
                 
-                SELECT itm.ItemCode,itm.ItemName,orl.Amount FROM OrderLines orl
+                SELECT itm.ItemCode,itm.ItemName,orl.Amount FROM OrderLines orl WITH(NOLOCK)
 	                inner join OrderFiches orf on orf.Id=orl.OrderFicheId
 	                inner join Items itm on itm.Id= orl.ItemId
 	                inner join Clients cl on cl.Id=orl.ClientId

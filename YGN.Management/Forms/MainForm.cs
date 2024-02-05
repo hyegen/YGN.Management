@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
+using YGN.Management.Managers;
 
 namespace YGN.Management.Forms
 {
@@ -75,8 +76,7 @@ namespace YGN.Management.Forms
         }
         private void purchaseBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PurchasingForm purchasingForm = new PurchasingForm();
-            purchasingForm.ShowDialog();
+            new PurchasingDetailManager().Show();
         }
         #endregion
 

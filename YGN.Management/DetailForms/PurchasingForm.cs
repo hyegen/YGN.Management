@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
@@ -33,6 +34,12 @@ namespace YGN.Management.DetailForms
         #endregion
 
         #region properties
+
+        public List<Item_View> ItemDataSource
+        {
+            get { return (List<Item_View>)itemsBindingSource.DataSource; }
+            set { itemsBindingSource.DataSource = value; }
+        }
         private List<OrderLine_View> OrderLineDataSource
         {
             get { return (List<OrderLine_View>)selectedItemsBindingSource.DataSource; }
@@ -54,7 +61,6 @@ namespace YGN.Management.DetailForms
         public PurchasingForm()
         {
             InitializeComponent();
-            OrderLineDataSource = new List<OrderLine_View>();
         }
 
         #endregion
@@ -81,8 +87,6 @@ namespace YGN.Management.DetailForms
                 }
             };
         }
-
-
         private void newItemButtonEdit_Click(object sender, EventArgs e)
         {
             using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
@@ -93,19 +97,14 @@ namespace YGN.Management.DetailForms
                     items.AddRange(itemSelectionForm.returnedList);
                   //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
                     newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode}"));
-
-                    selectedItemsBindingSource.DataSource = itemSelectionForm.returnedList;
-
-                    itemsGridControl.DataSource = itemSelectionForm.returnedList;
                 }
             };
         }
-
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }
-        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void saveBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (validateSave())
             {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Entities.Extensions.Extensions;
 
 namespace YGN.BusinessLayer.Abstract
 {
@@ -15,5 +16,6 @@ namespace YGN.BusinessLayer.Abstract
         void AddItem(Item item);
         string GetItemCode();
         Item GetItemById(int id);
+        List<Item_View> GetItemForFillingPurchaseGrid();
     }
 }

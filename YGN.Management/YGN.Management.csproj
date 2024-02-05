@@ -218,6 +218,7 @@
     <Compile Include="Forms\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\PurchasingDetailManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectionForms\ClientSelectionForm.cs">
@@ -297,6 +298,7 @@
     <None Include="Properties\DataSources\Entities.Concrete.Item.datasource" />
     <None Include="Properties\DataSources\Entities.Concrete.ItemCategory.datasource" />
     <None Include="Properties\DataSources\Entities.Extensions.Extensions+Client_View.datasource" />
+    <None Include="Properties\DataSources\Entities.Extensions.Extensions+Item_View.datasource" />
     <None Include="Properties\DataSources\Entities.Extensions.Extensions+OrderLine_View.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

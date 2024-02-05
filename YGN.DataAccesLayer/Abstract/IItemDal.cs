@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Entities.Extensions.Extensions;
 
 namespace YGN.DataAccesLayer.Abstract
 {
@@ -13,5 +14,6 @@ namespace YGN.DataAccesLayer.Abstract
         List<Item> GetAllItems();
         string GetItemCode();
         Item GetItemById(int id);
+        List<Item_View> GetItemForFillingPurchaseGrid();
     }
 }

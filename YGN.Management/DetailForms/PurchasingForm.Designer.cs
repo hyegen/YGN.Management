@@ -41,6 +41,7 @@ namespace YGN.Management.DetailForms
             this.addToSelectedItems = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.itemsGridControl = new DevExpress.XtraGrid.GridControl();
+            this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,13 +68,13 @@ namespace YGN.Management.DetailForms
             this.newClientButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.selectedItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGroupControl)).BeginInit();
             this.selectedItemsGroupControl.SuspendLayout();
@@ -92,7 +93,6 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -196,6 +196,7 @@ namespace YGN.Management.DetailForms
             // 
             // itemsGridControl
             // 
+            this.itemsGridControl.DataSource = this.itemsBindingSource;
             this.itemsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemsGridControl.Location = new System.Drawing.Point(2, 20);
             this.itemsGridControl.MainView = this.itemsGridView;
@@ -205,6 +206,10 @@ namespace YGN.Management.DetailForms
             this.itemsGridControl.TabIndex = 0;
             this.itemsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.itemsGridView});
+            // 
+            // itemsBindingSource
+            // 
+            this.itemsBindingSource.DataSource = typeof(Entities.Extensions.Extensions.Item_View);
             // 
             // itemsGridView
             // 
@@ -426,10 +431,6 @@ namespace YGN.Management.DetailForms
             this.clientLabelControl.TabIndex = 0;
             this.clientLabelControl.Text = "Cari";
             // 
-            // selectedItemsBindingSource
-            // 
-            this.selectedItemsBindingSource.DataSource = typeof(Entities.Extensions.Extensions.OrderLine_View);
-            // 
             // PurchasingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +448,7 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsGroupControl)).EndInit();
             this.selectedItemsGroupControl.ResumeLayout(false);
@@ -467,7 +469,6 @@ namespace YGN.Management.DetailForms
             this.clientGroupControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newClientButtonEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectedItemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,7 +496,6 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraGrid.Columns.GridColumn colItemName;
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.TextEdit amountTextEdit;
         private DevExpress.XtraEditors.TextEdit unitPriceTextEdit;
         private DevExpress.XtraEditors.TextEdit itemNameTextEdit;
@@ -512,5 +512,6 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraGrid.GridControl selectedItemsGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView selectedItemsGridView;
         private DevExpress.XtraEditors.SimpleButton addToSelectedItems;
+        private System.Windows.Forms.BindingSource itemsBindingSource;
     }
 }
