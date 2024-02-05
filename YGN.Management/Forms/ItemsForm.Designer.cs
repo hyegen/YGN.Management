@@ -37,7 +37,6 @@ namespace YGN.Management.Forms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.itemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.itemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -99,8 +98,7 @@ namespace YGN.Management.Forms
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             resources.ApplyResources(this.ribbonPage1, "ribbonPage1");
             // 
@@ -116,11 +114,6 @@ namespace YGN.Management.Forms
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBarButtonItem);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             resources.ApplyResources(this.ribbonPageGroup2, "ribbonPageGroup2");
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            resources.ApplyResources(this.ribbonPageGroup3, "ribbonPageGroup3");
             // 
             // panelControl1
             // 
@@ -176,6 +169,5 @@ namespace YGN.Management.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView itemsGridView;
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

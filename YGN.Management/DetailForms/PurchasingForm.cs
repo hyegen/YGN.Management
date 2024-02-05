@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
 using System;
@@ -31,18 +33,28 @@ namespace YGN.Management.DetailForms
         #endregion
 
         #region properties
-        private List<OrderLine_View> DataSource
+        private List<OrderLine_View> OrderLineDataSource
         {
             get { return (List<OrderLine_View>)selectedItemsBindingSource.DataSource; }
             set { selectedItemsBindingSource.DataSource = value; }
         }
-
+        public OrderLine_View SelectedLine
+        {
+            get
+            {
+                var gridView = itemsGridControl.FocusedView as GridView;
+                if (gridView != null)
+                    return (OrderLine_View)gridView.GetFocusedRow();
+                return null;
+            }
+        }
         #endregion
 
         #region constructor
         public PurchasingForm()
         {
             InitializeComponent();
+            OrderLineDataSource = new List<OrderLine_View>();
         }
 
         #endregion
@@ -79,38 +91,12 @@ namespace YGN.Management.DetailForms
                 {
                     items.Clear();
                     items.AddRange(itemSelectionForm.returnedList);
-                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
-                    //UpdateGrid();
-                    
-                    selectedItemsGridControl.DataSource = DataSource;
+                  //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
+                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode}"));
 
-                    //var orderFiche = new OrderFiche
-                    //{
-                    //    ClientId = _client.Id,
-                    //    ProcessDate = DateTime.Now,
-                    //    TotalPrice = 100,
-                    //    UserId = 1,
-                    //};
+                    selectedItemsBindingSource.DataSource = itemSelectionForm.returnedList;
 
-                    //orderFicheManager.AddToOrderfiche(orderFiche);
-
-
-
-                    //foreach (var item in items)
-                    //{
-                    //    var x = new OrderLine_View
-                    //    {
-                    //        ClientId = _client.Id,
-                    //        Amount = amountValue,
-                    //        ItemId = item.Id,
-                    //        OrderFicheId = orderFiche.Id,
-                    //        ProcessDate = DateTime.Now,
-                    //        TotalPrice = amountValue * item.UnitPrice,
-                    //        UserId = 1
-                    //    };
-                    //}
-
-                    selectedItemsGridControl.DataSource = DataSource;
+                    itemsGridControl.DataSource = itemSelectionForm.returnedList;
                 }
             };
         }
@@ -137,21 +123,21 @@ namespace YGN.Management.DetailForms
         #region private methods
         private void UpdateGrid()
         {
-            selectedItemsGridView.BeginUpdate();
+            itemsGridView.BeginUpdate();
 
             try
             {
-                selectedItemsGridView.Columns.Clear();
-                selectedItemsGridView.Columns.AddVisible("Id", "Id");
-                selectedItemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
-                selectedItemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
+                itemsGridView.Columns.Clear();
+                itemsGridView.Columns.AddVisible("Id", "Id");
+                itemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
+                itemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
 
-                selectedItemsGridControl.DataSource = items;
-                selectedItemsGridView.RefreshData();
+                itemsGridControl.DataSource = items;
+                itemsGridView.RefreshData();
             }
             finally
             {
-                selectedItemsGridView.EndUpdate();
+                itemsGridView.EndUpdate();
             }
         }
 
@@ -168,14 +154,14 @@ namespace YGN.Management.DetailForms
             orderFicheManager.AddToOrderfiche(orderFiche);
             foreach (var item in items)
             {
-                int selectedRowHandle = selectedItemsGridView.FocusedRowHandle;
+                int selectedRowHandle = itemsGridView.FocusedRowHandle;
 
-                int amountColumnIndex = selectedItemsGridView.Columns["Amount"].VisibleIndex;
-                double amountValue = Convert.ToDouble(selectedItemsGridView.GetRowCellValue(selectedRowHandle, amountColumnIndex.ToString()));
+                int unitPriceColumnIndex = itemsGridView.Columns["UnitPrice"].VisibleIndex;
+                double unitPriceValue = Convert.ToDouble(itemsGridView.GetRowCellValue(selectedRowHandle, unitPriceColumnIndex.ToString()));
 
                 var orderLine = new OrderLine
                 {
-                    Amount = amountValue,
+                    Amount = unitPriceValue,
                     ClientId = _client.Id,
                     ItemId = item.Id,
                     ProcessDate = DateTime.Now,
@@ -185,7 +171,7 @@ namespace YGN.Management.DetailForms
                 };
                 orderLineManager.AddToOrderLine(orderLine);
             }
-            //  XtraMessageBox.Show("{0} kodlu, ");
+            XtraMessageBox.Show("Satınalma başarılı.");
         }
 
         private bool validateSave()
@@ -196,6 +182,9 @@ namespace YGN.Management.DetailForms
             }
             return true;
         }
+
+
         #endregion
+
     }
 }

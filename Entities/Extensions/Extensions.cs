@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,14 +37,19 @@ namespace Entities.Extensions
 
         public class OrderLine_View
         {
+            public string Itemcode { get; set; }
+            public  string ItemName { get; set; }
+            public int UnitPrice { get; set; }
+            public  double Amount { get; set; }
+        }
+
+        public class Item_View
+        {
             public int Id { get; set; }
-            public int ItemId { get; set; }
-            public double Amount { get; set; }
-            public int OrderFicheId { get; set; }
-            public DateTime ProcessDate { get; set; }
-            public int UserId { get; set; }
-            public int ClientId { get; set; }
-            public double TotalPrice { get; set; } 
+            public string ItemCode { get; set; }
+            public string ItemName { get; set; }
+            public double UnitPrice { get; set; }
+            public string Brand { get; set; }
         }
     }
 }

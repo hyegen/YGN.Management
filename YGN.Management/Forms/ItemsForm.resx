@@ -337,14 +337,11 @@
   <data name="ribbonPageGroup2.Text" xml:space="preserve">
     <value>Durum</value>
   </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>ribbonPageGroup3</value>
-  </data>
   <data name="ribbonPage1.Text" xml:space="preserve">
     <value>ribbonPage1</value>
   </data>
   <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 116</value>
+    <value>697, 95</value>
   </data>
   <data name="&gt;&gt;ribbonControl1.Name" xml:space="preserve">
     <value>ribbonControl1</value>
@@ -366,7 +363,7 @@
     <value>2, 2</value>
   </data>
   <data name="itemsGridControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>693, 293</value>
+    <value>693, 314</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="itemsGridControl.TabIndex" type="System.Int32, mscorlib">
@@ -388,10 +385,10 @@
     <value>Fill</value>
   </data>
   <data name="panelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 116</value>
+    <value>0, 95</value>
   </data>
   <data name="panelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 297</value>
+    <value>697, 318</value>
   </data>
   <data name="panelControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -457,12 +454,6 @@
     <value>ribbonPageGroup2</value>
   </data>
   <data name="&gt;&gt;ribbonPageGroup2.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;ribbonPageGroup3.Name" xml:space="preserve">
-    <value>ribbonPageGroup3</value>
-  </data>
-  <data name="&gt;&gt;ribbonPageGroup3.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;itemsGridView.Name" xml:space="preserve">

@@ -29,7 +29,7 @@ namespace YGN.Management
             GlobalVariables.AppPath = Application.StartupPath;
             //Database.SetInitializer<YGNContext>(null); 
 
-            Database.SetInitializer<YGNContext>(new CreateDatabaseIfNotExists<YGNContext>());
+            //Database.SetInitializer<YGNContext>(new CreateDatabaseIfNotExists<YGNContext>());
 
 
             //if (!new ConfigManager().ReadConnectionSettings())

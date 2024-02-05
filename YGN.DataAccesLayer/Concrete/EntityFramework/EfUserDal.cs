@@ -11,6 +11,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfUserDal : EfGenericRepositoryBase<User, YGNContext>, IUserDal
     {
+
         public bool LoginByUsernameAndPassword(string userName, string password)
         {
             using (YGNContext context = new YGNContext())
@@ -25,7 +26,7 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
         }
         public int GetUsers()
         {
-            List<User> user = new List<User>();
+            //List<User> user = new List<User>();
             using (YGNContext context = new YGNContext())
             {
                 var result = (from u in context.Users
