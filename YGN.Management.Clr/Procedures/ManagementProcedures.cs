@@ -193,6 +193,7 @@ public partial class ManagementProcedures
 	                inner join Items itm on itm.Id= orl.ItemId
 	                inner join Clients cl on cl.Id=orl.ClientId
 	                inner join Users us on us.Id=orl.UserId
+                    group by itm.ItemCode,itm.ItemName,orl.Amount 
                 ");
             var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
             sqlConn.Open();
