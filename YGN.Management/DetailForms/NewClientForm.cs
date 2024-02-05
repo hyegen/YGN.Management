@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using Entities.Concrete;
 using FluentValidation.Results;
 using System;
@@ -73,11 +74,11 @@ namespace YGN.Management.DetailForms
         #endregion
 
         #region events
-        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void saveBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             addClient();
         }
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }

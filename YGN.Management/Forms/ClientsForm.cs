@@ -1,4 +1,6 @@
 ﻿using DevExpress.Utils.Menu;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Docking;
 using DevExpress.XtraEditors;
 using Entities;
 using System;
@@ -35,21 +37,21 @@ namespace YGN.Management.Forms
         {
             getData();
         }
-        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void saveBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             NewClientForm newClientForm = new NewClientForm();
             newClientForm.ShowDialog();
             getData();
         }
-        private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void refreshBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             getData();
         }
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }
-        private void clientGridView_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        private void clientGridView_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Entities.Concrete;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
+using DevExpress.XtraBars;
 
 namespace YGN.Management.SelectionForms
 {
@@ -61,7 +62,7 @@ namespace YGN.Management.SelectionForms
         }
         #endregion
 
-        private void saveBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void saveBarButtonItem_ItemClick(object sender,ItemClickEventArgs e)
         {
             DialogResult = DialogResult.OK;
 
@@ -87,7 +88,7 @@ namespace YGN.Management.SelectionForms
  
         }
 
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }

@@ -1,4 +1,6 @@
 ﻿using DevExpress.Utils.Menu;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Docking;
 using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
@@ -29,23 +31,23 @@ namespace YGN.Management.Forms
         {
             getData();
         }
-        private void itemsBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void itemsBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             ItemsForm itemsForm = new ItemsForm();
             itemsForm.ShowDialog();
         }
 
-        private void clientBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void clientBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             ClientsForm clientsForm = new ClientsForm();
             clientsForm.ShowDialog();
         }
 
-        private void refreshBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void refreshBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             getData();
         }
-        private void gridViewMainForm_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        private void gridViewMainForm_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {
@@ -74,7 +76,7 @@ namespace YGN.Management.Forms
                 }
             }
         }
-        private void purchaseBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void purchaseBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             new PurchasingDetailManager().Show();
         }

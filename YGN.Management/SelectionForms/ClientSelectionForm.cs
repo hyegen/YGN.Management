@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
 using System;
@@ -62,7 +63,7 @@ namespace YGN.Management.SelectionForms
             _returnOneClient = result;
             this.Close();
         }
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }

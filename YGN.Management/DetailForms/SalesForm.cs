@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,12 +27,12 @@ namespace YGN.Management.DetailForms
         #endregion
 
         #region events
-        private void itemsButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void itemsButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             ItemsForm itemsForm = new ItemsForm();
             itemsForm.ShowDialog();
         }
-        private void clientsButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void clientsButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             ClientsForm clientsForm = new ClientsForm();
             clientsForm.ShowDialog();

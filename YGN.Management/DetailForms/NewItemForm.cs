@@ -120,7 +120,7 @@ namespace YGN.Management.DetailForms
 
         }
 
-        private void closeBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }
