@@ -16,6 +16,7 @@ using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using YGN.Management.DetailForms;
+using static Entities.Extensions.Extensions;
 
 namespace YGN.Management.Forms
 {
@@ -23,12 +24,22 @@ namespace YGN.Management.Forms
     {
         #region members
         ClientManager clientManager = new ClientManager(new EfClientDal());
+        private Client_View _clientView;
         #endregion
 
         #region constructor
         public ClientsForm()
         {
             InitializeComponent();
+        }
+        #endregion
+
+        #region properties
+
+        public Client_View CurrDataSource
+        {
+            get { return (Client_View)selectedClientBindingSource.DataSource; }
+            set { selectedClientBindingSource.DataSource = value; }
         }
         #endregion
 
@@ -55,7 +66,7 @@ namespace YGN.Management.Forms
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
             {
-                // Sağ tık menüsü oluştur
+                // Create menu by right click
                 DXMenuItem menuItemExportToPdf = new DXMenuItem("PDF'e Aktar", new EventHandler(ExportToPdf_Click));
                 DXMenuItem deleteClient = new DXMenuItem("Cari'yi Sil", new EventHandler(deleteClient_Click));
                 e.Menu.Items.Add(menuItemExportToPdf);
@@ -72,21 +83,23 @@ namespace YGN.Management.Forms
         }
         private void deleteClient_Click(object sender, EventArgs e)
         {
-            int selectedRowHandle = clientGridView.FocusedRowHandle;
+            DialogResult result = XtraMessageBox.Show("Silmek istediğine eminmisiniz?", "", MessageBoxButtons.YesNo);
 
-            if (selectedRowHandle >= 0)
+            if (result == DialogResult.Yes)
             {
-                int selectedId = Convert.ToInt32(clientGridView.GetRowCellValue(selectedRowHandle, "Id"));
-                string selectedClientName = clientGridView.GetRowCellValue(selectedRowHandle, "ClientName").ToString();
-                string selectedClientSurname = clientGridView.GetRowCellValue(selectedRowHandle, "ClientSurname").ToString();
-                var condition = clientManager.DeleteClientById(selectedId);
-                if (condition)
-                {
-                    XtraMessageBox.Show(string.Format("{0} {1} olarak kayıtlı cari başarıyla silindi.",selectedClientName,selectedClientSurname), "Bilgi");
-                }
+                int selectedRowHandle = clientGridView.FocusedRowHandle;
 
-                else
-                    XtraMessageBox.Show(string.Format("{0} {1} Cari Silinirken Hata Oluştu !", selectedClientName, selectedClientSurname), "Hata");
+                if (selectedRowHandle >= 0)
+                {
+                    int selectedId = Convert.ToInt32(clientGridView.GetRowCellValue(selectedRowHandle, "Id"));
+                    string selectedClientName = clientGridView.GetRowCellValue(selectedRowHandle, "ClientName").ToString();
+                    string selectedClientSurname = clientGridView.GetRowCellValue(selectedRowHandle, "ClientSurname").ToString();
+                    var condition = clientManager.DeleteClientById(selectedId);
+                    if (condition)
+                        XtraMessageBox.Show(string.Format("{0} {1} olarak kayıtlı cari başarıyla silindi.", selectedClientName, selectedClientSurname), "Bilgi");
+                    else
+                        XtraMessageBox.Show(string.Format("{0} {1} adlı cari Silinirken Hata Oluştu !", selectedClientName, selectedClientSurname), "Hata");
+                }
             }
         }
 
@@ -105,5 +118,18 @@ namespace YGN.Management.Forms
         }
         #endregion
 
+        private void deleteBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            deleteClient_Click(sender, e);
+        }
+
+        private void updateBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //TO DO
+            int selectedRowHandle = clientGridView.FocusedRowHandle;
+            //   var a = clientGridView.GetRow(selectedRowHandle);
+            CurrDataSource = (Client_View)clientGridView.GetRow(selectedRowHandle);
+            //CurrDataSource = a;
+        }
     }
 }

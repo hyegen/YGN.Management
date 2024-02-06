@@ -14,7 +14,7 @@ namespace Entities.Extensions
     {
         public class Client_View
         {
-            public int Id { get; set; }
+      //      public int Id { get; set; }
             public string ClientCode { get; set; }
             public string ClientName { get; set; }
             public string ClientSurname { get; set; }

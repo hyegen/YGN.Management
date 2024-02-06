@@ -256,6 +256,12 @@
     <Compile Include="SelectionForms\ItemSelectionForm.Designer.cs">
       <DependentUpon>ItemSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateForms\UpdateClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForms\UpdateClientForm.Designer.cs">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CommonForm\PleaseWaitForm.resx">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionForms\ItemSelectionForm.resx">
       <DependentUpon>ItemSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForms\UpdateClientForm.resx">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
