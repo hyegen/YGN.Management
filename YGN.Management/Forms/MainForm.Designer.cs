@@ -37,15 +37,15 @@ namespace YGN.Management.Forms
             this.reportsBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.purchaseBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.salesBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.transactionRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControlMainForm = new DevExpress.XtraGrid.GridControl();
             this.gridViewMainForm = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -129,6 +129,13 @@ namespace YGN.Management.Forms
             this.salesBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("salesBarButtonItem.ImageOptions.LargeImage")));
             this.salesBarButtonItem.Name = "salesBarButtonItem";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -150,7 +157,6 @@ namespace YGN.Management.Forms
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBarButtonItem);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Durum";
             // 
             // transactionRibbonPageGroup
             // 
@@ -158,6 +164,12 @@ namespace YGN.Management.Forms
             this.transactionRibbonPageGroup.ItemLinks.Add(this.salesBarButtonItem);
             this.transactionRibbonPageGroup.Name = "transactionRibbonPageGroup";
             this.transactionRibbonPageGroup.Text = "Hareketler";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // panelControl1
             // 
@@ -188,19 +200,6 @@ namespace YGN.Management.Forms
             this.gridViewMainForm.OptionsView.ShowFooter = true;
             this.gridViewMainForm.OptionsView.ShowGroupPanel = false;
             this.gridViewMainForm.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewMainForm_PopupMenuShowing);
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 10;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainForm
             // 

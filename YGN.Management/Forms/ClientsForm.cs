@@ -57,7 +57,9 @@ namespace YGN.Management.Forms
             {
                 // Sağ tık menüsü oluştur
                 DXMenuItem menuItemExportToPdf = new DXMenuItem("PDF'e Aktar", new EventHandler(ExportToPdf_Click));
+                DXMenuItem deleteClient = new DXMenuItem("Cari'yi Sil", new EventHandler(deleteClient_Click));
                 e.Menu.Items.Add(menuItemExportToPdf);
+                e.Menu.Items.Add(deleteClient);
             }
         }
         #endregion
@@ -68,6 +70,26 @@ namespace YGN.Management.Forms
             clientGridControl.DataSource = clientManager.GetAllClients();
             //clientGridControl.DataSource = dbcontext.CLIENT.ToList();
         }
+        private void deleteClient_Click(object sender, EventArgs e)
+        {
+            int selectedRowHandle = clientGridView.FocusedRowHandle;
+
+            if (selectedRowHandle >= 0)
+            {
+                int selectedId = Convert.ToInt32(clientGridView.GetRowCellValue(selectedRowHandle, "Id"));
+                string selectedClientName = clientGridView.GetRowCellValue(selectedRowHandle, "ClientName").ToString();
+                string selectedClientSurname = clientGridView.GetRowCellValue(selectedRowHandle, "ClientSurname").ToString();
+                var condition = clientManager.DeleteClientById(selectedId);
+                if (condition)
+                {
+                    XtraMessageBox.Show(string.Format("{0} {1} olarak kayıtlı cari başarıyla silindi.",selectedClientName,selectedClientSurname), "Bilgi");
+                }
+
+                else
+                    XtraMessageBox.Show(string.Format("{0} {1} Cari Silinirken Hata Oluştu !", selectedClientName, selectedClientSurname), "Hata");
+            }
+        }
+
         private void ExportToPdf_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())

@@ -141,6 +141,7 @@ namespace YGN.Management.Forms
             this.clientGridView.GridControl = this.clientGridControl;
             this.clientGridView.Name = "clientGridView";
             this.clientGridView.OptionsBehavior.Editable = false;
+            this.clientGridView.OptionsView.ShowAutoFilterRow = true;
             this.clientGridView.OptionsView.ShowGroupPanel = false;
             this.clientGridView.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.clientGridView_PopupMenuShowing);
             // 

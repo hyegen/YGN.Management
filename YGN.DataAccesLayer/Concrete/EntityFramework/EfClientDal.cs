@@ -11,7 +11,6 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
 {
     public class EfClientDal : EfGenericRepositoryBase<Client, YGNContext>, IClientDal
     {
-        
         public List<Client> GetAllClient()
         {
             List<Client> clients = new List<Client>();
@@ -50,5 +49,15 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
             }
             return str;
         }
+        public bool DeleteClientById(int id)
+        {
+            using (YGNContext context= new YGNContext())
+            {
+                var result =Convert.ToBoolean(context.Database.ExecuteSqlCommand("EXEC YGN_DELETE_CLIENT_BY_ID {0}", id));
+                return result;
+            }
+            
+        }
+
     }
 }

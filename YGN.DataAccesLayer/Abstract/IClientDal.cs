@@ -13,5 +13,6 @@ namespace YGN.DataAccesLayer.Abstract
         List<Client> GetAllClient();
         string GetClientCode();
         Client GetClientById(int id);
+        bool DeleteClientById(int id);
     }
 }

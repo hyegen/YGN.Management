@@ -50,10 +50,13 @@ namespace YGN.BusinessLayer.Concrete
         {
             return _clientDal.GetClientCode();
         }
-
         public Client GetClientById(int id)
         {
             return _clientDal.GetClientById(id);
+        }
+        public bool DeleteClientById(int id)
+        {
+            return _clientDal.DeleteClientById(id);
         }
     }
 }
