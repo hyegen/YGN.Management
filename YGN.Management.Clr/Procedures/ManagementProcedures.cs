@@ -194,6 +194,23 @@ public partial class ManagementProcedures
         }
 
     }
+    [SqlProcedure(Name = "YGN_DELETE_ITEM_BY_ID")]
+    public static void YGN_DELETE_ITEM_BY_ID(SqlInt32 ID)
+    {
+        using (var sqlConn = new SqlConnection("context connection=true"))
+        {
+            var sqlSelect = string.Format(@"
+                  DELETE FROM Items WHERE Id=@ID
+                ");
+            var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("@ID", SqlDbType.Int) { Value = ID });
+            sqlConn.Open();
+            if (SqlContext.Pipe != null)
+                SqlContext.Pipe.Send(sqlCmd.ExecuteReader());
+            sqlConn.Close();
+        }
+    }
+
     #endregion
 
     #region ORDER PROCEDURES

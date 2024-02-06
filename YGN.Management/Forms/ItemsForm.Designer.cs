@@ -40,6 +40,7 @@ namespace YGN.Management.Forms
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.itemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.itemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -57,9 +58,10 @@ namespace YGN.Management.Forms
             this.ribbonControl1.SearchEditItem,
             this.saveBarButtonItem,
             this.closeBarButtonItem,
-            this.refreshBarButtonItem});
+            this.refreshBarButtonItem,
+            this.barButtonItem1});
             resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -106,6 +108,7 @@ namespace YGN.Management.Forms
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.saveBarButtonItem);
             this.ribbonPageGroup1.ItemLinks.Add(this.closeBarButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
             // 
@@ -138,6 +141,12 @@ namespace YGN.Management.Forms
             this.itemsGridView.OptionsView.ShowGroupPanel = false;
             this.itemsGridView.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.itemsGridView_PopupMenuShowing);
             // 
+            // barButtonItem1
+            // 
+            resources.ApplyResources(this.barButtonItem1, "barButtonItem1");
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // ItemsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -169,5 +178,6 @@ namespace YGN.Management.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView itemsGridView;
         private DevExpress.XtraBars.BarButtonItem refreshBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

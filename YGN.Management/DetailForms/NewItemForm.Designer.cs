@@ -36,6 +36,7 @@ namespace YGN.Management.DetailForms
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.itemDetailGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.brandTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.brandLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.unitPriceTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.unitPriceLabelControl = new DevExpress.XtraEditors.LabelControl();
@@ -43,14 +44,15 @@ namespace YGN.Management.DetailForms
             this.itemCodeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.itemCodeLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.itemNameLabelControl = new DevExpress.XtraEditors.LabelControl();
-            this.brandTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.newItemRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).BeginInit();
             this.itemDetailGroupControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.brandTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brandTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // newItemRibbonControl
@@ -61,9 +63,10 @@ namespace YGN.Management.DetailForms
             this.newItemRibbonControl.ExpandCollapseItem,
             this.newItemRibbonControl.SearchEditItem,
             this.saveBarButtonItem,
-            this.closeBarButtonItem});
+            this.closeBarButtonItem,
+            this.barButtonItem1});
             this.newItemRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.newItemRibbonControl.MaxItemId = 3;
+            this.newItemRibbonControl.MaxItemId = 4;
             this.newItemRibbonControl.Name = "newItemRibbonControl";
             this.newItemRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -93,7 +96,8 @@ namespace YGN.Management.DetailForms
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -119,6 +123,14 @@ namespace YGN.Management.DetailForms
             this.itemDetailGroupControl.Size = new System.Drawing.Size(367, 213);
             this.itemDetailGroupControl.TabIndex = 10;
             this.itemDetailGroupControl.Text = "Yeni ";
+            // 
+            // brandTextEdit
+            // 
+            this.brandTextEdit.Location = new System.Drawing.Point(97, 139);
+            this.brandTextEdit.MenuManager = this.newItemRibbonControl;
+            this.brandTextEdit.Name = "brandTextEdit";
+            this.brandTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.brandTextEdit.TabIndex = 18;
             // 
             // brandLabelControl
             // 
@@ -174,13 +186,17 @@ namespace YGN.Management.DetailForms
             this.itemNameLabelControl.TabIndex = 8;
             this.itemNameLabelControl.Text = "Malzeme Adı";
             // 
-            // brandTextEdit
+            // ribbonPageGroup2
             // 
-            this.brandTextEdit.Location = new System.Drawing.Point(97, 139);
-            this.brandTextEdit.MenuManager = this.newItemRibbonControl;
-            this.brandTextEdit.Name = "brandTextEdit";
-            this.brandTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.brandTextEdit.TabIndex = 18;
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 3;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // NewItemForm
             // 
@@ -196,10 +212,10 @@ namespace YGN.Management.DetailForms
             ((System.ComponentModel.ISupportInitialize)(this.itemDetailGroupControl)).EndInit();
             this.itemDetailGroupControl.ResumeLayout(false);
             this.itemDetailGroupControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.brandTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitPriceTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemCodeTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brandTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +236,7 @@ namespace YGN.Management.DetailForms
         private DevExpress.XtraEditors.LabelControl unitPriceLabelControl;
         private DevExpress.XtraEditors.LabelControl brandLabelControl;
         private DevExpress.XtraEditors.TextEdit brandTextEdit;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

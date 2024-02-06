@@ -17,5 +17,6 @@ namespace YGN.BusinessLayer.Abstract
         string GetItemCode();
         Item GetItemById(int id);
         List<Item_View> GetItemForFillingPurchaseGrid();
+        bool DeleteItemById(int id);
     }
 }

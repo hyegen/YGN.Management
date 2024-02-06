@@ -49,5 +49,14 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                 return result;
             }
         }
+        public bool DeleteItemById(int id)
+        {
+            using (YGNContext context = new YGNContext())
+            {
+                var result = Convert.ToBoolean(context.Database.ExecuteSqlCommand("EXEC YGN_DELETE_CLIENT_BY_ID {0}", id));
+                return result;
+            }
+
+        }
     }
 }

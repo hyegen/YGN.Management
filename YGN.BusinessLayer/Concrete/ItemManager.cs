@@ -47,7 +47,6 @@ namespace YGN.BusinessLayer.Concrete
             }
             return existItemCode.Equals(newItemCode, StringComparison.OrdinalIgnoreCase);
         }
-
         public string GetItemCode()
         {
             return _itemDal.GetItemCode();
@@ -59,6 +58,11 @@ namespace YGN.BusinessLayer.Concrete
         public List<Item_View> GetItemForFillingPurchaseGrid()
         {
             return _itemDal.GetItemForFillingPurchaseGrid();
+        }
+
+        public bool DeleteItemById(int id)
+        {
+            return _itemDal.DeleteItemById(id);
         }
     }
 }

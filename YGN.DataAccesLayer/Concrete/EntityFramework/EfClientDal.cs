@@ -30,13 +30,6 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                 var result = context.Database.SqlQuery<Client>($"EXEC YGN_GET_CLIENT_BY_ID {id}").FirstOrDefault();
                 return result;
             }
-            //List<Client> clients1 = new List<Client>();
-            //using (YGNContext context = new YGNContext())
-            //{
-            //    var result = context.Database.SqlQuery<Client>($"EXEC YGN_GET_CLIENT_BY_ID {id}").ToList();
-            //    clients1.AddRange(result);
-            //}
-            //return clients1;
         }
 
         public string GetClientCode()
@@ -56,8 +49,6 @@ namespace YGN.DataAccesLayer.Concrete.EntityFramework
                 var result =Convert.ToBoolean(context.Database.ExecuteSqlCommand("EXEC YGN_DELETE_CLIENT_BY_ID {0}", id));
                 return result;
             }
-            
         }
-
     }
 }
