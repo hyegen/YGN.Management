@@ -220,13 +220,10 @@ public partial class ManagementProcedures
         using (var sqlConn = new SqlConnection("context connection=true"))
         {
             var sqlSelect = string.Format(@"
-                
-                SELECT itm.ItemCode,itm.ItemName,orl.Amount FROM OrderLines orl WITH(NOLOCK)
-	                inner join OrderFiches orf on orf.Id=orl.OrderFicheId
-	                inner join Items itm on itm.Id= orl.ItemId
-	                inner join Clients cl on cl.Id=orl.ClientId
-	                inner join Users us on us.Id=orl.UserId
-                    group by itm.ItemCode,itm.ItemName,orl.Amount 
+ 
+             SELECT ITM.ItemCode,ITM.ItemName,ITM.UnitPrice,ORL.Amount FROM OrderLines ORL 
+	            LEFT JOIN Items ITM ON ITM.Id=ORL.ItemId
+	            GROUP BY ITM.ItemCode,ITM.ItemName,ITM.UnitPrice,ORL.Amount
                 ");
             var sqlCmd = new SqlCommand(sqlSelect, sqlConn);
             sqlConn.Open();

@@ -76,10 +76,12 @@ namespace YGN.Management.SelectionForms
             clientsGridControl.DataSource = clientManager.GetAllClients();
         }
 
-
         #endregion
 
-        
+        private void clientsGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+           // var 
+        }
     }
 }
 

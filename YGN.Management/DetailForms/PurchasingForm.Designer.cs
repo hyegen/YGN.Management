@@ -70,6 +70,10 @@ namespace YGN.Management.DetailForms
             this.newClientButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.clientLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.selectedItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.columnItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.columnItemName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.columnUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.columnAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -291,9 +295,15 @@ namespace YGN.Management.DetailForms
             // 
             // selectedItemsGridView
             // 
+            this.selectedItemsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.columnItemCode,
+            this.columnItemName,
+            this.columnUnitPrice,
+            this.columnAmount});
             this.selectedItemsGridView.GridControl = this.selectedItemsGridControl;
             this.selectedItemsGridView.Name = "selectedItemsGridView";
             this.selectedItemsGridView.OptionsView.ShowGroupPanel = false;
+            this.selectedItemsGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.selectedItemsGridView_CellValueChanged);
             // 
             // lastPriceWithTax
             // 
@@ -449,6 +459,38 @@ namespace YGN.Management.DetailForms
             this.clientLabelControl.TabIndex = 0;
             this.clientLabelControl.Text = "Cari";
             // 
+            // columnItemCode
+            // 
+            this.columnItemCode.Caption = "Malzeme Kodu";
+            this.columnItemCode.FieldName = "ItemCode";
+            this.columnItemCode.Name = "columnItemCode";
+            this.columnItemCode.Visible = true;
+            this.columnItemCode.VisibleIndex = 0;
+            // 
+            // columnItemName
+            // 
+            this.columnItemName.Caption = "Malzeme Adı";
+            this.columnItemName.FieldName = "ItemName";
+            this.columnItemName.Name = "columnItemName";
+            this.columnItemName.Visible = true;
+            this.columnItemName.VisibleIndex = 1;
+            // 
+            // columnUnitPrice
+            // 
+            this.columnUnitPrice.Caption = "Birim Fiyat";
+            this.columnUnitPrice.FieldName = "UnitPrice";
+            this.columnUnitPrice.Name = "columnUnitPrice";
+            this.columnUnitPrice.Visible = true;
+            this.columnUnitPrice.VisibleIndex = 2;
+            // 
+            // columnAmount
+            // 
+            this.columnAmount.Caption = "Miktar";
+            this.columnAmount.FieldName = "Amount";
+            this.columnAmount.Name = "columnAmount";
+            this.columnAmount.Visible = true;
+            this.columnAmount.VisibleIndex = 3;
+            // 
             // PurchasingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +575,9 @@ namespace YGN.Management.DetailForms
         private System.Windows.Forms.BindingSource itemsBindingSource;
         private DevExpress.XtraBars.BarButtonItem createOrderFicheBarButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraGrid.Columns.GridColumn columnItemCode;
+        private DevExpress.XtraGrid.Columns.GridColumn columnItemName;
+        private DevExpress.XtraGrid.Columns.GridColumn columnUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn columnAmount;
     }
 }

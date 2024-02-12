@@ -39,7 +39,7 @@ namespace Entities.Extensions
         {
             public string Itemcode { get; set; }
             public  string ItemName { get; set; }
-            public int UnitPrice { get; set; }
+            public double UnitPrice { get; set; }
             public  double Amount { get; set; }
         }
 
@@ -49,5 +49,6 @@ namespace Entities.Extensions
             public string ItemName { get; set; }
             public double UnitPrice { get; set; }
         }
+     
     }
 }

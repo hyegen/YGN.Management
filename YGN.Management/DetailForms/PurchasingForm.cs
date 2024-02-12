@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
+using YGN.Management.Managers;
 using YGN.Management.OrderFicheMaker;
 using YGN.Management.SelectionForms;
 using static Entities.Extensions.Extensions;
@@ -33,7 +34,7 @@ namespace YGN.Management.DetailForms
         private Client _client;
         OrderFicheManager orderFicheManager = new OrderFicheManager(new EfOrderFicheDal());
         OrderLineManager orderLineManager = new OrderLineManager(new EfOrderLineDal());
-
+        private List<Item> _lineDataSource;
         #endregion
 
         #region properties
@@ -43,7 +44,7 @@ namespace YGN.Management.DetailForms
             get { return (List<Item_View>)itemsBindingSource.DataSource; }
             set { itemsBindingSource.DataSource = value; }
         }
-        private List<OrderLine_View> OrderLineDataSource
+        public List<OrderLine_View> OrderLineDataSource
         {
             get { return (List<OrderLine_View>)selectedItemsBindingSource.DataSource; }
             set { selectedItemsBindingSource.DataSource = value; }
@@ -56,6 +57,14 @@ namespace YGN.Management.DetailForms
                 if (gridView != null)
                     return (OrderLine_View)gridView.GetFocusedRow();
                 return null;
+            }
+        }
+        public List<Item> LineDataSource
+        {
+            get { return _lineDataSource; }
+            set
+            {
+                _lineDataSource = value;
             }
         }
         #endregion
@@ -92,16 +101,18 @@ namespace YGN.Management.DetailForms
         }
         private void newItemButtonEdit_Click(object sender, EventArgs e)
         {
-            using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
-            {
-                if (itemSelectionForm.ShowDialog() == DialogResult.OK)
-                {
-                    items.Clear();
-                    items.AddRange(itemSelectionForm.returnedList);
-                    //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
-                    newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode}"));
-                }
-            };
+            //using (ItemSelectionForm itemSelectionForm = new ItemSelectionForm())
+            //{
+            //    if (itemSelectionForm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        items.Clear();
+            //        //  items.AddRange(itemSelectionForm.returnedList);
+            //        //  newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode} - {item.ItemName}"));
+            //        newItemButtonEdit.Text = string.Join(", ", items.Select(item => $"{item.ItemCode}"));
+            //        selectedItemsGridControl.DataSource = itemSelectionForm.returnedList;  //itemSelectionForm.returnedList;
+            //    }
+            //};
+            new PurchasingDetailManager().itemSelection();
         }
         private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -111,15 +122,13 @@ namespace YGN.Management.DetailForms
         {
             if (validateSave())
             {
-                addToOrderFicheAndSave();
+                //addToOrderFicheAndSave();
             }
             else
             {
                 XtraMessageBox.Show("Malzeme(ler) veya Cari seçilmemiş. Lütfen seçiniz.", "Hata");
             }
             Close();
-
-
         }
 
         #endregion
@@ -138,25 +147,25 @@ namespace YGN.Management.DetailForms
             reportDesignTool.ShowRibbonDesignerDialog(lookAndFeel);
         }
 
-        private void UpdateGrid()
-        {
-            itemsGridView.BeginUpdate();
+        //private void UpdateGrid()
+        //{
+        //    itemsGridView.BeginUpdate();
 
-            try
-            {
-                itemsGridView.Columns.Clear();
-                itemsGridView.Columns.AddVisible("Id", "Id");
-                itemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
-                itemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
+        //    try
+        //    {
+        //        itemsGridView.Columns.Clear();
+        //        itemsGridView.Columns.AddVisible("Id", "Id");
+        //        itemsGridView.Columns.AddVisible("ItemCode", "Malzeme Kodu");
+        //        itemsGridView.Columns.AddVisible("ItemName", "Malzeme Adı");
 
-                itemsGridControl.DataSource = items;
-                itemsGridView.RefreshData();
-            }
-            finally
-            {
-                itemsGridView.EndUpdate();
-            }
-        }
+        //        itemsGridControl.DataSource = items;
+        //        itemsGridView.RefreshData();
+        //    }
+        //    finally
+        //    {
+        //        itemsGridView.EndUpdate();
+        //    }
+        //}
 
         private void addToOrderFicheAndSave()
         {
@@ -206,5 +215,16 @@ namespace YGN.Management.DetailForms
         {
             createOrderFiche();
         }
+
+        private void selectedItemsGridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == columnAmount)
+            {
+                var row = (Item)selectedItemsGridView.GetRow(e.RowHandle);
+                Item dataRow = _lineDataSource.FirstOrDefault();
+                dataRow.Amount = row.Amount;
+            }
+        }
+
     }
 }

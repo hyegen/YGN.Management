@@ -65,6 +65,7 @@ namespace YGN.Management.SelectionForms
             this.clientsGridView.OptionsView.ShowAutoFilterRow = true;
             this.clientsGridView.OptionsView.ShowGroupPanel = false;
             this.clientsGridView.OptionsView.ShowIndicator = false;
+            this.clientsGridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.clientsGridView_CellValueChanged);
             this.clientsGridView.DoubleClick += new System.EventHandler(this.clientsGridView_DoubleClick);
             // 
             // ribbonControl1

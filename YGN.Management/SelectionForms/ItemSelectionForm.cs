@@ -12,6 +12,8 @@ using Entities.Concrete;
 using YGN.BusinessLayer.Concrete;
 using YGN.DataAccesLayer.Concrete.EntityFramework;
 using DevExpress.XtraBars;
+using static Entities.Extensions.Extensions;
+using YGN.Management.DetailForms;
 
 namespace YGN.Management.SelectionForms
 {
@@ -19,6 +21,7 @@ namespace YGN.Management.SelectionForms
     {
         #region members
         ItemManager itemManager = new ItemManager(new EfItemDal());
+        OrderLineManager orderLineManager = new OrderLineManager(new EfOrderLineDal());
         private List<Item> _returnedList;
 
         #endregion
@@ -32,6 +35,11 @@ namespace YGN.Management.SelectionForms
         #endregion
 
         #region properties
+        //public List<Item> returnedList
+        //{
+        //    get { return _returnedList; }
+        //    set { _returnedList = value; }
+        //}
         public List<Item> returnedList
         {
             get { return _returnedList; }
@@ -54,15 +62,26 @@ namespace YGN.Management.SelectionForms
 
         private void itemGridView_DoubleClick(object sender, EventArgs e)
         {
-            int selectedRowID = Convert.ToInt32(itemGridView.GetFocusedRowCellValue("Id"));
-            var result = itemManager.GetItemById(selectedRowID);
-            _returnedList.Add(result);
+            //int selectedRowID = Convert.ToInt32(itemGridView.GetFocusedRowCellValue("Id"));
+            //int[] selectedRowHandles = itemGridView.GetSelectedRows();
+            //// var result = itemManager.GetItemById(selectedRowID);
+            //var result = orderLineManager.GetOrderLine();
+            //_returnedList.AddRange(result);
+            //PurchasingForm purchasingForm = new PurchasingForm();
+            //purchasingForm.OrderLineDataSource = _returnedList;
 
-            this.Close();
+            //foreach (var item in selectedRowHandles)
+            //{
+
+
+            //    //List<OrderLine_View> rowData = (List<OrderLine_View>)itemGridView.GetRow(item);
+            //    //  _returnedList.AddRange(rowData);
+            //}
+            //this.Close();
         }
         #endregion
 
-        private void saveBarButtonItem_ItemClick(object sender,ItemClickEventArgs e)
+        private void saveBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult = DialogResult.OK;
 
@@ -72,7 +91,7 @@ namespace YGN.Management.SelectionForms
 
             foreach (int rowHandle in selectedRowHandles)
             {
-                if (rowHandle >= 0) // Negatif değerler header veya group satırlarını temsil edebilir
+                if (rowHandle >= 0)
                 {
                     Item rowData = (Item)itemGridView.GetRow(rowHandle);
                     _returnedList.Add(rowData);
@@ -85,12 +104,14 @@ namespace YGN.Management.SelectionForms
             //_returnedList.Add(result);
 
             Close();
- 
+
         }
 
         private void closeBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Close();
         }
+
+
     }
 }

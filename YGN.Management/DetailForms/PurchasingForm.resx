@@ -270,18 +270,18 @@
   </data>
   <data name="createOrderFicheBarButtonItem.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAjdEVYdFRpdGxlAE9yZGVyRGV0YWlsO1ByaW50T3JkZXJEZXRhaWw7aMqFLgAAATdJREFUWEft
-        kt1twzAQgz1cXztFd+gAhXfoCF0gDwWyQgfINooY6AAezSiu4jgvOeADxNP90IKnUspTsck9sck9sUlm
-        nudyDzpPsUmmDRmKl4GXgSEDtemIxsYmBmjeEZpJAlAx2NrARTNJAC6uqP43OjP2BEkALq4s7kfgmXqX
-        BODiR6D7kgCuaUt0XxLANV3hr4J6gLOrWaD7kgCuieClXMu5rhndlwQwTTzc3Svdet2XBNCGisutZTsD
-        EXK3IKLpIQMHaUoG1gb3Eod6lfYlcQ00R7x//V7gM+uI1mPnMTapsIG18TAD+sWqI57+Ai3sPMYmlVsv
-        gPj8+U60sPMYm1TWvIAzQGc7F9ikMvoC7WxnBjapjP4Duxpoyxx2ZmCTCgz06MR0+nizMwObHAVfrOe+
-        gTKdAcHuDdE5D8akAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACN0RVh0VGl0
+        bGUAT3JkZXJEZXRhaWw7UHJpbnRPcmRlckRldGFpbDtoyoUuAAABN0lEQVRYR+2S3W3DMBCDPVxfO0V3
+        6ACFd+gIXSAPBbJCB8g2ihjoAB7NKK7iOC854APE0/3QgqdSylOxyT2xyT2xSWae53IPOk+xSaYNGYqX
+        gZeBIQO16YjGxiYGaN4RmkkCUDHY2sBFM0kALq6o/jc6M/YESQAurizuR+CZepcE4OJHoPuSAK5pS3Rf
+        EsA1XeGvgnqAs6tZoPuSAK6J4KVcy7muGd2XBDBNPNzdK9163ZcE0IaKy61lOwMRcrcgoukhAwdpSgbW
+        BvcSh3qV9iVxDTRHvH/9XuAz64jWY+cxNqmwgbXxMAP6xaojnv4CLew8xiaVWy+A+Pz5TrSw8xibVNa8
+        gDNAZzsX2KQy+gLtbGcGNqmM/gO7GmjLHHZmYJMKDPToxHT6eLMzA5scBV+s576BMp0Bwe4N0TkPxqQA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="itemsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>376, 17</value>
+    <value>228, 25</value>
   </metadata>
   <metadata name="selectedItemsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
