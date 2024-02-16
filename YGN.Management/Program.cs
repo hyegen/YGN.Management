@@ -9,7 +9,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 using YGN.DataAccesLayer.Concrete;
-using YGN.Management.Config;
+
 
 namespace YGN.Management
 {

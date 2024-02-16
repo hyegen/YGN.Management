@@ -67,7 +67,6 @@
     <Compile Include="Concrete\PurchasingOrderClientSelectionManager.cs" />
     <Compile Include="Concrete\StockTransactionManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
-    <Compile Include="ConfigManager\CreateDatabaseManager.cs" />
     <Compile Include="FluentValidation\ClientValidator.cs" />
     <Compile Include="FluentValidation\ItemValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
